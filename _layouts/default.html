@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
+
+    <link rel="canonical" href="{{ site.url }}" />
+  </head>
+  <body>
+    {% include header.html %}
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/thoughts">Thoughts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <main>
+        {{ content }}
+      </main>
+      <aside>
+        <div class="strava-card">
+          <div class="card-header">
+            <h3>Strava</h3>
+          </div>
+          <div class="card-body"></div>
+        </div>
+      </aside>
+    </div>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

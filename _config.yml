@@ -1,0 +1,7 @@
+highlighter: rouge
+plugins:
+  - jekyll-feed
+title: Chris McKelt’s blog
+description: Welcome to my blog
+author: Chris McKelt
+permalink: /:year/:month/:day/:title:output_ext
