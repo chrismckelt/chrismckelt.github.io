@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Azure IoT Edge - using Grafana on the Edge"
 date: "2020-05-02"
 categories: 
