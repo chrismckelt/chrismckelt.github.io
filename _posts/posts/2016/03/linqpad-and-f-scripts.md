@@ -1,0 +1,21 @@
+---
+title: "LinqPad and F# Charting"
+date: "2016-03-28"
+categories: 
+  - "f"
+  - "linqpad"
+---
+
+# Import these references
+
+[![image](images/image_thumb.png "image")](/wp-content/uploads/2016/03/image.png)
+
+### Sample script
+
+<script src="https://gist.github.com/chrismckelt/7f2ec81a893e5f31d056.js"></script>
+
+### Graph
+
+ 
+
+[![image](images/image_thumb-1.png "image")](/wp-content/uploads/2016/03/image-1.png)
