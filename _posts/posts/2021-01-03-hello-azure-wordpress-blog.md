@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "Using Azure to setup a new blog and domain"
 date: "2021-01-03"
 categories: 
