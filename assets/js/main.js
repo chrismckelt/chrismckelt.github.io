@@ -6,7 +6,7 @@
   let timeoutId;
 
   if (stravaCardBody) {
-    enhanceStravaCard();
+   
   }
 
   if (isDateTimeFormatSupported()) {
@@ -14,40 +14,6 @@
   }
 
   ////////////////
-  
-  function enhanceStravaCard() {
-    showStartFetchingMessage();
-
-    getLatestActivity()
-      .then(response => {
-        clearTimeout(timeoutId);
-
-        const template = `
-          <div class="latest-run">
-            <div class="activity-name">
-              <a href="https://www.strava.com/activities/${ response.id }" target="_blank" ref="noopener noreferrer">
-                ${ response.name }
-              </a>
-            </div>
-            <div class="stats">
-              <div>
-                <span class="label">Distance</span>
-                <div>${ toKm(response.distance) } km</div>
-              </div>
-              <div>
-                <span class="label">Time</span>
-                <div>${ formatTime(response.moving_time) } min</div>
-              </div>
-            </div>
-          </div>
-        `;
-
-        stravaCardBody.innerHTML = template;
-      })
-      .catch(() => {
-        stravaCardBody.innerHTML = '<p><small>Ouch! The activity request got lost in the Web forest.</small></p>';
-      });
-  }
 
   function formatDates() {
     const language = navigator.language;
@@ -119,31 +85,8 @@
     return `${minutes}:${seconds}`;
   }
       
-  function getLatestActivity() {
-    const url = "https://dzhstravaapp.azurewebsites.net/api/Activities";
-    const tenSecondsInTicks = 10 * 1000;
-
-    timeoutId = setTimeout(() => {
-      stravaCardBody.innerHTML = showSlowRequestMessage();
-    }, tenSecondsInTicks);
-
-    return fetch(url)
-      .then(response => response.json())
-      .then(response => response[0]);
-  }
-
-  function showSlowRequestMessage() {
-    return `
-      <p>
-        <small>Oh, no! The request is running slow*...<br>
-        <strong>Not me, though! Wait and see!</strong> 🏃</small>
-      </p>
-      <p class="azure-function-message">
-        * It’s actually an Azure Function doing a cold start.
-      </p>`
-  }
 
   function showStartFetchingMessage() {
-    stravaCardBody.innerHTML = '<p><small>🏃 to get the latest activity...</small></p>';
+    stravaCardBody.innerHTML = '<p><small>🏃 Remembering Thoughts...</small></p>';
   }
 }());
