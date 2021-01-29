@@ -10,4 +10,4 @@ categories:
 
   
 
-[![Kanban Process](images/Kanban-Process_thumb.gif "Kanban Process")](http://blog.mckelt.com/wp-content/uploads/2020/08/Kanban-Process.gif)
+[![Kanban Process](images/Kanban-Process_thumb.gif "Kanban Process")](https://github.com/chrismckelt/chrismckelt.github.io/tree/master/_posts/posts/images/2020/08/Kanban-Process.gif)
