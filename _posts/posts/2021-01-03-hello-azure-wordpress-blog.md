@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Using Azure to setup a new blog and domain"
-date: "2021-01-03"
 category: posts
+date: "2021-01-03"
 categories: 
   - "azure"
   - "wordpress"

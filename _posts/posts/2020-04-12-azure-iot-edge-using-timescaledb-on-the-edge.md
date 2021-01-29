@@ -1,5 +1,7 @@
 ---
+layout: post
 title: "Azure IoT Edge – using TimescaleDB on the Edge"
+category: posts
 date: "2020-04-12"
 categories: 
   - "net"
