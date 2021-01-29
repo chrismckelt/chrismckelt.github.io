@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Biztalk notes"
 date: "2009-02-12"
 categories: 

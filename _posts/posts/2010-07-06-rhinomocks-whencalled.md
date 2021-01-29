@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "RhinoMocks – WhenCalled"
 date: "2010-07-06"
 categories: 

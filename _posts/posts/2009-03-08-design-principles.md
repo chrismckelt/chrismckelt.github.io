@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Design Principles"
 date: "2009-03-08"
 categories: 

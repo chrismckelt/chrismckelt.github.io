@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "D365 FO OData proxy generation"
 date: "2018-12-03"
 categories: 

@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Spec Flow, Specifications and Chained Commands"
 date: "2010-10-16"
 categories: 

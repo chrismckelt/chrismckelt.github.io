@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Impersonation in Microsoft Dot Net"
 date: "2008-07-28"
 categories: 

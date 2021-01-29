@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "SQL Tricks"
 date: "2008-07-31"
 categories: 

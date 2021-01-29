@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Software Development Best Practice (minimum)"
 date: "2014-07-21"
 categories: 

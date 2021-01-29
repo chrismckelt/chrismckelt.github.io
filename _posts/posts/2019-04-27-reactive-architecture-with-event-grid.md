@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Reactive architecture with event grid"
 date: "2019-04-27"
 categories: 

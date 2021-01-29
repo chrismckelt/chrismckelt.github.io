@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Crystal Software Development"
 date: "2010-06-30"
 categories: 

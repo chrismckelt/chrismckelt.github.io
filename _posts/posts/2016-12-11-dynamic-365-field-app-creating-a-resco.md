@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Dynamics 365 Field services mobile app debugging"
 date: "2016-12-11"
 categories: 

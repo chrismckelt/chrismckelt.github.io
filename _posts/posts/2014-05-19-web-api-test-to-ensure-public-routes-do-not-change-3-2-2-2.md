@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Web API Test to ensure public routes do not change"
 date: "2014-05-19"
 categories: 

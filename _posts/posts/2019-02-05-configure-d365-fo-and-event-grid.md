@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Configure D365 fo and event grid"
 date: "2019-02-05"
 categories: 

@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Invalid object name 'master.dbo.spt_values'."
 date: "2010-08-24"
 categories: 

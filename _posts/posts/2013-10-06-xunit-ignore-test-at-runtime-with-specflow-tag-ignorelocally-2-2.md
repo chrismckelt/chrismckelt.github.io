@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "XUnit Ignore test at runtime (with SpecFlow tag @IgnoreLocally)"
 date: "2013-10-06"
 categories: 

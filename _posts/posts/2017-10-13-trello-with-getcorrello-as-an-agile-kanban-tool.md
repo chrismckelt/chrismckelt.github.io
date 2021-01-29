@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Trello with GetCorrello as an Agile Kanban Tool"
 date: "2017-10-13"
 categories: 

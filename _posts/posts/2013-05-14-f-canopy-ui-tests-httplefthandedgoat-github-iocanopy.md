@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "F# Canopy UI tests -- http://lefthandedgoat.github.io/canopy/"
 date: "2013-05-14"
 categories: 

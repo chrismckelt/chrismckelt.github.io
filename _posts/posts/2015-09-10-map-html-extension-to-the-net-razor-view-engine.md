@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Map .html extension to the .Net razor view engine"
 date: "2015-09-10"
 categories: 

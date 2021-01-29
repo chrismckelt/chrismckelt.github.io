@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "From DotNetBlogEngine to WordPress"
 date: "2015-06-01"
 categories: 

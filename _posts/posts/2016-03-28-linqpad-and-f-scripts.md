@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "LinqPad and F# Charting"
 date: "2016-03-28"
 categories: 

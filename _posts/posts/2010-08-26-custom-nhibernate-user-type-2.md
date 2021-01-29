@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Custom NHibernate User Type"
 date: "2010-08-26"
 categories: 

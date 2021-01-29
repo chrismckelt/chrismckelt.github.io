@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "WCF Windsor Interceptor, AOP with Logging and Exception Handler Interceptor"
 date: "2009-02-03"
 categories: 

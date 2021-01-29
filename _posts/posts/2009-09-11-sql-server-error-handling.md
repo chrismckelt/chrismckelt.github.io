@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "SQL Server error handling"
 date: "2009-09-11"
 categories: 

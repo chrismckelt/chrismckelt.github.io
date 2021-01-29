@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Cloud platform providers"
 date: "2015-06-29"
 categories: 

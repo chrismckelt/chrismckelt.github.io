@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "GreaseMonkey script to auto login on an Angular app"
 date: "2014-05-08"
 categories: 

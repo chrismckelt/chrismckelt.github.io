@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Word prediction with Natural Language Processing"
 date: "2017-12-03"
 categories: 

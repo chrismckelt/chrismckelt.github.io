@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Sales Tax Calculator using SpecFlow & The State Pattern And Chained Commands"
 date: "2011-03-11"
 categories: 

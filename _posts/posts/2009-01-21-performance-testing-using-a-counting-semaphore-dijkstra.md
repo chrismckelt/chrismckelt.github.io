@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Performance Testing using a counting semaphore -- Dijkstra"
 date: "2009-01-21"
 categories: 

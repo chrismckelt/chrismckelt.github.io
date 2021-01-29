@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Active Record and Fake In Memory Repositories in Test Driven Development"
 date: "2008-08-07"
 categories: 

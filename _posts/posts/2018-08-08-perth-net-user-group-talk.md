@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Perth .Net user group talk"
 date: "2018-08-08"
 categories: 

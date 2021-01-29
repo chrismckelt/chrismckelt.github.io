@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "F# Beginnings"
 date: "2011-03-07"
 categories: 

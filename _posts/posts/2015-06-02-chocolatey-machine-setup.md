@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Chocolatey machine setup"
 date: "2015-06-02"
 categories: 

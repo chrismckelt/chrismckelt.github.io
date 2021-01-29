@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Windows SharePoint Services Notes"
 date: "2008-10-12"
 categories: 

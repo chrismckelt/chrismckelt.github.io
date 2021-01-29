@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "How to use DB Deploy"
 date: "2008-08-28"
 categories: 

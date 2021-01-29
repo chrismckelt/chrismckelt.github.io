@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Allow IIS7 to download .config files"
 date: "2010-03-11"
 categories: 
