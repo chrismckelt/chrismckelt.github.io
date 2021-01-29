@@ -28,13 +28,13 @@ And permissions are correct for the DEV environment
 
 For each environment that you wish to restore into create an Azure Pipeline with 3 stages.
 
-[![image](images/image_thumb-7.png "image")](https://github.com/chrismckelt/chrismckelt.github.io/tree/master/_posts/posts/images/2019/08/image-7.png)
+[![image](images/image_thumb-7.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/08/image-7.png)
 
 Create variable groups that are **scoped to specific stages**
 
 Each variable group contains deployment credentials that the specific stage will require to perform operations within the specific Azure Subscription.
 
-[![image](images/image_thumb-8.png "image")](https://github.com/chrismckelt/chrismckelt.github.io/tree/master/_posts/posts/images/2019/08/image-8.png)
+[![image](images/image_thumb-8.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/08/image-8.png)
 
 ### Task 1 - Export
 
@@ -42,7 +42,7 @@ Create a PowerShell task to run a script and pass it the information for the pro
 
 This runs against the production environment and creates a blog storage container that holds the exported BACPAC
 
-[![image](images/image_thumb-9.png "image")](https://github.com/chrismckelt/chrismckelt.github.io/tree/master/_posts/posts/images/2019/08/image-9.png)
+[![image](images/image_thumb-9.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/08/image-9.png)
 
 ###### [View code for script production-export.ps1](https://gist.github.com/chrismckelt/cc3c2ea53d8500b7c02e3da43513cbae)
 
@@ -52,13 +52,13 @@ This runs against the production environment and creates a blog storage containe
 
 ### Results in production once this script run should show the database BACPAC export
 
-### [![image](images/image_thumb-10.png "image")](https://github.com/chrismckelt/chrismckelt.github.io/tree/master/_posts/posts/images/2019/08/image-10.png)
+### [![image](images/image_thumb-10.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/08/image-10.png)
 
 ### Task 2 – Import
 
 Under the ‘import’ stage create a task that will import the BACPAC from the storage container in the production subscription.  This uses both production and the environment credentials.
 
-[![image](images/image_thumb-11.png "image")](https://github.com/chrismckelt/chrismckelt.github.io/tree/master/_posts/posts/images/2019/08/image-11.png)
+[![image](images/image_thumb-11.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/08/image-11.png)
 
 ###### [View code for script production-import.ps1](https://gist.github.com/chrismckelt/629f992935f9a6aa6701e2c69ae49358)
 
@@ -86,4 +86,4 @@ Also remove any Production SQL user account and replace them with environment sp
 
 Running the pipeline now copies the database to the DEV environment. Typically after this will run a software build which will automatically apply schema changes currently in DEV in the database. Happy restoring!
 
-[![image](images/image_thumb-13.png "image")](https://github.com/chrismckelt/chrismckelt.github.io/tree/master/_posts/posts/images/2019/08/image-13.png)
+[![image](images/image_thumb-13.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/08/image-13.png)
