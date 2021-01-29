@@ -16,11 +16,11 @@ categories:
 
 2\. Using a Visual Studio Standard Library project and add a new ‘Connected Service’
 
-[![clip_image001[4]](images/clip_image0014_thumb.png "clip_image001[4]")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/clip_image0014.png)
+[![clip_image001[4]](images/clip_image0014_thumb.png "clip_image001[4]")](http://blog.mckelt.com/wp-content/uploads/2019/12/clip_image0014.png)
 
-[![clip_image002[4]](images/clip_image0024_thumb.png "clip_image002[4]")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/clip_image0024.png)
+[![clip_image002[4]](images/clip_image0024_thumb.png "clip_image002[4]")](http://blog.mckelt.com/wp-content/uploads/2019/12/clip_image0024.png)
 
-[![image](images/image_thumb.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/image.png)
+[![image](images/image_thumb.png "image")](http://blog.mckelt.com/wp-content/uploads/2019/12/image.png)
 
 3\. Open the _Reference.cs_  file in VS Code (_VS Code seems to handle the file better than Notepad++ and Visual Studio)_
 
@@ -32,7 +32,7 @@ _private const string Edmx  = @”\[mega big xml string we need to change\]”_
 
 Set this to be file to be embedded content in your Visual Studio project
 
-[![clip_image001](images/clip_image001_thumb.png "clip_image001")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/clip_image001.png)
+[![clip_image001](images/clip_image001_thumb.png "clip_image001")](http://blog.mckelt.com/wp-content/uploads/2019/12/clip_image001.png)
 
 5\. Search for the below function name and replace with the code below:
 
