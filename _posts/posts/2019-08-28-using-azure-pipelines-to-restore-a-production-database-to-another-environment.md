@@ -1,5 +1,7 @@
 ---
+layout: post
 title: "Using Azure Pipelines to restore a production database to another environment"
+category: posts
 date: "2019-08-28"
 categories: 
   - "azure"

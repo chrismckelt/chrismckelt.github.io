@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Azure Service offering"
 date: "2019-08-15"
 categories: 

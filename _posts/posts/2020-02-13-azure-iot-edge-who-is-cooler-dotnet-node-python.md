@@ -1,5 +1,7 @@
 ---
+layout: post
 title: "Azure IoT Edge- Who is cooler? dotnet, node or python?"
+category: posts
 date: "2020-02-13"
 categories: 
   - "net"
