@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "RandomHelper"
 date: "2009-04-27"
 categories: 

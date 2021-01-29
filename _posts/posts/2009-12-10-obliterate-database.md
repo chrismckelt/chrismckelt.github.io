@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Obliterate Database"
 date: "2009-12-10"
 categories: 

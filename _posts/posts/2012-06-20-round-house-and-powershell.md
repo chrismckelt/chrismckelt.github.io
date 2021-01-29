@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Round house and powershell"
 date: "2012-06-20"
 categories: 

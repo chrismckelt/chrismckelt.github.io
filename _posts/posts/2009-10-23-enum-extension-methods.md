@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Enum extension methods"
 date: "2009-10-23"
 categories: 

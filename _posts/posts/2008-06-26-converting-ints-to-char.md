@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Converting ints to char"
 date: "2008-06-26"
 categories: 

@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Stream bytes to files"
 date: "2010-02-10"
 categories: 

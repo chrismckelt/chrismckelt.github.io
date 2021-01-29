@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Powershell script to delete mail from specific folder"
 date: "2012-10-18"
 categories: 

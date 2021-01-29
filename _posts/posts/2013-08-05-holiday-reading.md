@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Why Agile?"
 date: "2013-08-05"
 categories: 

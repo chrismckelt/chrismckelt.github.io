@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Log4Net config"
 date: "2009-10-15"
 categories: 

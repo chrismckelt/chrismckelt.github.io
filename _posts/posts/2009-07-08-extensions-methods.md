@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Extensions Methods"
 date: "2009-07-08"
 ---

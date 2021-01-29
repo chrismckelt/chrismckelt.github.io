@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Castle Windsor – WCF Endpoint Configuration"
 date: "2010-02-01"
 categories: 

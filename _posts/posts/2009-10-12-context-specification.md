@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Context Specification"
 date: "2009-10-12"
 categories: 

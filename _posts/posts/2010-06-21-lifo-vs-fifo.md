@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "LIFO vs FIFO"
 date: "2010-06-21"
 categories: 

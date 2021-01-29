@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "ISpecification"
 date: "2010-02-03"
 categories: 

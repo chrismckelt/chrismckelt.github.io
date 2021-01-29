@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Charge Id – The prediction model"
 date: "2018-07-29"
 categories: 

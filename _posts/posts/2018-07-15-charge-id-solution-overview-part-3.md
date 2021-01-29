@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Charge Id – solution overview"
 date: "2018-07-15"
 categories: 

@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Winforms UI cross thread operations"
 date: "2009-02-27"
 categories: 

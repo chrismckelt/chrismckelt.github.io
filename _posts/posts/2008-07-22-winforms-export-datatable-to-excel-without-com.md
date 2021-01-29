@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Winforms export datatable to excel without COM+"
 date: "2008-07-22"
 categories: 

@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "NANT CruiseControl NUnit   - How to get unit tests running and displaying on the build server"
 date: "2011-05-18"
 categories: 

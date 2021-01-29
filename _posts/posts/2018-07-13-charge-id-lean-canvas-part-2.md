@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Charge Id - Lean Canvas"
 date: "2018-07-13"
 categories: 

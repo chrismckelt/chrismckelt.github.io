@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "ConvertPropertiesAndValuesToHashtable Extension method"
 date: "2010-01-27"
 categories: 

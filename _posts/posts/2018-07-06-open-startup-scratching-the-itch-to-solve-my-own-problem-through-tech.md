@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Charge Id – What is the problem?"
 date: "2018-07-06"
 categories: 

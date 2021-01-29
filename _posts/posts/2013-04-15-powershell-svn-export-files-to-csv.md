@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Powershell & SVN – Export files to CSV"
 date: "2013-04-15"
 categories: 

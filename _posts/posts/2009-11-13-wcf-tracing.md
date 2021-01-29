@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "WCF Tracing"
 date: "2009-11-13"
 categories: 

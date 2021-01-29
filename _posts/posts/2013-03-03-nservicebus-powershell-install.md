@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "NServiceBus Powershell Install"
 date: "2013-03-03"
 categories: 

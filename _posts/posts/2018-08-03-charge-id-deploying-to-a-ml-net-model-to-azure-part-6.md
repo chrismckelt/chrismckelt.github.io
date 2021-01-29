@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Charge Id - Deploying a ML.Net Model to Azure"
 date: "2018-08-03"
 categories: 

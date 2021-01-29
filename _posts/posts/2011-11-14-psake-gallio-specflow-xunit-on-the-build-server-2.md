@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "PSAKE- Gallio–SpecFlow–XUnit–on the build server"
 date: "2011-11-14"
 categories: 
