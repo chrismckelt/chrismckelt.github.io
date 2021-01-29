@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Resharper Live Templates"
 date: "2009-09-04"
 categories: 

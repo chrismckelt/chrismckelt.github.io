@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Set-DefaultBrowser powershell"
 date: "2013-01-22"
 categories: 

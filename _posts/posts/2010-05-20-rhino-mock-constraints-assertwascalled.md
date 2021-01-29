@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Rhino Mock Constraints  -- AssertWasCalled"
 date: "2010-05-20"
 categories: 

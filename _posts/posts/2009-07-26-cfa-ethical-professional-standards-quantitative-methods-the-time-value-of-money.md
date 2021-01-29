@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "CFA – Ethical & Professional Standards & Quantitative Methods – The Time Value of Money"
 date: "2009-07-26"
 categories: 

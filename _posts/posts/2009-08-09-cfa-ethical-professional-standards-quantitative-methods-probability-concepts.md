@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "CFA – Ethical & Professional Standards & Quantitative Methods – Probability Concepts"
 date: "2009-08-09"
 categories: 

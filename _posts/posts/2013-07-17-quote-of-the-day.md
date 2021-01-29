@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Sing your death song and die like a hero going home."
 date: "2013-07-17"
 categories: 

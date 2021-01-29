@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "It has been said that the greatest souls awaken through suffering."
 date: "2013-04-30"
 categories: 

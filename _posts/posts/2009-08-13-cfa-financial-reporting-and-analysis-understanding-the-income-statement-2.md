@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "CFA – Financial Reporting and Analysis – Understanding the Income Statement"
 date: "2009-08-13"
 categories: 

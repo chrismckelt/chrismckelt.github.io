@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "DatabaseBackup.fs"
 date: "2011-03-03"
 categories: 

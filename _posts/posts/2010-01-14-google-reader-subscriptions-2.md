@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Google reader subscriptions"
 date: "2010-01-14"
 categories: 

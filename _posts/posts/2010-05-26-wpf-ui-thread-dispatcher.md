@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "WPF UI Thread Dispatcher"
 date: "2010-05-26"
 categories: 

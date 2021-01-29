@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Visual Studio Icons"
 date: "2010-02-22"
 categories: 

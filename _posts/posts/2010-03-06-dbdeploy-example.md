@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "DBDeploy Example"
 date: "2010-03-06"
 categories: 

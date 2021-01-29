@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Holiday reading on my Kindle"
 date: "2011-01-29"
 ---

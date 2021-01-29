@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Azure IoT Edge – using Apache Nifi as a 3rd party container"
 category: posts
+title: "Azure IoT Edge – using Apache Nifi as a 3rd party container"
 date: "2020-04-11"
 categories: 
   - "net"

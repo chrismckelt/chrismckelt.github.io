@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Azure IoT Edge - Developing custom modules"
 category: posts
+title: "Azure IoT Edge - Developing custom modules"
 date: "2020-03-10"
 categories: 
   - "net"

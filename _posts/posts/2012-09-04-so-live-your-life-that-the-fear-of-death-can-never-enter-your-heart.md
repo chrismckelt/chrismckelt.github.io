@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "Software quotes"
 date: "2012-09-04"
 categories: 

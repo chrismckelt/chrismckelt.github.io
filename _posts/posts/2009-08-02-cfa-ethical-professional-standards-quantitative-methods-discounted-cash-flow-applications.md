@@ -1,4 +1,6 @@
 ---
+layout: post
+category: posts
 title: "CFA – Ethical & Professional Standards & Quantitative Methods – Discounted Cash Flow Applications"
 date: "2009-08-02"
 categories: 
