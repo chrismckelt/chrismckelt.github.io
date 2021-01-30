@@ -109,7 +109,7 @@ view an alert & business event arrives in the following table
 XXXXX == your organisations URL  
 YYYY == your company
 
-[![image](images/image_thumb-14.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-14.png)
+![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-14.png)
 
 if no record appears here – you might need to fix your batch jobs
 
@@ -117,17 +117,17 @@ if no record appears here – you might need to fix your batch jobs
 
 Verify that your Azure Event Grid Topic has received the customer change events
 
-[![image](images/image_thumb-12.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-12.png)
+![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-12.png)
 
 ### Step 14
 
 The below payload structure is sent to Event Grid
 
-[![image](images/image_thumb-13.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-13.png)
+![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-13.png)
 
 # Subscribing to published Events in Flow
 
-[![image](images/image_thumb-15.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-15.png)
+![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/10/image-15.png)
 
 ## Sample extract (which was pushed to teams)
 
@@ -139,11 +139,11 @@ Key Points for setting up change alerts in D365 FO
 
 1. Alerts should be setup under 1 user with admin permissions (on test this is the dual write user)
 2. Setup  a Batch Group called INT (integration) and allocate servers to it
-3. [![image](images/image_thumb-11.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2020/02/image-11.png)
+3. ![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2020/02/image-11.png)
 4.    Ensure the Batch Job is setup as below (note the user) 
 
-[![image](images/image_thumb-12.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2020/02/image-12.png)
+![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2020/02/image-12.png)
 
 ## Exported Logic App / Flow Example to listen to events and send to Teams channel
 
-[![image](images/image_thumb-13.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2020/02/image-13.png)
+![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2020/02/image-13.png)

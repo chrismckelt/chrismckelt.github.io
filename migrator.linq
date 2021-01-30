@@ -17,12 +17,12 @@ title:";
 
 	Replace(find, replace);
 
-	find = @"http://blog.mckelt.com/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//";
+	find = @"http://blog.mckelt.com/wp-content/uploads/";
 	replace = @"https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/";
 
 	Replace(find, replace);
 	
-	Replace("http://mckeltblog.azurewebsites.net/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/", "https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/");
+	Replace("http://mckeltblog.azurewebsites.net/wp-content/uploads", "https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/");
 
 	//Images();
 
