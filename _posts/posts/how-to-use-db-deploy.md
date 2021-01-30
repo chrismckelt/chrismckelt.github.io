@@ -29,15 +29,15 @@ The NANT output should look like this
 
  
 
-![](images/image.axd?picture=dbdeploy-cmd1.png) ![](images/image.axd?picture=dbdeploy-cmd2.png)
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=dbdeploy-cmd1.png) ![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=dbdeploy-cmd2.png)
 
 Opening the solution file looks like this
 
-![](images/image.axd?picture=DBDeployExample-DirStructure.png)
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=DBDeployExample-DirStructure.png)
 
 The database should now look like this
 
-![](images/image.axd?picture=dbdeploy-dbview.png)
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=dbdeploy-dbview.png)
 
 The ChangeLog table in the database is used by DBDeploy for change management and will look like this:
 
@@ -45,7 +45,7 @@ The ChangeLog table in the database is used by DBDeploy for change management an
 
  
 
-![](images/image.axd?picture=dbdeploy-ChangeLogTable.png)
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=dbdeploy-ChangeLogTable.png)
 
  
 

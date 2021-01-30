@@ -19,7 +19,7 @@ The folder with our build scripts looks like this
 
  
 
-[![image](images/image.axd?picture=image_thumb_38.png "image")](http://www.mckelt.com/image.axd?picture=image_38.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_38.png "image")](http://www.mckelt.com/image.axd?picture=image_38.png)
 
  
 
@@ -27,7 +27,7 @@ The environments folder contains all of the configuration files for each environ
 
  
 
-[![image](images/image.axd?picture=image_thumb_34.png "image")](http://www.mckelt.com/image.axd?picture=image_34.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_34.png "image")](http://www.mckelt.com/image.axd?picture=image_34.png)
 
  
 
@@ -89,10 +89,10 @@ Remove-PSSnapin Gallio
 
 From an acceptance test entered into SpecFlow as follows:
 
-[![image](images/image.axd?picture=image_thumb_35.png "image")](http://www.mckelt.com/image.axd?picture=image_35.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_35.png "image")](http://www.mckelt.com/image.axd?picture=image_35.png)
 
 On checkin the build will run and output the result of this test in a report called _AcceptanceTests-test-report.html_ 
 
-[![image](images/image.axd?picture=image_thumb_36.png "image")](http://www.mckelt.com/image.axd?picture=image_36.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_36.png "image")](http://www.mckelt.com/image.axd?picture=image_36.png)
 
-[![image](images/image.axd?picture=image_thumb_37.png "image")](http://www.mckelt.com/image.axd?picture=image_37.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_37.png "image")](http://www.mckelt.com/image.axd?picture=image_37.png)

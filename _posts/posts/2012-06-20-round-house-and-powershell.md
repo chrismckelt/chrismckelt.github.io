@@ -89,7 +89,7 @@ The following tables are created
 
  
 
-[![image](images/image.axd?picture=image_thumb_39.png "image")](/blog/image.axd?picture=image_39.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_39.png "image")](/blog/image.axd?picture=image_39.png)
 
  
 
@@ -97,4 +97,4 @@ With the following scripts run
 
  
 
-[![image](images/image.axd?picture=image_thumb_40.png "image")](/blog/image.axd?picture=image_40.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_40.png "image")](/blog/image.axd?picture=image_40.png)
