@@ -40,6 +40,8 @@ title:";
 	replace = @"https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/";
 
 	Replace(find, replace);
+	
+	Replace("http://mckeltblog.azurewebsites.net/wp-content/uploads", "https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/");
 
 	//Images();
 
@@ -47,7 +49,8 @@ title:";
 		string fn = Path.GetFileName(f);
 		File.Move(f, @$"C:\dev\mckelt\chrismckelt.github.io\_posts\posts\{fn}",true);
 	}
-	
+
+
 }
 
 void Replace(string find, string replace)
