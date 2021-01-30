@@ -10,7 +10,7 @@ categories:
 
 Azure Global Bootcamp – 27th April 2019
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/image_thumb.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2019/04/image.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/image_thumb.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2019/04/image.png)
 
 ![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/highres_480710988.jpeg)
 

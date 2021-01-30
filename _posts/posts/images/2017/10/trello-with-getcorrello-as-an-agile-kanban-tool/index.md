@@ -17,31 +17,31 @@ Charts from this tool are below.   The GetCorrello team were able to add featu
 
 ## Burndown
 
-[![image](images/image_thumb.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image.png)
+[![image](images/image_thumb.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image.png)
 
 ## Cumulative Flow Diagram
 
-[![image](images/image_thumb-1.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-1.png)
+[![image](images/image_thumb-1.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-1.png)
 
 ## Estimated time to complete per label
 
-[![image](images/image_thumb-2.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-2.png)
+[![image](images/image_thumb-2.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-2.png)
 
 ## Control chart
 
-[![image](images/image_thumb-3.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-3.png)
+[![image](images/image_thumb-3.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-3.png)
 
 ## Cycle times
 
-[![image](images/image_thumb-4.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-4.png)
+[![image](images/image_thumb-4.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-4.png)
 
 ## Stats
 
-[![image](images/image_thumb-5.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-5.png)
+[![image](images/image_thumb-5.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-5.png)
 
 ## Slack integration
 
-[![image](images/image_thumb-6.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-6.png)
+[![image](images/image_thumb-6.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2017/10/image-6.png)
 
  
 

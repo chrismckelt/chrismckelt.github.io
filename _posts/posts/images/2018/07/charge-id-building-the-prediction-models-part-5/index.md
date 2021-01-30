@@ -178,7 +178,7 @@ Write a test to ensure the model is giving accurate results
 
 #### The output metrics
 
-[![image](images/image_thumb-6.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-6.png)
+[![image](images/image_thumb-6.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-6.png)
 
 #### Metrics for classification models
 
@@ -216,7 +216,7 @@ The model is output as a _.zip_ file making it easy to deploy.
 
 Extracted contents are below
 
-[![image](images/image_thumb-7.png "image")]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-7.png)
+[![image](images/image_thumb-7.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-7.png)
 
 ## Conclusion
 
