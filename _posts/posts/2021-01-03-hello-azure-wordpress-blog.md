@@ -28,23 +28,23 @@ Resources used to setup the blog may be seen below. These were created within a 
 
 > 1\. After logging into Azure go the the [marketplace](https://portal.azure.com/?quickstart=true) and search for WordPress
 
-[![2-wordpress-marketplace](images/2-wordpress-marketplace_thumb.png "2-wordpress-marketplace")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/2-wordpress-marketplace.png)
+[![2-wordpress-marketplace](images/2021/01/2-wordpress-marketplace.png "2-wordpress-marketplace")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/2-wordpress-marketplace.png)
 
 > 2\. Click _create_ and begin to enter the details for your blog.  All resources below were created in a new resource group called ‘_blog’_
 
-[![3-create-from-marketplace](images/3-create-from-marketplace_thumb.png "3-create-from-marketplace")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/3-create-from-marketplace.png)
+[![3-create-from-marketplace](images/2021/01/3-create-from-marketplace.png "3-create-from-marketplace")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/3-create-from-marketplace.png)
 
 > 3\. Create a new _App Service Plan_
 > 
-> _[![2-new-app-service-plan](images/2-new-app-service-plan_thumb.png "2-new-app-service-plan")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/2-new-app-service-plan.png)_
+> _[![2-new-app-service-plan](images/2021/01/2-new-app-service-plan.png "2-new-app-service-plan")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/2-new-app-service-plan.png)_
 > 
 > Here we are using the cheapest pricing tier that allows a custom domain: ‘B1 Basic’ Tier
 > 
-> [![spec-picker](images/spec-picker_thumb.png "spec-picker")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/spec-picker.png)
+> [![spec-picker](images/2021/01/spec-picker.png "spec-picker")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/spec-picker.png)
 > 
 > 4\. Configure a new database server using the ‘Basic’ pricing tier
 > 
-> [![database-server](images/database-server_thumb.png "database-server")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/database-server.png)
+> [![database-server](images/2021/01/database-server.png "database-server")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/database-server.png)
 > 
 > [![pricing-tier](images/pricing-tier_thumb.png "pricing-tier")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/pricing-tier.png)
 > 
@@ -52,7 +52,7 @@ Resources used to setup the blog may be seen below. These were created within a 
 > 
 > Navigate to the website and configure your WordPress instance.
 > 
-> [![english](images/english_thumb.png "english")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/english.png)
+> [![english](images/2021/01/english.png "english")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/english.png)
 > 
 > 6\. Next we will setup a custom website domain to use for the blog using [App Service Domains](https://docs.microsoft.com/en-us/azure/app-service/manage-custom-dns-buy-domain).  
 > App Service domains are custom domains that are managed directly in Azure. They make it easy to manage custom domains for [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/overview).
