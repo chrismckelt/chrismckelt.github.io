@@ -28,7 +28,7 @@ The steps involved to create a model using ML.Net are:
 
 ## Deciding what type of machine learning problem we are trying to solve?
 
-[This cheat sheet is a good place to start](https://i2.wp.com/insightextractor.com/wp-content/uploads/2016/02/Azure-Machine-Learning-Algorithm-Cheat-Sheet.jpg) to help identify the type of outcome you want from the data you have.
+[This cheat sheet is a good place to start](https://i2.wp.com/insightextractor.com/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2016/02/Azure-Machine-Learning-Algorithm-Cheat-Sheet.jpg) to help identify the type of outcome you want from the data you have.
 
 In this area we are using Supervised machine learning to predict a single category given an input of data \[TransactionUtcDate, Description, Amount\].
 
@@ -178,7 +178,7 @@ Write a test to ensure the model is giving accurate results
 
 #### The output metrics
 
-[![image](images/image_thumb-6.png "image")](/wp-content/uploads/2018/07/image-6.png)
+[![image](images/image_thumb-6.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-6.png)
 
 #### Metrics for classification models
 
@@ -216,7 +216,7 @@ The model is output as a _.zip_ file making it easy to deploy.
 
 Extracted contents are below
 
-[![image](images/image_thumb-7.png "image")](/wp-content/uploads/2018/07/image-7.png)
+[![image](images/image_thumb-7.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-7.png)
 
 ## Conclusion
 

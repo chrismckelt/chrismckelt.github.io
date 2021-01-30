@@ -62,7 +62,7 @@ Sample below that logs to [Logz.io](https://logz.io/)
 
 [Hosting our endpoint](https://chargeid-api-test.azurewebsites.net/swagger/index.html?url=/swagger/v1/swagger.json#!/Prediction/Prediction_Search) with Swagger on Azure allows us to test the inputs and see the results below:
 
-T[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-3.png "image")](/wp-content/uploads/2018/08/image-3.png)
+T[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-3.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/08/image-3.png)
 
 * * *
 

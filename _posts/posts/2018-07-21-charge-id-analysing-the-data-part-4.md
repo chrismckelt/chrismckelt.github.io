@@ -39,15 +39,15 @@ Given a users bank statement we will be able to predict (within a statistical co
 
 #### Account Summary
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-3.png "image")](/wp-content/uploads/2018/07/image-3.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-3.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-3.png)
 
 #### Account Statement
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-4.png "image")](/wp-content/uploads/2018/07/image-4.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-4.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-4.png)
 
 #### Account Transactions
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-5.png "image")](/wp-content/uploads/2018/07/image-5.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-5.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-5.png)
 
 Account types come in numerous varieties of credit/debit [options](http://echeck.org/ultimate-guide-to-the-different-types-of-bank-accounts/).
 
@@ -69,19 +69,19 @@ Below is a result of **_manually_** classifying 3 months worth of bank statement
 
 _Sample of Subcategories having > 50 occurrences on a bank statement_
 
-[![subs](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//subs_thumb-3.png "subs")](/wp-content/uploads/2018/07/subs-3.png)
+[![subs](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//subs_thumb-3.png "subs")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/subs-3.png)
 
 ### Each sub-category rolls up into its parent category which gives a clearer view on where money is coming/going:
 
 _Total categories summed by subcategory_
 
-[![cats](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//cats_thumb-3.png "cats")](/wp-content/uploads/2018/07/cats-3.png)
+[![cats](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//cats_thumb-3.png "cats")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/cats-3.png)
 
   
 
 ### Summing the amount for each of these categories will give us the total income/expenditure.
 
-[![total](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//total_thumb-2.png "total")](/wp-content/uploads/2018/07/total-2.png)
+[![total](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//total_thumb-2.png "total")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/total-2.png)
 
   
 

@@ -28,7 +28,7 @@ Before performing a PCA(or any other multivariate method) we should start with s
 - Perhaps transforming some variables
 - ETC
 
-###### [![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/image_thumb.png "image")](/wp-content/uploads/2016/07/image.png)
+###### [![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/image_thumb.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2016/07/image.png)
 
 The minimal output from any PCA should contain 3 things:
 
