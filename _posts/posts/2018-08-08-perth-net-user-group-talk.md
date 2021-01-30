@@ -16,7 +16,7 @@ Machine learning is typically the realm for R/Python. But can .Net move into thi
 
 In this talk we will run through Microsoft's new ML.Net framework including what it currently offers, how to build a learning pipeline and how to deploy a model to an Azure Service.
 
-[![image](images/image_thumb-7.png "image")](/wp-content/uploads/2018/08/image-7.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-7.png "image")](/wp-content/uploads/2018/08/image-7.png)
 
 [https://slides.com/chrismckelt/deck-451cdb94-a37d-47b7-9d49-6686065e7d03](https://slides.com/chrismckelt/deck-451cdb94-a37d-47b7-9d49-6686065e7d03 "https://slides.com/chrismckelt/deck-451cdb94-a37d-47b7-9d49-6686065e7d03")
 

@@ -10,7 +10,7 @@ categories:
 
 # Import these references
 
-[![image](images/image_thumb.png "image")](/wp-content/uploads/2016/03/image.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb.png "image")](/wp-content/uploads/2016/03/image.png)
 
 ### Sample script
 
@@ -20,4 +20,4 @@ categories:
 
  
 
-[![image](images/image_thumb-1.png "image")](/wp-content/uploads/2016/03/image-1.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-1.png "image")](/wp-content/uploads/2016/03/image-1.png)

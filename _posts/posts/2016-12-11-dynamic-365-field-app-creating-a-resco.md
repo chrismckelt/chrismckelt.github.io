@@ -18,7 +18,7 @@ _Please let me know if you have a better way to manage this development life cyc
 
 The project solution on disk
 
-[![image](images/image_thumb.png "image")](/wp-content/uploads/2018/12/image.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb.png "image")](/wp-content/uploads/2018/12/image.png)
 
 This project uses TypeScript with VS Code.   Typescript helped catch lots of issues before deployment.
 
@@ -31,21 +31,21 @@ This project uses TypeScript with VS Code.   Typescript helped catch lots of i
 - LINQ Pad (just to copy the local dev files to the local Window Store  Field Service App folder)
 - Field Service – Dynamics 365 application installed
 
-[![image](images/image_thumb-1.png "image")](/wp-content/uploads/2018/12/image-1.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-1.png "image")](/wp-content/uploads/2018/12/image-1.png)
 
 ## How do I build the solution?
 
 #### Step 1
 
-After setting up the files locally  (mine are at _c:\\dev\\vForms_ )   run the following commands in the root directory –> _npm install[![image](images/image_thumb-2.png "image")](/wp-content/uploads/2018/12/image-2.png)_
+After setting up the files locally  (mine are at _c:\\dev\\vForms_ )   run the following commands in the root directory –> _npm install[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-2.png "image")](/wp-content/uploads/2018/12/image-2.png)_
 
-[![image](images/image_thumb-3.png "image")](/wp-content/uploads/2018/12/image-3.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-3.png "image")](/wp-content/uploads/2018/12/image-3.png)
 
  
 
 This should give you the TypeScript jQuery & Sizzle files for intellisense in VS Code / Visual Studio
 
-[![image](images/image_thumb-4.png "image")](/wp-content/uploads/2018/12/image-4.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-4.png "image")](/wp-content/uploads/2018/12/image-4.png)
 
 #### Step 2
 
@@ -57,7 +57,7 @@ Open up the file ‘vForms-directory-sync.linq’
 
 Here we need to replace the highlighted yellow with your local Field Service application data package directory
 
-[![image](images/image_thumb-5.png "image")](/wp-content/uploads/2018/12/image-5.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-5.png "image")](/wp-content/uploads/2018/12/image-5.png)
 
 Run this script and it will ‘watch’ your development files and copy them to the local Field Service application folder upon change.
 
@@ -79,14 +79,14 @@ Follow the steps to setup your IE settings outlined here
 
 In your TypeScript/JavasScript file put the word ‘debugger’ to break out into a debug session
 
-[![image](images/image_thumb-6.png "image")](/wp-content/uploads/2018/12/image-6.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-6.png "image")](/wp-content/uploads/2018/12/image-6.png)
 
 #### Step 3
 
-[![image](images/image_thumb-7.png "image")](/wp-content/uploads/2018/12/image-7.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-7.png "image")](/wp-content/uploads/2018/12/image-7.png)
 
 Attach Visual Studio to the MobileCrm.exe process
 
 Voila – you should be able to attach & debug the running JavaScript (note may take a few goes to warm up)
 
-[![image](images/image_thumb-8.png "image")](/wp-content/uploads/2018/12/image-8.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-8.png "image")](/wp-content/uploads/2018/12/image-8.png)

@@ -45,7 +45,7 @@ It looks like this:
 
  
 
-[![image](images/image_thumb.png "image")](http://www.mckelt.com/app_data/files/Sales-Tax-Calculator-using-SpecFlow--The_11294/image.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb.png "image")](http://www.mckelt.com/app_data/files/Sales-Tax-Calculator-using-SpecFlow--The_11294/image.png)
 
  
 
