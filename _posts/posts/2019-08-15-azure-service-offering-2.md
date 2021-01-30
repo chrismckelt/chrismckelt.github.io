@@ -16,7 +16,7 @@ For organisations just starting out their journey and those looking to better th
 
 This will give your organisation a future plan on how to move and operate a governed Azure enterprise environment.
 
-[![clip_image002](images/clip_image002_thumb.jpg "clip_image002")](https://blog.mckelt.com/wp-content/uploads/2019/07/clip_image002.jpg)
+[![clip_image002](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/clip_image002_thumb.jpg "clip_image002")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2019/07/clip_image002.jpg)
 
 To provide optimal cloud infrastructure we will help you
 
@@ -30,7 +30,7 @@ Azure integration services provide an enterprise ready, event-based, serverless 
 
 We have expertise in enterprise messaging services and couple this with modern software design patterns focusing on serverless iPAAS (integration Platform as a Service). This allow our solutions to scale on demand and automatically react and respond to issues. Monitoring and alerting are built into the platform allowing quick identification and resolution for system failures.
 
-[![clip_image004](images/clip_image004_thumb.png "clip_image004")](https://blog.mckelt.com/wp-content/uploads/2019/07/clip_image004.png)
+[![clip_image004](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/clip_image004_thumb.png "clip_image004")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2019/07/clip_image004.png)
 
 ## Workload Migration
 
@@ -38,11 +38,11 @@ We identify workloads that make sense to migrate to the cloud. Where doing so ha
 
 We assess applications, networks, databases and virtual machines on benefits attained from migration and implement a plan to migrate them through the following process.
 
-[![clip_image006](images/clip_image006_thumb.jpg "clip_image006")](https://blog.mckelt.com/wp-content/uploads/2019/07/clip_image006.jpg)
+[![clip_image006](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/clip_image006_thumb.jpg "clip_image006")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2019/07/clip_image006.jpg)
 
 ## Governance
 
-![](images/azure_cloud_adoption.jpg)
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/azure_cloud_adoption.jpg)
 
 ## Microsoft Cloud Services
 
@@ -87,4 +87,4 @@ We assess applications, networks, databases and virtual machines on benefits att
 
 ## [MLOps](https://dev.to/axurcio)
 
- [![machine-learning](images/automated-machine-learning.png) ![Axurcio's DEV Profile](https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg)](https://dev.to/axurcio)
+ [![machine-learning](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/automated-machine-learning.png) ![Axurcio's DEV Profile](https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg)](https://dev.to/axurcio)
