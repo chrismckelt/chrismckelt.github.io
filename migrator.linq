@@ -41,7 +41,7 @@ title:";
 
 	Replace(find, replace);
 	
-	Replace("http://mckeltblog.azurewebsites.net/wp-content/uploads", "https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/");
+	Replace("https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/", "https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/");
 
 	//Images();
 
