@@ -2,6 +2,29 @@
   <Output>DataGrids</Output>
 </Query>
 
+/*
+ npx wordpress-export-to-markdown
+ 
+ npx: installed 94 in 5.413s
+
+Starting wizard...
+? Path to WordPress export file? export.xml
+? Path to output folder? output
+? Create year folders? Yes
+? Create month folders? Yes
+? Create a folder for each post? No
+? Prefix post folders/files with date? Yes
+? Save images attached to posts? Yes
+? Save images scraped from post body content? Yes
+? Include custom post types and pages? No
+
+Parsing...
+107 posts found.
+0 attached images found.
+246 images scraped from post body content.
+
+
+*/
 string Folder = @"C:\temp\output\";
 
 void Main()
@@ -14,7 +37,7 @@ title:";
 	Replace(find, replace);
 
 	find = @"http://blog.mckelt.com/wp-content/uploads/";
-	replace = @"https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images";
+	replace = @"https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/";
 
 	Replace(find, replace);
 
@@ -64,7 +87,7 @@ void Images() {
 
 		foreach (var item in images)
 		{
-			string u = $"{year}/{month}/{item.Value}";
+			string u = $"/{year}/{month}/{item.Value}";
 			Console.WriteLine(u);
 
 			string content = File.ReadAllText(f);
