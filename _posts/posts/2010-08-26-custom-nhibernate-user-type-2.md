@@ -10,15 +10,11 @@ categories:
 
 # How to use a custom NHibernate User Type
 
- 
 
 To store the state of a Risk (ie RiskState) as a value in a column we can use a NHibernate.UserType
 
  
-
 The RiskState can be one of the following: (these are all derived from RiskState which implements IRiskState)
-
-[![image](images/image.axd?picture=image_thumb_30.png "image")](http://www.mckelt.com/blog/image.axd?picture=image_30.png)
 
 Our user type
 
