@@ -59,19 +59,19 @@ Resources used to setup the blog may be seen below. These were created within a 
 > 
 > [Create your App Service Domain](https://portal.azure.com/?quickstart=true#create/Microsoft.Domain) and choose a TLD domain name for your website.
 > 
-> [![create-app-services-domain-1](images/create-app-services-domain-1_thumb.png "create-app-services-domain-1")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/create-app-services-domain-1.png)
+> [![create-app-services-domain-1]([images/2021/01/create-app-services-domain-1.png](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/create-app-services-domain-1.png) "create-app-services-domain-1")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/create-app-services-domain-1.png)
 > 
 > 7\. Enter your contact information required by GoDaddy for domain registration and Azure DNS to host the domains. In addition to the yearly domain registration fee, usage charges for Azure DNS apply. For information, see Azure DNS Pricing.
 > 
-> [![create-app-services-domain-2](images/create-app-services-domain-2_thumb.png "create-app-services-domain-2")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/create-app-services-domain-2.png)
+> [![create-app-services-domain-2](images/2021/01/create-app-services-domain-2.png "create-app-services-domain-2")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/create-app-services-domain-2.png)
 > 
 > 8\. Create you App Service Domain, it may take a while for the DNS to propagate and be ready for use
 > 
-> [![app-service-domain-deployment-2](images/app-service-domain-deployment-2_thumb.png "app-service-domain-deployment-2")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/app-service-domain-deployment-2.png)
+> [![app-service-domain-deployment-2](images/2021/01/app-service-domain-deployment-2.png "app-service-domain-deployment-2")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/app-service-domain-deployment-2.png)
 > 
 > 9\. Go to your App Service Domain and add a hostname binding pointing to the App Service that hosts your WordPress blog.
 > 
-> [![hostname-bindings](images/hostname-bindings_thumb.png "hostname-bindings")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/hostname-bindings.png)
+> [![hostname-bindings](images/2021/01/hostname-bindings.png "hostname-bindings")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/hostname-bindings.png)
 > 
 > 10\. You should now be able to browse to your custom domain and see your WordPress site. Thats it!
 > 
