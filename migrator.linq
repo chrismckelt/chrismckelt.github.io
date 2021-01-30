@@ -5,25 +5,6 @@
 /*
  npx wordpress-export-to-markdown
  
- npx: installed 94 in 5.413s
-
-Starting wizard...
-? Path to WordPress export file? export.xml
-? Path to output folder? output
-? Create year folders? Yes
-? Create month folders? Yes
-? Create a folder for each post? No
-? Prefix post folders/files with date? Yes
-? Save images attached to posts? Yes
-? Save images scraped from post body content? Yes
-? Include custom post types and pages? No
-
-Parsing...
-107 posts found.
-0 attached images found.
-246 images scraped from post body content.
-
-
 */
 string Folder = @"C:\temp\output\";
 
@@ -41,7 +22,7 @@ title:";
 
 	Replace(find, replace);
 	
-	Replace("https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/", "https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/");
+	Replace("http://mckeltblog.azurewebsites.net/wp-content/uploads", "https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/");
 
 	//Images();
 

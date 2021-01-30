@@ -38,7 +38,7 @@ The code is located at: [https://github.com/chrismckelt/edgy](https://github.com
 
 ### 1\. add the [custom module](https://github.com/chrismckelt/edgy/tree/master/modules/TimescaleDb) 
 
-![](images/79062247-060de280-7ccb-11ea-901d-7faa07663fd6.png)
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//79062247-060de280-7ccb-11ea-901d-7faa07663fd6.png)
 
 ### 2\. add the section to the [deployment file](https://github.com/chrismckelt/edgy/blob/master/deployment.debug.template.json)
 
@@ -60,7 +60,7 @@ Expose the internal port 5432 that TimescaleDB uses to 8081 for external contain
 
 ######  select \* from "table\_001" where Isairconditioneron = 0 ORDER BY "Timestamp" DESC LIMIT 100;
 
-![](images/79062131-078adb00-7cca-11ea-975e-6885c0ba70ce.png)
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//79062131-078adb00-7cca-11ea-975e-6885c0ba70ce.png)
 
 # Outro
 
