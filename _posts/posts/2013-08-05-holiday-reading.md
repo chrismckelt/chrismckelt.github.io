@@ -9,7 +9,7 @@ categories:
 
 ## The software design process
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-4.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/08/image-4.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-4.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/08/image-4.png)
 
 ## Why Waterfall fails
 
@@ -29,7 +29,7 @@ categories:
 
 Agile techniques deliver business-critical solutions at 40% lower cost, 50% faster and with significantly greater fit and quality.
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-5.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/08/image-5.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-5.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/08/image-5.png)
 
 Source - © Standish Group CHAOS report 1994 – 2010. Sample size over 40,000 completed IT Projects.
 

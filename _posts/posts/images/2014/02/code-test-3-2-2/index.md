@@ -154,4 +154,4 @@ This saves time and money. We can get started using those services in minutes, a
 
 **Our Tech Overview**
 
-[![](images/SystemOverview-300x212.jpg)](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2014/02/SystemOverview.jpg)
+[![](images/SystemOverview-300x212.jpg)]https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2014/02/SystemOverview.jpg)
