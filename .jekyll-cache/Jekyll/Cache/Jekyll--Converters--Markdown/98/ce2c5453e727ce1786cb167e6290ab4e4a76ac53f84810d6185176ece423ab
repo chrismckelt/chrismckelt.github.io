@@ -1,0 +1,13 @@
+I"�	<p>Heres the results of converting the corresponding number to an character  (i.e. Convert.ToChar(34).ToString())</p>
+
+<p> </p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>33 = <strong>!</strong> 34 = <strong>“</strong> 35 = <strong>#</strong> 36 = <strong>$</strong> 37 = <strong>%</strong> 38 = <strong>&amp;</strong> 39 = <strong>‘</strong> 40 = <strong>(</strong> 41 = <strong>)</strong> 42 = <strong>*</strong> 43 = <strong>+</strong> 44 = <strong>,</strong> 45 = <strong>-</strong> 46 = <strong>.</strong> 47 = <strong>/</strong> 48 = <strong>0</strong> 49 = <strong>1</strong> 50 = <strong>2</strong> 51 = <strong>3</strong> 52 = <strong>4</strong> 53 = <strong>5</strong> 54 = <strong>6</strong> 55 = <strong>7</strong> 56 = <strong>8</strong> 57 = <strong>9</strong> 58 = <strong>:</strong> 59 = <strong>;</strong> 60 = <strong>&lt;</strong> 61 = <strong>=</strong> 62 = <strong>&gt;</strong> 63 = <strong>?</strong> 64 = <strong>@</strong> 65 = <strong>A</strong> 66 = <strong>B</strong> 67 = <strong>C</strong> 68 = <strong>D</strong> 69 = <strong>E</strong> 70 = <strong>F</strong> 71 = <strong>G</strong> 72 = <strong>H</strong> 73 = <strong>I</strong> 74 = <strong>J</strong> 75 = <strong>K</strong> 76 = <strong>L</strong> 77 = <strong>M</strong> 78 = <strong>N</strong> 79 = <strong>O</strong> 80 = <strong>P</strong> 81 = <strong>Q</strong> 82 = <strong>R</strong> 83 = <strong>S</strong> 84 = <strong>T</strong> 85 = <strong>U</strong> 86 = <strong>V</strong> 87 = <strong>W</strong> 88 = <strong>X</strong> 89 = <strong>Y</strong> 90 = <strong>Z</strong> 91 = <strong>[</strong> 92 = <strong>\</strong> 93 = <strong>]</strong> 94 = <strong>^</strong> 95 = <strong>_</strong> 96 = <strong>`</strong> 97 = <strong>a</strong> 98 = <strong>b</strong> 99 = <strong>c</strong> 100 = <strong>d</strong> 101 = <strong>e</strong> 102 = <strong>f</strong> 103 = <strong>g</strong> 104 = <strong>h</strong> 105 = <strong>i</strong> 106 = <strong>j</strong> 107 = <strong>k</strong> 108 = <strong>l</strong> 109 = <strong>m</strong> 110 = <strong>n</strong> 111 = <strong>o</strong> 112 = <strong>p</strong> 113 = <strong>q</strong> 114 = <strong>r</strong> 115 = <strong>s</strong> 116 = <strong>t</strong> 117 = <strong>u</strong> 118 = <strong>v</strong> 119 = <strong>w</strong> 120 = <strong>x</strong> 121 = <strong>y</strong> 122 = <strong>z</strong> 123 = <strong>{</strong> 124 = **</td>
+      <td>** 125 = <strong>}</strong> 126 = <strong>~</strong></td>
+    </tr>
+  </tbody>
+</table>
+:ET

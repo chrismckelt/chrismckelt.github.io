@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Principles | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2009/03/08/design-principles.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Design Principles</h2>
+        <p class="publish-date">
+  Published: <time datetime="2009-03-08">March 8, 2009</time>
+  
+</p>
+
+        <p>The Open/Closed Principle</p>
+
+<p>Software entities (classes, modules, etc) should be open for extension, but closed for modification</p>
+
+<p>The Liskov Substitution Principle</p>
+
+<p>Liskov’s notion of “subtype” is based on the notion of <a href="http://en.wikipedia.org/wiki/Substitutability" title="Substitutability">substitutability</a>; that is, if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of the desirable properties of that program (e.g., <a href="http://en.wikipedia.org/wiki/Correctness" title="Correctness">correctness</a>). ie Derived classes must be usable through the base class interface without the need for the user to know the difference</p>
+
+<p>The Dependency Inversion Principle</p>
+
+<p>High level modules should not depend upon low level modules. Both should depend upon abstractions. Abstractions should not depend upon details. Details should depend upon abstractions.</p>
+
+<p>The Interface Segregation Principle</p>
+
+<p>The dependency of one class to another one should depend on the smallest possible interface. Many client specific interfaces are better than one general purpose interface/</p>
+
+<p>The Reuse/Release Equivalency Principle</p>
+
+<p>The unit of reuse is the unit of release. Effective reuse requires tracking of releases from a change control system. The package is the effective unit of reuse and release.</p>
+
+<p>The Common Closure Principle</p>
+
+<p>Classes that change together, belong together.</p>
+
+<p>Common Reuse Principle</p>
+
+<p>The classes in a package are reused together. If you reuse one of the classes in a package, you reuse them all</p>
+
+<p>The Acyclic Dependencies Principle</p>
+
+<p>The dependency structure between packages must be a <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph" title="http://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph (DAG)</a>.</p>
+
+<p>The Stable Dependencies Principle</p>
+
+<p>Dependencies between released categories must run in the direction of stability. The dependee must be more stable than the depender.</p>
+
+<p>The Stable Abstractions Principle</p>
+
+<p>The more stable a class category is, the more it must consist of abstract classes. A completely stable category should consist of nothing but abstract classes.</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Design Principles&amp;url=http://0.0.0.0:4000/2009/03/08/design-principles.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

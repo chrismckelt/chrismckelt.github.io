@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powershell & SVN – Export files to CSV | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2013/04/15/powershell-svn-export-files-to-csv.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Powershell & SVN – Export files to CSV</h2>
+        <p class="publish-date">
+  Published: <time datetime="2013-04-15">April 15, 2013</time>
+  
+</p>
+
+        <p>Function Get-SvnLogData()
+{
+    ([xml](svn log -v –xml  ‘http://svn/trunk’)).log.logentry | % {
+        $nestedEntry = $_
+        $_.paths.path | % {
+            $path = $_
+            $nestedEntry | Select-Object -Property `
+                Author, `
+                @{n=’Revision’; e={([int]$_.Revision)}}, `
+                @{n=’Date’;     e={Get-Date $_.Date  }}, `
+                @{n=’Action’;   e={$path.action      }}, `
+                @{n=’Path’;     e={$path.InnerText   }}`
+        }
+    }
+}</p>
+
+<p>Get-SvnLogData |
+where { $_.Date -ge (Get-Date ‘16-04-2013’) } |
+Select-Object  Revision,Date,Path,Author | 
+sort -property `
+    @{ Expression=”Path”;     Descending=$false }, `
+    @{ Expression=”Revision”; Descending=$true  } |
+Export-CSV c:\test.csv</p>
+
+<p>.csharpcode, .csharpcode pre<br /> {<br /> font-size: small;<br /> color: black;<br /> font-family: consolas, “Courier New”, courier, monospace;<br /> background-color: #ffffff;<br /> /*white-space: pre;*/<br /> }<br /> .csharpcode pre { margin: 0em; }<br /> .csharpcode .rem { color: #008000; }<br /> .csharpcode .kwrd { color: #0000ff; }<br /> .csharpcode .str { color: #006080; }<br /> .csharpcode .op { color: #0000c0; }<br /> .csharpcode .preproc { color: #cc6633; }<br /> .csharpcode .asp { background-color: #ffff00; }<br /> .csharpcode .html { color: #800000; }<br /> .csharpcode .attr { color: #ff0000; }<br /> .csharpcode .alt<br /> {<br /> background-color: #f4f4f4;<br /> width: 100%;<br /> margin: 0em;<br /> }<br /> .csharpcode .lnum { color: #606060; }</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Powershell & SVN – Export files to CSV&amp;url=http://0.0.0.0:4000/2013/04/15/powershell-svn-export-files-to-csv.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

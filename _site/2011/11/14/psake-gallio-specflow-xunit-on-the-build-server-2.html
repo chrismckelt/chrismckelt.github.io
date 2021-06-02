@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSAKE- Gallio–SpecFlow–XUnit–on the build server | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2011/11/14/psake-gallio-specflow-xunit-on-the-build-server-2.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>PSAKE- Gallio–SpecFlow–XUnit–on the build server</h2>
+        <p class="publish-date">
+  Published: <time datetime="2011-11-14">November 14, 2011</time>
+  
+</p>
+
+        <p>This is a quick post to show how to get PowerShell with <a href="http://codebetter.com/jameskovacs/2010/04/12/psake-v4-00/">PSAKE</a> to run <a href="http://specflow.org/">Specflow</a> acceptance tests on the build server using <a href="http://www.gallio.org/">Gallio</a>.</p>
+
+<p><a href="https://github.com/chrismckelt/PS-Sake-BuildScripts" title="https://github.com/chrismckelt/PS-Sake-BuildScripts">https://github.com/chrismckelt/PS-Sake-BuildScripts</a></p>
+
+<p> </p>
+
+<p>The folder with our build scripts looks like this</p>
+
+<p> </p>
+
+<p><a href="http://www.mckelt.com/image.axd?picture=image_38.png"><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_38.png" alt="image" title="image" /></a></p>
+
+<p> </p>
+
+<p>The environments folder contains all of the configuration files for each environment</p>
+
+<p> </p>
+
+<p><a href="http://www.mckelt.com/image.axd?picture=image_34.png"><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_34.png" alt="image" title="image" /></a></p>
+
+<p> </p>
+
+<p>Build server process</p>
+
+<p> </p>
+
+<p>The build/check-in process is now as follows.</p>
+
+<p>1. Developer checks in.</p>
+
+<p>2. Build server detects changes – cleans everything and then pulls down latest SVN code</p>
+
+<p>3. Cruise control builds code in release mode –&gt; If compile fails –&gt; build fail</p>
+
+<p>4. Unit tests run in place à if any test fails –&gt; build fail</p>
+
+<p>5. On success a new folder with the VERSION number is created      — <em>this is our artefacts</em></p>
+
+<p>6. This build is then deployed to the integration server and the Acceptance tests are run – Results are output to a folder</p>
+
+<p>7. If the Acceptance tests fails -&gt; build fail</p>
+
+<p>8. On Success the build is packaged for deployment (config files modified for environment)</p>
+
+<p> </p>
+
+<p>Cruise control originally calls default.ps1 passing in the environment.</p>
+
+<powershell> <scriptsDirectory>C:\\CCWorking\\Phoenix\\CodeBase\\Build\\BuildScripts</scriptsDirectory><!--Scrips folder--> <script>default.ps1</script> <buildArgs>-environment:integration</buildArgs><!-- Project working folder -workingDir C:\\project1\\working--> <executable>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</executable> <buildTimeoutSeconds>10000</buildTimeoutSeconds> <description>Phoenix Build</description> </powershell>
+
+<p> </p>
+
+<p>This calls build.ps1</p>
+
+<p>PSAKE tasks include</p>
+
+<p> </p>
+
+<p>Task default -depends PrintInformation, CleanEnvironment, Clean, SetupEnvironment, MakeBuild, BuildDatabase, DeployIntegrationBuild, IntegrationTest, DeployBuild, UpdateConfigFiles</p>
+
+<p> </p>
+
+<h1 id="to-run-the-acceptance-tests-using-gallio">To run the acceptance tests using Gallio</h1>
+
+<p>The following Powershell function is used:@</p>
+
+<p><em>Usage for Gallio tests:</em></p>
+
+<p><em>Task Test-System -Description “Runs the system tests via Gallio” { Test-Gallio $proj $configuration $platform $dll “system” “Test.System” # Test-Gallio “.\src\Test.Unit\Test.Unit.csproj” Release x64 “.\src\Test.Unit\bin\Release\x64\Test.Unit.dll” “unit” } } #&gt; function Test-Gallio($proj, $configuration, $platform, $dll, $report_name, $report_dir, $namespace_filter){ Write-Host “GALLIO TEST proj –  $proj” Write-Host “GALLIO TEST configuration –  $configuration” Write-Host “GALLIO TEST platform –  $platform” Write-Host “GALLIO TEST dll –  $dll” Write-Host “GALLIO TEST report_name –  $report_name” Write-Host “GALLIO TEST namespace_filter –  $namespace_filter”</em></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>_if ( (Get-PSSnapin -Name Gallio -ErrorAction SilentlyContinue) -eq $null ) { Add-PSSnapin Gallio } $result = Run-Gallio $dll -filter Namespace:/$namespace_filter/ -ReportTypes text,html,xml -ReportDirectory $report_dir  -ReportNameFormat $report_name-test-report  #-NoProgress -NoEchoResults get-content “$report_dir\$report_name-test-report.txt”</td>
+      <td>Write-Host Write-Host $result.ResultsSummary if ($result.Statistics.FailedCount -gt 0) { Write-Warning “Some unit tests have failed.” $Error = $result.ResultsSummary exit $result.ResultCode }</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Remove-PSSnapin Gallio</p>
+
+<p>}_</p>
+
+<p> </p>
+
+<p>From an acceptance test entered into SpecFlow as follows:</p>
+
+<p><a href="http://www.mckelt.com/image.axd?picture=image_35.png"><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_35.png" alt="image" title="image" /></a></p>
+
+<p>On checkin the build will run and output the result of this test in a report called <em>AcceptanceTests-test-report.html</em></p>
+
+<p><a href="http://www.mckelt.com/image.axd?picture=image_36.png"><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_36.png" alt="image" title="image" /></a></p>
+
+<p><a href="http://www.mckelt.com/image.axd?picture=image_37.png"><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_37.png" alt="image" title="image" /></a></p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=PSAKE- Gallio–SpecFlow–XUnit–on the build server&amp;url=http://0.0.0.0:4000/2011/11/14/psake-gallio-specflow-xunit-on-the-build-server-2.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

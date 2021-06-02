@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charge Id - Deploying a ML.Net Model to Azure | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2018/08/03/charge-id-deploying-to-a-ml-net-model-to-azure-part-6.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Charge Id - Deploying a ML.Net Model to Azure</h2>
+        <p class="publish-date">
+  Published: <time datetime="2018-08-03">August 3, 2018</time>
+  
+</p>
+
+        <p>In the <a href="/blog/?p=668">previous post</a> we built a machine learning model using <a href="http://dot.net/ml">ML.Net</a>, in this post we will deploy the model to an Azure app and allow it to be used via a HTTP API</p>
+
+<p>Using the output model in zip format ‘vita-model-1.zip’ we can include this in our web application as an embedded resource or simply include the file for deployment.</p>
+
+<p>To use the file from a HTTP endpoint:</p>
+
+<ol>
+  <li>Include the zip file in your deployment – embedded resource/content/read from blob storage etc..</li>
+  <li>Initialise the model as a singleton during application start up by using a file path or stream</li>
+  <li>Call the model using the function PredictionModel.Predict(‘my data from which to predict’)</li>
+</ol>
+
+<p>Sample below that logs to <a href="https://logz.io/">Logz.io</a></p>
+
+<p>[Produces(“application/json”)]
+ [Route(“[controller]”)]
+    public class PredictionController : Controller
+    {
+        private readonly IPredict _predictor;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    public PredictionController(IPredict predictor)
+    {
+        \_predictor = predictor;
+    }
+</code></pre></div></div>
+
+<p>[HttpPost(“predict/”)]
+ [SwaggerResponse(HttpStatusCode.OK, typeof(string))]
+        public async Task<IActionResult> Search(PredictionRequest request)
+        {
+            Guard.AgainstNull(request);
+            var requestId = Guid.NewGuid();
+            using (LogContext.PushProperty("request", request.ToJson()))
+            using (LogContext.PushProperty("requestId", requestId))
+            {
+                try
+                {
+                    var result = await \_predictor.PredictAsync(request);
+                    return Ok(result);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Log.Warning(e, "PredictionController error {request}", request.ToJson());
+                    return NoContent();
+                }
+            }
+        }
+    }</IActionResult></p>
+
+<p><a href="https://chargeid-api-test.azurewebsites.net/swagger/index.html?url=/swagger/v1/swagger.json#!/Prediction/Prediction_Search">Hosting our endpoint</a> with Swagger on Azure allows us to test the inputs and see the results below:</p>
+
+<p>T<a href="/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/08/image-3.png"><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-3.png" alt="image" title="image" /></a></p>
+
+<hr />
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Here we hosted our model in Azure using an App Service and managed to test it via Swagger.</p>
+
+<p>Hoping to make this a Function App when this issue is resolved –&gt; <a href="https://github.com/dotnet/machinelearning/issues/569" title="https://github.com/dotnet/machinelearning/issues/569">https://github.com/dotnet/machinelearning/issues/569</a></p>
+
+<p> </p>
+
+<p> </p>
+
+<hr />
+
+<p> </p>
+
+<h2 id="posts-in-this-series">Posts in this series</h2>
+
+<p><a href="/blog/?p=460">Charge Id – scratching the tech itch [ part 1 ]</a> <a href="/blog/?p=485">Charge Id – lean canvas [ part 2 ]</a> <a href="/blog/?p=505">Charge Id – solution overview [ part 3 ]</a> <a href="/blog/?p=507">Charge Id – analysing the data [ part 4 ]</a> <a href="/blog/?p=668">Charge Id – the prediction model [ part 5 ]</a> <a href="/blog/?p=705">Charge Id – deploying a ML.Net Model to Azure [ part 6 ]</a></p>
+
+<p> </p>
+
+<h2 id="code">Code</h2>
+
+<p><a href="https://github.com/chrismckelt/vita" title="https://github.com/chrismckelt/vita">https://github.com/chrismckelt/vita</a></p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Charge Id - Deploying a ML.Net Model to Azure&amp;url=http://0.0.0.0:4000/2018/08/03/charge-id-deploying-to-a-ml-net-model-to-azure-part-6.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

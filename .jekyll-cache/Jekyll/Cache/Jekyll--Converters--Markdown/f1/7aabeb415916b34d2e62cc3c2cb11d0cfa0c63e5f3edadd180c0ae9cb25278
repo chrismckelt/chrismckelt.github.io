@@ -1,0 +1,190 @@
+I"^<h1 id="delete-all-tables">Delete all tables</h1>
+
+<p>EXEC sp_MSforeachtable @command1 = “DROP TABLE ?”</p>
+
+<h1 id="grant-execute-permissions-to-all-stored-procedures-to-a-specific-user"><strong><code class="language-plaintext highlighter-rouge">Grant execute permissions to all stored procedures to a specific user</code></strong></h1>
+
+<p><code class="language-plaintext highlighter-rouge">CREATE PROC grantexecutepermission( @UserName NVARCHAR(250)) AS DECLARE curse CURSOR  FOR SELECT name FROM   sysobjects WHERE  TYPE = 'P'</code></p>
+
+<p>OPEN curse</p>
+
+<p>DECLARE  @proc VARCHAR(100)</p>
+
+<p>DECLARE  @stmt NVARCHAR(200)</p>
+
+<p>FETCH NEXT FROM curse INTO @proc</p>
+
+<p>WHILE @@FETCH_STATUS = 0 BEGIN SET @stmt = ’grant execute on ‘ + @proc + ’ to ‘ + @UserName</p>
+
+<p>EXEC sp_executesql @STMT</p>
+
+<p>PRINT @stmt</p>
+
+<p>FETCH NEXT FROM curse INTO @proc END</p>
+
+<p>CLOSE curse</p>
+
+<p>DEALLOCATE curse</p>
+
+<p> </p>
+
+<h1 id="check-if-column-exists-before-adding">Check if column exists before adding</h1>
+
+<p> </p>
+
+<p>IF NOT EXISTS (select * from Information_SCHEMA.columns
+WHERE Table_name=’ExampleTable’ and column_name=’ExampleColumn’)</p>
+
+<p>BEGIN
+ALTER TABLE ExampleTable
+ADD ExampleColumn nvarchar(350)
+END
+GO</p>
+
+<h1 id="use-a-cursor-to-print-out-column-values-to-a-pre-formatted-string">Use a cursor to print out column values to a pre-formatted string</h1>
+
+<p>SET NOCOUNT ON</p>
+
+<p>DECLARE @BTDocumentId int</p>
+
+<p>DECLARE @BTDocumentVersionNo int</p>
+
+<p>DECLARE myCursor CURsOR FOR</p>
+
+<p>SELECT Id as BTDocumentId, VersionNo as BTDocumentVersionNo from document where istemplate = 1</p>
+
+<p>OPEN myCursor</p>
+
+<p>FETCH NEXT FROM myCursor INTO @BTDocumentId, @BTdocumentVersionNo</p>
+
+<p>WHILE @@FETCH_STATUS = 0</p>
+
+<p>BEGIN</p>
+
+<p>PRINT ‘BTVersionId=’ +  CAST(@BTDocumentId AS VARCHAR(500)) + ‘ AND BTDocumentVersionNo=’ + CAST(@BTDocumentVersionNo AS VARCHAR(500)) + ‘, ‘</p>
+
+<p>FETCH NEXT FROM myCursor INTO @BTDocumentId, @BTdocumentVersionNo</p>
+
+<p>END</p>
+
+<p>CLOSE myCursor</p>
+
+<p>DEALLOCATE myCursor</p>
+
+<h1 id="reseed-a-table">Reseed a table</h1>
+
+<p> </p>
+
+<p>DBCC CHECKIDENT (“Risk”, RESEED, 920617);</p>
+
+<h1 id="drop-column--remove-foreign-key-reference-first">Drop column – remove foreign key reference first</h1>
+
+<p>IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_SCHEMA=’dbo’ AND CONSTRAINT_NAME=’FK_Coverage_CobCode’ AND TABLE_NAME=’Coverage’)</p>
+
+<p>BEGIN</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ALTER TABLE dbo.Coverage DROP CONSTRAINT FK\_Coverage\_CobCode;
+</code></pre></div></div>
+
+<p>END</p>
+
+<p>GO</p>
+
+<p>IF EXISTS (select * from Information_SCHEMA.columns</p>
+
+<p>WHERE Table_name=’Coverage’ and column_name=’CobCodeId’)</p>
+
+<p>BEGIN</p>
+
+<p>ALTER TABLE Coverage</p>
+
+<p>DROP COLUMN CobCodeId</p>
+
+<p>END</p>
+
+<p>GO</p>
+
+<p><strong>CSV import</strong></p>
+
+<p> </p>
+
+<p>IF Object_id(‘tempdb..#csv’) IS NOT NULL
+  DROP TABLE #csv</p>
+
+<p>go</p>
+
+<p>CREATE TABLE #csv
+  (
+     positionId           NVARCHAR(150) COLLATE sql_latin1_general_cp1_ci_as,
+     salesforceno        NVARCHAR(150) COLLATE sql_latin1_general_cp1_ci_as,
+  )</p>
+
+<p>DECLARE @FileName NVARCHAR (450)</p>
+
+<p>SET @FileName =
+‘C:\Temp\Adviser.tab’</p>
+
+<p>DECLARE @SqlStatement NVARCHAR(4000)</p>
+
+<p>SET @SqlStatement = ‘ BULK INSERT #csv  FROM ‘’’ + @FileName + ‘’’     WITH      (          FIELDTERMINATOR = ‘’\t’’,          ROWTERMINATOR = ‘’\n’’      ) ‘</p>
+
+<p>EXEC Sp_executesql
+  @SqlStatement</p>
+
+<p>DECLARE @Total INT</p>
+
+<p>SET @Total = (SELECT Count(positionId)
+              FROM   #csv)</p>
+
+<p>PRINT ‘Total Imported Rows’</p>
+
+<p>PRINT @Total</p>
+
+<p>-- CHANGE to OnlineAccount database —————–
+use OnlineAccount</p>
+
+<p>DECLARE @Id NVARCHAR(150)
+DECLARE @SfId NVARCHAR(150)</p>
+
+<p>WHILE (SELECT Count(*)
+       FROM   #csv) &gt; 0
+  BEGIN
+      SELECT TOP 1 @Id = positionId,
+                   @SfId = salesforceno
+      FROM   #csv</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  UPDATE useraccount
+  SET    positionId = @SfId
+  WHERE  positionId = @Id
+  PRINT 'OLD AdviserNo = '
+  PRINT @Id
+  PRINT 'NEW SalesForce PositionId ='
+  PRINT @SfId
+  DELETE #csv
+  WHERE  positionId = @Id   END
+</code></pre></div></div>
+
+<p>DELETE ALL OBJECTS IN DATABASE</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DECLARE @Sql NVARCHAR(500) DECLARE @Cursor CURSOR
+
+SET @Cursor = CURSOR FAST_FORWARD FOR
+SELECT DISTINCT sql = 'ALTER TABLE [' + tc2.TABLE_NAME + '] DROP [' + rc1.CONSTRAINT_NAME + ']'
+FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc1
+LEFT JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc2 ON tc2.CONSTRAINT_NAME =rc1.CONSTRAINT_NAME
+
+OPEN @Cursor FETCH NEXT FROM @Cursor INTO @Sql
+
+WHILE (@@FETCH_STATUS = 0)
+BEGIN
+Exec SP_EXECUTESQL @Sql
+FETCH NEXT FROM @Cursor INTO @Sql
+END
+
+CLOSE @Cursor DEALLOCATE @Cursor
+GO
+
+EXEC sp_MSForEachTable 'DROP TABLE ?'
+GO
+</code></pre></div></div>
+:ET

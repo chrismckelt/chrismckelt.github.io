@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCF Windsor Interceptor, AOP with Logging and Exception Handler Interceptor | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2009/02/03/wcf-windsor-interceptor-aop-with-logging-and-exception-handler-interceptor.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>WCF Windsor Interceptor, AOP with Logging and Exception Handler Interceptor</h2>
+        <p class="publish-date">
+  Published: <time datetime="2009-02-03">February 3, 2009</time>
+  
+</p>
+
+        <p><a href="/file.axd?file=WcfServiceExample.zip">WcfServiceExample.zip (7.57 mb)</a></p>
+
+<p> </p>
+
+<p>The above example uses <a href="http://www.castleproject.org/container/facilities/trunk/wcf/index.html" title="http://www.castleproject.org/container/facilities/trunk/wcf/index.html">Windows Communication Foundation (WCF) Integration Facility</a></p>
+
+<p>The main idea here is that WCF should get the service instances from Windsor, which gives us all the usual advantages of <a href="http://en.wikipedia.org/wiki/Inversion_of_control" title="http://en.wikipedia.org/wiki/Inversion_of_control">IoC</a> <em>plus Windsor’s interceptors</em> capabilities. It isn’t a lot of code, but it makes it <em>much</em> easier to work with WCF services.</p>
+
+<p>The service contains 2 simple methods on the HelloWorld class.</p>
+
+<p>--  SayHello – returns a string “Hello World” –  ThrowException – throws an exception</p>
+
+<p>Every single call to each of these is intercepted and logged.  Whilst the throw exception will always be caught by the exceptionhandler interceptor.</p>
+
+<p>The first project in the solution is the WCF service, whilst the second is just a WPF client tester. The project outlook is as follows:</p>
+
+<p><img src="images/image.axd?picture=WCF-1.png" alt="" /></p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=WCF Windsor Interceptor, AOP with Logging and Exception Handler Interceptor&amp;url=http://0.0.0.0:4000/2009/02/03/wcf-windsor-interceptor-aop-with-logging-and-exception-handler-interceptor.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

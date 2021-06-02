@@ -1,0 +1,50 @@
+I"�	<p>This is the start of a series of blog posts where I try to build an online personal budgeting system.</p>
+
+<p>The motivation for this was me trying to do a household budget using existing tools (Pocketbook, CashDesk, QuickBooks, Xero).</p>
+
+<p>Each time I needed to classify a large number of transactions manually (except Pocketbook they have got a pretty good classification engine)</p>
+
+<p>As I do lots of transfer between accounts the summaries never made sense.  So I thought Id give it a go to build my own personal finance budgeter.</p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//42613185-0f6a0ae4-85d2-11e8-90b0-335f87a5ee1f.png" alt="image" /></p>
+
+<h2 id="goals">Goals</h2>
+
+<ul>
+  <li>Discover the Who, What When, Where, Why and How a money transaction occurred purely from the metadata</li>
+  <li>Website that allows users to connect/upload their bank accounts</li>
+  <li>Connect to a users bank account using <a href="https://bankstatements.com.au">bankstatements.com.au</a> / <a href="https://basiq.io" title="https://basiq.io">basiq.io</a> (hoping to switch to Open Banking OAuth when available)</li>
+  <li>Classify bank statements into categories &amp; sub categories</li>
+  <li>Summarise personal finances and display to a consumable way</li>
+  <li>Predict spend over time &amp; necessary budgeting</li>
+  <li>Find savings / tax deductions (mortgage, insurance etc)</li>
+</ul>
+
+<h2 id="the-code-for-this-solution-is-hosted-on-github">The code for this solution is hosted on GitHub</h2>
+
+<p><a href="https://github.com/chrismckelt/vita" title="https://github.com/chrismckelt/vita">https://github.com/chrismckelt/vita</a></p>
+
+<hr />
+
+<h2 id="posts-in-this-series">Posts in this series</h2>
+
+<p><a href="/blog/?p=460">Charge Id – scratching the tech itch [ part 1 ]</a></p>
+
+<p><a href="/blog/?p=485">Charge Id – lean canvas [ part 2 ]</a></p>
+
+<p><a href="/blog/?p=505">Charge Id – solution overview [ part 3 ]</a></p>
+
+<p><a href="/blog/?p=507">Charge Id – analysing the data [ part 4 ]</a></p>
+
+<p><a href="/blog/?p=668">Charge Id – the prediction model [ part 5 ]</a></p>
+
+<p><a href="/blog/?p=705">Charge Id – deploying a ML.Net Model to Azure [ part 6 ]</a></p>
+
+<h2 id="code">Code</h2>
+
+<p><a href="https://github.com/chrismckelt/vita" title="https://github.com/chrismckelt/vita">https://github.com/chrismckelt/vita</a></p>
+
+<p> </p>
+
+<hr />
+:ET

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R–Data Exploration | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2016/07/23/rdata-exploration.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>R–Data Exploration</h2>
+        <p class="publish-date">
+  Published: <time datetime="2016-07-23">July 23, 2016</time>
+  
+</p>
+
+        <h1 id="pca">PCA</h1>
+
+<p><strong>Principal Components Analysis</strong> (PCA) allows us to study and explore a set of quantitative variables measured on a set of objects</p>
+
+<h6 id="core-idea">Core Idea</h6>
+
+<p> </p>
+
+<p>With PCA we seek to reduce the dimensionality (reduce the number of variables) of a data set while retaining as much as possible of the variation present in the data</p>
+
+<p>Before performing a PCA(or any other multivariate method) we should start with some preliminary explorations</p>
+
+<ul>
+  <li>Descriptive statistics</li>
+  <li>Basic graphical displays</li>
+  <li>Distribution of variables</li>
+  <li>Pair-wise correlations among variables</li>
+  <li>Perhaps transforming some variables</li>
+  <li>ETC</li>
+</ul>
+
+<h6><a href="/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2016/07/image.png"><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/image_thumb.png" alt="image" title="image" /></a></h6>
+
+<p>The minimal output from any PCA should contain 3 things:</p>
+
+<p><strong>Eigenvalues</strong> provide information about the amount of variability captured by each principal component</p>
+
+<p><strong>Scores</strong> or PCs (principal components) that provide coordinates to graphically represent objects in a lower dimensional space</p>
+
+<p><strong>Loadings</strong> provide information to determine what variables characterize each principal component</p>
+
+<h6 id="some-questions-to-keep-in-mind">Some questions to keep in mind</h6>
+
+<ul>
+  <li>How many PCs should be retained?</li>
+  <li>How good (or bad) is the data approximation with the retained PCs?</li>
+  <li>What variables characterize each PC?</li>
+  <li>Which variables are influential, and how are they correlated?</li>
+  <li>Which variables are responsible for the patterns among objects?</li>
+  <li>Are there any outlier objects?</li>
+</ul>
+
+<h6 id="links">Links</h6>
+
+<p><a href="http://genomicsclass.github.io/book/pages/pca_svd.html">http://genomicsclass.github.io/book/pages/pca_svd.html</a></p>
+
+<p><a href="http://www.r-bloggers.com/using-r-two-plots-of-principal-component-analysis/">http://www.r-bloggers.com/using-r-two-plots-of-principal-component-analysis/</a></p>
+
+<p><a href="http://www.sthda.com/english/wiki/principal-component-analysis-in-r-prcomp-vs-princomp-r-software-and-data-mining">http://www.sthda.com/english/wiki/principal-component-analysis-in-r-prcomp-vs-princomp-r-software-and-data-mining</a></p>
+
+<p><a href="http://stats.stackexchange.com/questions/143905/loadings-vs-eigenvectors-in-pca-when-to-use-one-or-another">http://stats.stackexchange.com/questions/143905/loadings-vs-eigenvectors-in-pca-when-to-use-one-or-another</a></p>
+
+<p><a href="https://www.dropbox.com/s/mjdtdpgji74cut1/PCA_with_R.pdf?dl=0">https://www.dropbox.com/s/mjdtdpgji74cut1/PCA_with_R.pdf?dl=0</a></p>
+
+<p><a href="http://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/35653#35653">http://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/35653#35653</a></p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=R–Data Exploration&amp;url=http://0.0.0.0:4000/2016/07/23/rdata-exploration.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

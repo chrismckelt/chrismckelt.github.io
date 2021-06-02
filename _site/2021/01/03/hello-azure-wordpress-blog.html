@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Azure to setup a new blog and domain | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2021/01/03/hello-azure-wordpress-blog.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Using Azure to setup a new blog and domain</h2>
+        <p class="publish-date">
+  Published: <time datetime="2021-01-03">January 3, 2021</time>
+  
+</p>
+
+        <h1 id="intro">Intro</h1>
+
+<p>Here is a quick way to setup a new WordPress blog with a custom domain on Azure (optionally using <a href="https://azure.microsoft.com/en-au/free">free using credits</a>).</p>
+
+<p>This was used to setup the blog you are reading: <a href="http://TakesInsight.com"><strong>TakesInsight.com</strong></a></p>
+
+<h3 id="azure-resources-overview">Azure Resources Overview</h3>
+
+<p>Resources used to setup the blog may be seen below. These were created within a single resource group called ‘blog’</p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/1-resource-group-view.png" alt="images" /></p>
+
+<h2 id="wordpress-setup">WordPress Setup</h2>
+
+<blockquote>
+  <p>1. After logging into Azure go the the <a href="https://portal.azure.com/?quickstart=true">marketplace</a> and search for WordPress</p>
+</blockquote>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/2-wordpress-marketplace.png" alt="images" /></p>
+
+<blockquote>
+  <p>2. Click <em>create</em> and begin to enter the details for your blog.  All resources below were created in a new resource group called ‘<em>blog’</em></p>
+</blockquote>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/3-create-from-marketplace.png" alt="images" /></p>
+
+<blockquote>
+  <p>3. Create a new <em>App Service Plan</em></p>
+
+  <p><em><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/2-new-app-service-plan.png" alt="images" /></em></p>
+
+  <p>Here we are using the cheapest pricing tier that allows a custom domain: ‘B1 Basic’ Tier</p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/spec-picker.png" alt="images" /></p>
+
+  <p>4. Configure a new database server using the ‘Basic’ pricing tier</p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/database-server.png" alt="images" /></p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/pricing-tier.png" alt="images" /></p>
+
+  <p>5. After clicking the create button a new WordPress App Service will be deployed and available to configure on <em>YourBlogSite.azurewebsites.net</em></p>
+
+  <p>Navigate to the website and configure your WordPress instance.</p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/english.png" alt="images" /></p>
+
+  <p>6. Next we will setup a custom website domain to use for the blog using <a href="https://docs.microsoft.com/en-us/azure/app-service/manage-custom-dns-buy-domain">App Service Domains</a>.<br />
+App Service domains are custom domains that are managed directly in Azure. They make it easy to manage custom domains for <a href="https://docs.microsoft.com/en-us/azure/app-service/overview">Azure App Service</a>.</p>
+
+  <p><a href="https://portal.azure.com/?quickstart=true#create/Microsoft.Domain">Create your App Service Domain</a> and choose a TLD domain name for your website.</p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/create-app-services-domain-1.png" alt="images" /></p>
+
+  <p>7. Enter your contact information required by GoDaddy for domain registration and Azure DNS to host the domains. In addition to the yearly domain registration fee, usage charges for Azure DNS apply. For information, see Azure DNS Pricing.</p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/create-app-services-domain-2.png" alt="images" /></p>
+
+  <p>8. Create you App Service Domain, it may take a while for the DNS to propagate and be ready for use</p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/app-service-domain-deployment-2.png" alt="images" /></p>
+
+  <p>9. Go to your App Service Domain and add a hostname binding pointing to the App Service that hosts your WordPress blog.</p>
+
+  <p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2021/01/hostname-bindings.png" alt="images" /></p>
+
+  <p>10. You should now be able to browse to your custom domain and see your WordPress site. Thats it!</p>
+
+  <h1 id="conclusion">Conclusion</h1>
+
+  <p>So we now have a WordPress website setup with a custom domain without leaving the Azure portal.</p>
+
+  <p>Next steps will be:</p>
+
+  <ul>
+    <li>Create a free SSL certificate via Lets Encrypt to host the site under SSL</li>
+    <li>Follow Azure guidelines to <a href="https://techcommunity.microsoft.com/t5/azure-database-for-mysql/improving-your-wordpress-workloa-performance-on-azure-database/ba-p/1418717">improve</a> WordPress performance</li>
+  </ul>
+
+  <p>Please let us know how you go with setting up your own site.</p>
+
+  <p>Happy blogging!</p>
+</blockquote>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Using Azure to setup a new blog and domain&amp;url=http://0.0.0.0:4000/2021/01/03/hello-azure-wordpress-blog.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

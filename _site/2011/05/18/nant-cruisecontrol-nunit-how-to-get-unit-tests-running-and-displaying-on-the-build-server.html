@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NANT CruiseControl NUnit   - How to get unit tests running and displaying on the build server | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2011/05/18/nant-cruisecontrol-nunit-how-to-get-unit-tests-running-and-displaying-on-the-build-server.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>NANT CruiseControl NUnit   - How to get unit tests running and displaying on the build server</h2>
+        <p class="publish-date">
+  Published: <time datetime="2011-05-18">May 18, 2011</time>
+  
+</p>
+
+        <p>&lt;target name=”webtest” haltonfailure=”false” failonerror=”true”&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;echo message="Running unit tests"/&gt;
+
+    &lt;echo message="${project.local.folder}"/&gt;
+
+    &lt;property name="test\_dll\_folder" value\="${project.local.folder}\\McKelt.Tests\\bin\\Debug\\"/&gt;
+
+    &lt;exec failonerror="true" program="${nunit-console.exe}" workingdir="${project.local.folder}" verbose="true" append="true" commandline="${test\_dll\_folder}McKelt.Tests.dll /xml=${test\_dll\_folder}TestResults.xml /output=${test\_dll\_folder}TestOutput.txt /err=${test\_dll\_folder}TestErrorOutput.txt"&gt;
+
+&lt;/exec&gt;
+
+&lt;echo message="-- TEST COMPLETE -- "/&gt;
+</code></pre></div></div>
+
+<p>&lt;/target&gt;</p>
+
+<p> </p>
+
+<p>Follow these instructions – <a href="http://confluence.public.thoughtworks.org/display/CCNETCOMM/Improved+MSBuild+Integration" title="http://confluence.public.thoughtworks.org/display/CCNETCOMM/Improved+MSBuild+Integration">http://confluence.public.thoughtworks.org/display/CCNETCOMM/Improved+MSBuild+Integration</a></p>
+
+<p> </p>
+
+<p>In the following file – c:\program files\CruiseControl.Net\Server\CCNet.config</p>
+
+<p> </p>
+
+<p>&lt;msbuild&gt;</p>
+
+<p>&lt;executable&gt;C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe&lt;/executable&gt;</p>
+
+<p>&lt;workingDirectory&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\&lt;/workingDirectory&gt;</p>
+
+<p>&lt;projectFile&gt;McKeltOnlineForms.sln&lt;/projectFile&gt;</p>
+
+<p>&lt;buildArgs&gt; /noconsolelogger /p:Configuration=Debug /v:quiet &lt;/buildArgs&gt;</p>
+
+<p>&lt;targets&gt;Rebuild&lt;/targets&gt;</p>
+
+<p>&lt;timeout&gt;120&lt;/timeout&gt;</p>
+
+<p>&lt;logger&gt;c:\Program Files\CruiseControl.NET\server\Rodemeyer.MsBuildToCCNet.dll&lt;/logger&gt;</p>
+
+<p>&lt;/msbuild&gt;</p>
+
+<p>&lt;/tasks&gt;</p>
+
+<p>&lt;publishers&gt;</p>
+
+<p>&lt;merge&gt;</p>
+
+<p>&lt;files&gt;</p>
+
+<p>&lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Web.Application.Tests\bin\Debug\testresults.xml&lt;/file&gt;</p>
+
+<p>&lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Service.Implementations.Tests\bin\Debug\testresults.xml&lt;/file&gt;</p>
+
+<p>&lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\Tests\AcceptanceTests\bin\Debug\TestResults.xml&lt;/file&gt;</p>
+
+<p>&lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Web.Application.Tests\bin\Debug\*Output.txt&lt;/file&gt;</p>
+
+<p>&lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Service.Implementations.Tests\bin\Debug\*Output.txt&lt;/file&gt;</p>
+
+<p>&lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\Tests\AcceptanceTests\bin\Debug\*Output.txt&lt;/file&gt;</p>
+
+<p>&lt;/files&gt;</p>
+
+<p>&lt;/merge&gt;</p>
+
+<xmllogger />
+
+<p>&lt;/publishers&gt;</p>
+
+<p>In your dashboard.config</p>
+
+<p>&lt;?xml version=“1.0” encoding=“utf-8”?&gt;</p>
+
+<p>&lt;dashboard&gt;</p>
+
+<p>&lt;remoteServices&gt;</p>
+
+<p>&lt;servers&gt;</p>
+
+<!-- Update this list to include all the servers you want to connect to. NB - each server name must be unique -->
+
+<p>&lt;server name=“local” url=“tcp://localhost:21234/CruiseManager.rem” allowForceBuild=“true” allowStartStopBuild=“true” backwardsCompatible=“false” /&gt;</p>
+
+<p>&lt;/servers&gt;</p>
+
+<p>&lt;/remoteServices&gt;</p>
+
+<p>&lt;plugins&gt;</p>
+
+<p>&lt;farmPlugins&gt;</p>
+
+<farmReportFarmPlugin />
+
+<cctrayDownloadPlugin />
+
+<p>&lt;administrationPlugin password=”” /&gt;</p>
+
+<p>&lt;/farmPlugins&gt;</p>
+
+<p>&lt;serverPlugins&gt;</p>
+
+<serverReportServerPlugin />
+
+<p>&lt;/serverPlugins&gt;</p>
+
+<p>&lt;projectPlugins&gt;</p>
+
+<projectReportProjectPlugin />
+
+<viewProjectStatusPlugin />
+
+<latestBuildReportProjectPlugin />
+
+<viewAllBuildsProjectPlugin />
+
+<p>&lt;/projectPlugins&gt;</p>
+
+<p>&lt;buildPlugins&gt;</p>
+
+<p>&lt;buildReportBuildPlugin&gt;</p>
+
+<p>&lt;xslFileNames&gt;</p>
+
+<p>&lt;xslFile&gt;xsl\header.xsl&lt;/xslFile&gt;</p>
+
+<p>&lt;xslFile&gt;xsl\msbuild2ccnet.xsl&lt;/xslFile&gt;</p>
+
+<p>&lt;xslFile&gt;xsl\modifications.xsl&lt;/xslFile&gt;</p>
+
+<p>&lt;xslFile&gt;xsl\unittests.xsl&lt;/xslFile&gt;</p>
+
+<p>&lt;/xslFileNames&gt;</p>
+
+<p>&lt;/buildReportBuildPlugin&gt;</p>
+
+<buildLogBuildPlugin />
+
+<p>&lt;xslReportBuildPlugin description=“NAnt Output” actionName=“NAntOutputBuildReport” xslFileName=“xsl\NAnt.xsl”&gt;&lt;/xslReportBuildPlugin&gt;</p>
+
+<p>&lt;xslReportBuildPlugin description=“NAnt Timings” actionName=“NAntTimingsBuildReport” xslFileName=“xsl\NAntTiming.xsl”&gt;&lt;/xslReportBuildPlugin&gt;</p>
+
+<p>&lt;xslReportBuildPlugin description=“NUnit Details” actionName=“NUnitDetailsBuildReport” xslFileName=“xsl\tests.xsl”&gt;&lt;/xslReportBuildPlugin&gt;</p>
+
+<p>&lt;xslReportBuildPlugin description=“NUnit Timings” actionName=“NUnitTimingsBuildReport” xslFileName=“xsl\timing.xsl”&gt;&lt;/xslReportBuildPlugin&gt;</p>
+
+<p>&lt;/buildPlugins&gt;</p>
+
+<p>&lt;securityPlugins&gt;</p>
+
+<simpleSecurity />
+
+<p>&lt;/securityPlugins&gt;</p>
+
+<p>&lt;/plugins&gt;</p>
+
+<p>&lt;/dashboard&gt;</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=NANT CruiseControl NUnit   - How to get unit tests running and displaying on the build server&amp;url=http://0.0.0.0:4000/2011/05/18/nant-cruisecontrol-nunit-how-to-get-unit-tests-running-and-displaying-on-the-build-server.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

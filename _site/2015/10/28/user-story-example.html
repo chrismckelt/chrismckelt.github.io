@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User story example | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2015/10/28/user-story-example.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>User story example</h2>
+        <p class="publish-date">
+  Published: <time datetime="2015-10-28">October 28, 2015</time>
+  
+</p>
+
+        <p>Overview –&gt; see [What is a user story](?](https://www.mountaingoatsoftware.com/agile/user-stories)</p>
+
+<h1 id="an-example-user-story-below">An example user story below</h1>
+
+<h2 id="title">Title</h2>
+
+<p>Wholesale customers to be created as ‘on-hold’</p>
+
+<h2 id="card">Card</h2>
+
+<p>Wholesale customers created in D365 CE will initially have their account status placed ‘on hold’ to disallow any credit transactions before they have their account credit checked and approved</p>
+
+<p><strong>Story</strong> As a finance manager I want new wholesale customers to begin with their account status ‘oh hold’ So that no credit transactions are processed on their account until their account credit checked,approved and taken off hold.</p>
+
+<p><em>[Any supporting notes/diagrams]</em></p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//9c4ff0bf-2adc-4582-93a8-ffa8f06f2fca?fileName=image.png" alt="Image" /></p>
+
+<h4 id="background">Background</h4>
+
+<p>see attached documents</p>
+
+<h3 id="acceptance-criteria">Acceptance Criteria</h3>
+
+<h4 id="simple-acceptance-criteria">Simple Acceptance Criteria</h4>
+
+<ul>
+  <li>new customer accounts created will have an on hold status</li>
+  <li>accounts with on-hold status are not able to make purchases (without up front payment by credit card)</li>
+  <li>customers on hold - scrap batteries can still be collected</li>
+  <li>regression test suite 5, 39, 43 pass</li>
+</ul>
+
+<h4 id="specification-by-example-for-automated-tests">Specification by Example (for automated tests)</h4>
+
+<p>Given a new wholesale customer is created in D365CE When that record is synced with D365FO Then the customer record status will be ‘On Hold’</p>
+
+<p>Given a new wholesale customer is created in D365CE When a new purchase order is raised against the customer Then the request is denied due to the customer being on hold</p>
+
+<p>Given a new wholesale customer is taken off hold When a new purchase order is raised against the customer Then the request is accepted</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=User story example&amp;url=http://0.0.0.0:4000/2015/10/28/user-story-example.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

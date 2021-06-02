@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enum extension methods | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2009/10/23/enum-extension-methods.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Enum extension methods</h2>
+        <p class="publish-date">
+  Published: <time datetime="2009-10-23">October 23, 2009</time>
+  
+</p>
+
+        <p>using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
+using System.Text;</p>
+
+<p>namespace Challenger.Global.Util.Extensions
+{
+    public static class EnumExtensionMethods
+    {</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    public static T ParseAsEnumByDescriptionAttribute&lt;T&gt;(this string description)  // where T : enum
+    {
+        if (string.IsNullOrEmpty(description))
+        {
+            throw new ArgumentNullException(description, @"Cannot parse an empty description");
+        }
+
+        Type enumType = typeof(T);
+        if (!enumType.IsEnum)
+        {
+            throw new InvalidOperationException(string.Format("Invalid Enum type{0}", typeof(T)));
+        }
+
+        foreach (T item in Enum.GetValues(typeof(T)))
+        {
+            DescriptionAttribute\[\] attributes = (DescriptionAttribute\[\])item.GetType().GetField(item.ToString()).GetCustomAttributes(typeof(DescriptionAttribute), false);
+            if (attributes.Length &gt; 0 &amp;&amp; attributes\[0\].Description.ToUpper() == description.ToUpper())
+            {
+                return item;
+            }
+        }
+        throw new InvalidOperationException(string.Format("Couldn't find enum of type {0} with attribute of '{1}'", typeof(T), description));
+    }
+
+    public static string GetDescription(this Enum enumerationValue)
+    {
+        DescriptionAttribute\[\] attributes = (DescriptionAttribute\[\])enumerationValue.GetType().GetField(enumerationValue.ToString()).GetCustomAttributes(typeof(DescriptionAttribute), false);
+        return attributes.Length &gt; 0 ? attributes\[0\].Description : enumerationValue.ToString();
+    }
+
+    public static EnumDto GetDto(this Enum enumerationValue)
+    {
+        return new EnumDto { Value = enumerationValue, Description = GetDescription(enumerationValue) };
+    }
+
+    public static IList&lt;EnumDto&gt; ToEnumDtoList(this Enum enumerationValue)
+    {
+        var vals = Enum.GetValues(typeof (Enum));
+        IList&lt;EnumDto&gt; list = (from object val in vals
+                               let desc = ((Enum) val).GetDescription()
+                               select new EnumDto() {Description = desc, Value = (Enum) val}).ToList();
+
+        return list;
+    }
+   
+    /// &lt;summary&gt;
+    /// Gets all items for an enum value.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name="T"&gt;&lt;/typeparam&gt;
+    /// &lt;param name="value"&gt;The value.&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static IEnumerable&lt;T&gt; GetAllItems&lt;T&gt;(this Enum value)
+    {
+        return from object item in Enum.GetValues(typeof(T)) select (T)item;
+    }
+
+    /// &lt;summary&gt;
+    /// Gets all items for an enum type.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name="T"&gt;&lt;/typeparam&gt;
+    /// &lt;param name="value"&gt;The value.&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static IEnumerable&lt;T&gt; GetAllItems&lt;T&gt;() where T : struct
+    {
+        return Enum.GetValues(typeof(T)).Cast&lt;T&gt;();
+    }
+
+    /// &lt;summary&gt;
+    /// Gets all combined items from an enum value.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name="T"&gt;&lt;/typeparam&gt;
+    /// &lt;param name="value"&gt;The value.&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    /// &lt;example&gt;
+    /// Displays ValueA and ValueB.
+    /// &lt;code&gt;
+    /// EnumExample dummy = EnumExample.Combi;
+    /// foreach (var item in dummy.GetAllSelectedItems&lt;EnumExample&gt;())
+    /// {
+    ///    Console.WriteLine(item);
+    /// }
+    /// &lt;/code&gt;
+    /// &lt;/example&gt;
+    public static IEnumerable&lt;T&gt; GetAllSelectedItems&lt;T&gt;(this Enum value)
+    {
+        int valueAsInt = Convert.ToInt32(value, CultureInfo.InvariantCulture);
+
+        return from object item in Enum.GetValues(typeof(T)) let itemAsInt = Convert.ToInt32(item, CultureInfo.InvariantCulture) where itemAsInt == (valueAsInt &amp; itemAsInt) select (T)item;
+    }
+
+    /// &lt;summary&gt;
+    /// Determines whether the enum value contains a specific value.
+    /// &lt;/summary&gt;
+    /// &lt;param name="value"&gt;The value.&lt;/param&gt;
+    /// &lt;param name="request"&gt;The request.&lt;/param&gt;
+    /// &lt;returns&gt;
+    ///     &lt;c&gt;true&lt;/c&gt; if value contains the specified value; otherwise, &lt;c&gt;false&lt;/c&gt;.
+    /// &lt;/returns&gt;
+    /// &lt;example&gt;
+    /// &lt;code&gt;
+    /// EnumExample dummy = EnumExample.Combi;
+    /// if (dummy.Contains&lt;EnumExample&gt;(EnumExample.ValueA))
+    /// {
+    ///     Console.WriteLine("dummy contains EnumExample.ValueA");
+    /// }
+    /// &lt;/code&gt;
+    /// &lt;/example&gt;
+    public static bool Contains&lt;T&gt;(this Enum value, T request)
+    {
+        int valueAsInt = Convert.ToInt32(value, CultureInfo.InvariantCulture);
+        int requestAsInt = Convert.ToInt32(request, CultureInfo.InvariantCulture);
+
+        if (requestAsInt == (valueAsInt &amp; requestAsInt))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static T ToEnum&lt;T&gt;(this string enumerationString)
+    {
+        return (T)Enum.Parse(typeof(T), enumerationString);
+    }
+} }
+</code></pre></div></div>
+
+<p>.csharpcode, .csharpcode pre<br />{<br /> font-size: small;<br /> color: black;<br /> font-family: consolas, “Courier New”, courier, monospace;<br /> background-color: #ffffff;<br /> /*white-space: pre;*/<br />}<br />.csharpcode pre { margin: 0em; }<br />.csharpcode .rem { color: #008000; }<br />.csharpcode .kwrd { color: #0000ff; }<br />.csharpcode .str { color: #006080; }<br />.csharpcode .op { color: #0000c0; }<br />.csharpcode .preproc { color: #cc6633; }<br />.csharpcode .asp { background-color: #ffff00; }<br />.csharpcode .html { color: #800000; }<br />.csharpcode .attr { color: #ff0000; }<br />.csharpcode .alt<br />{<br /> background-color: #f4f4f4;<br /> width: 100%;<br /> margin: 0em;<br />}<br />.csharpcode .lnum { color: #606060; } &lt;p&gt;.csharpcode, .csharpcode pre<br />{<br /> font-size: small;<br /> color: black;<br /> font-family: consolas, “Courier New”, courier, monospace;<br /> background-color: #ffffff;<br /> /*white-space: pre;*/<br />}<br />.csharpcode pre { margin: 0em; }<br />.csharpcode .rem { color: #008000; }<br />.csharpcode .kwrd { color: #0000ff; }<br />.csharpcode .str { color: #006080; }<br />.csharpcode .op { color: #0000c0; }<br />.csharpcode .preproc { color: #cc6633; }<br />.csharpcode .asp { background-color: #ffff00; }<br />.csharpcode .html { color: #800000; }<br />.csharpcode .attr { color: #ff0000; }<br />.csharpcode .alt<br />{<br /> background-color: #f4f4f4;<br /> width: 100%;<br /> margin: 0em;<br />}<br />.csharpcode .lnum { color: #606060; }</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Enum extension methods&amp;url=http://0.0.0.0:4000/2009/10/23/enum-extension-methods.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

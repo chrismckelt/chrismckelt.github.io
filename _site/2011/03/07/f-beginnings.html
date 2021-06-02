@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F# Beginnings | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2011/03/07/f-beginnings.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>F# Beginnings</h2>
+        <p class="publish-date">
+  Published: <time datetime="2011-03-07">March 7, 2011</time>
+  
+</p>
+
+        <p>open System</p>
+
+<p>#light // Hello world let a = “Hello, world!”;</p>
+
+<p>let mutable b = 0;
+while b &lt; 10 do b &lt;- b+1
+     Console.WriteLine(a + b.ToString())</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Console.ReadLine()</td>
+      <td>&gt; ignore</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>// recursive binary search  - http://rosettacode.org/wiki/Binary_search#F.23 let items = [</td>
+      <td>10; 20; 30; 40; 50; 60; 70; 80; 90; 100;</td>
+      <td>]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>let rec binarySearch (arr:int[], low:int, high:int, value:int) =
+    if (high &lt; low) then
+        false
+    else
+        let mid = (low + high) / 2</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    if (arr.\[mid\] &gt; value) then binarySearch (arr, low, mid-1, value)
+    else if (arr.\[mid\] &lt; value) then binarySearch (arr, mid+1, high, value)
+    else
+        true
+</code></pre></div></div>
+
+<p>let result = binarySearch (items, 0, 10, 80);
+let any_to_string = sprintf “%A” printf “Binary Search found: %s\n” (any_to_string result);</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Console.ReadLine()</td>
+      <td>&gt; ignore</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>// run for one minute let time = DateTime.Now.AddHours(0.5).Ticks;
+let mutable continueRunning = true
+let dt = DateTime.Now.AddMinutes(1.0)
+while continueRunning do
+    let currentTime = System.DateTime.Now.ToString()
+    Console.WriteLine currentTime |&gt; ignore
+    if System.DateTime.Now.Ticks &gt; dt.Ticks then continueRunning &lt;- false</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=F# Beginnings&amp;url=http://0.0.0.0:4000/2011/03/07/f-beginnings.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

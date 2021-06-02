@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Record and Fake In Memory Repositories in Test Driven Development | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2008/08/07/active-record-and-fake-in-memory-repositories-in-test-driven-development.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Active Record and Fake In Memory Repositories in Test Driven Development</h2>
+        <p class="publish-date">
+  Published: <time datetime="2008-08-07">August 7, 2008</time>
+  
+</p>
+
+        <p>Download Project source files:<a href="/file.axd?file=FakeRepositoryExample.zip">ExampleFakeRepository.zip</a></p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Here is a simple example of how to use fake repositories in test driven development.</p>
+
+<p>By using Fake Repositories generated from a binary file we are able to quickly use ‘real data’ in all our tests.</p>
+
+<p>It is a Visual Studio 2008 solution and uses the Castle project’s <a href="http://www.castleproject.org/" title="http://www.castleproject.org/">Active Record</a> as an ORM.</p>
+
+<h3 id="step-1--our-core-model">Step 1 – Our Core Model</h3>
+
+<p> </p>
+
+<p>Our model will consist of 3 classes</p>
+
+<ul>
+  <li>SuperHero e.g. Superman
+    <ul>
+      <li>SupeHeroId</li>
+      <li>RealName</li>
+      <li>SuperHeroName</li>
+    </ul>
+  </li>
+  <li>Power e.g. Flight
+    <ul>
+      <li>PowerId</li>
+      <li>PowerName</li>
+    </ul>
+  </li>
+  <li>SuperHeroPower e.g. Superman’s flight
+    <ul>
+      <li>SuperHeroPowerId</li>
+      <li>Comments (e.g. Faster than a speeding bullet)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Each of our classes implements an Interface called <em>IIdRetriever</em></p>
+
+<p>/// &lt;summary&gt; /// This was created so that the BaseRepositoryFake class can provide a standard /// implementation for fake repositories despite not knowing what property holds /// the Id. /// &lt;/summary&gt; public interface IIdRetriever { int GetId(); void SetId(int id); }</p>
+
+<p>First we define a base interface that defines all our methods needed for an ‘in-memory’ database</p>
+
+<p>This base interface is called <em>IRepository</em></p>
+
+<p>public interface IRepository<T>
+where T : class
+{
+T Save(T item);
+T SaveOrUpdate(T item);
+T Get(object
+id);
+long
+Count();
+ICollection<T>
+FindAll(params ICriterion[]
+criteria);
+void
+Delete(T item);</T></T></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>}     
+</code></pre></div></div>
+
+<p>Now for each class we need a repository so we define 3 repository interfaces that implement the <em>IRepository</em> interface with their corresponding class</p>
+
+<ul>
+  <li>ISuperHeroRepository</li>
+  <li>IPowerRepository</li>
+  <li>ISuperHeroPowerRepository</li>
+</ul>
+
+<p>public interface ISuperHeroRepository : IRepository&lt;SuperHero&gt;{}</p>
+
+<p> </p>
+
+<p>Now for the concrete implementations of our repositories the following classes are created</p>
+
+<p> </p>
+
+<ul>
+  <li>SuperHeroRepository</li>
+  <li>PowerRepository</li>
+  <li>SuperHeroPowerRepository</li>
+</ul>
+
+<p>public class PowerRepository : ARRepository&lt;Power&gt;, IPowerRepository{}</p>
+
+<h3 id="step-2--create-the-database-populate-data-and-generate-the-binary-file">Step 2 – Create the database, populate data and generate the binary file</h3>
+
+<p>In the attached project there is a command line utility project that accepts 3 arguments</p>
+
+<ul>
+  <li>CreateSchema – will create the tables in the designated database in the app.config</li>
+  <li>PopulateData – will populate the tables with some sample data</li>
+  <li>GenerateBinary – will get our ‘core’ object which contains relations to all our data and binary serialize it into a file</li>
+</ul>
+
+<h3 id="step-3--creating-our-fakes-for-use-in-tests">Step 3 – Creating our fakes for use in tests</h3>
+
+<p>We will now create fake ‘in-memory’ repositories which use the pre-populated binary data for use in out tests</p>
+
+<p>Firstly there are some integration tests in the database which ensure the add/edit behaviour is correct when talking to the database.</p>
+
+<p>Secondly there is a folder entitled <em>Fakes</em></p>
+
+<p>The main file here is the BaseRepositoryFake which contains all our base methods to mimic a database – yet in memory through an internal collection. By inheriting this class our other fake repositories get the ability to Save,SaveOrUpdate,Delete and find all.</p>
+
+<p>Our inheriting fake repositories are as follows</p>
+
+<ul>
+  <li>SuperHeroPowerRepositoryFake</li>
+  <li>PowerHeroRepositoryFake</li>
+  <li>SuperHeroPowerRepositoryFake</li>
+</ul>
+
+<p>These simply inherit the BaseRepositoryFake and implement their corresponding interface</p>
+
+<p>public class SuperHeroRepositoryFake : BaseRepositoryFake&lt;SuperHero&gt;, ISuperHeroRepository</p>
+
+<p>An explanation of the files in the root of the Tests project</p>
+
+<ul>
+  <li>ActiveRecordFixture – singleton one time setup for active record</li>
+  <li>RandomHelper – Set Ids and values for our fake objects (As SQL Server identity columns these will be seeded in the DB)</li>
+  <li>SeededRepositoryFakes – contains a fake representation of each repository (e.g. SuperHeroRepository) – data is read from the binary file in these</li>
+  <li>SeededRepositoryFakesCountTest – test to ensure the SeededRepositoryFakes are filled</li>
+  <li>SuperHeroSeed – class that reads from the binary file</li>
+</ul>
+
+<p> </p>
+
+<p>Download the above sample and run the tests to see this all in action.</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Active Record and Fake In Memory Repositories in Test Driven Development&amp;url=http://0.0.0.0:4000/2008/08/07/active-record-and-fake-in-memory-repositories-in-test-driven-development.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

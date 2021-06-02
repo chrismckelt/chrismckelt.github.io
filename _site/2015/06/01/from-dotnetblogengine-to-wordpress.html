@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From DotNetBlogEngine to WordPress | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2015/06/01/from-dotnetblogengine-to-wordpress.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>From DotNetBlogEngine to WordPress</h2>
+        <p class="publish-date">
+  Published: <time datetime="2015-06-01">June 1, 2015</time>
+  
+</p>
+
+        <p>So after losing 6 months worth of posts I have now converted this blog to use WordPress.</p>
+
+<p>To transfers the posts I wrote a simple <a href="https://gist.github.com/chrismckelt/31a3c5ea9114f28f3170">linqpad</a> script that uses <a href="WordPressSharp">WordPressSharp</a></p>
+
+<p>After trying Syntax highlighter I instead choose this <a href="https://code.google.com/p/codeformatterpluginforwindowslivewriter/downloads/detail?name=CodeFormatterPluginSetup2.5.1.msi&amp;can=2&amp;q=">code formatter.</a></p>
+
+<p>// need nuget WordPressSharp  internal class FileStore
+{ public IList&lt;Post&gt; Posts { get; private set; } public void ReadFiles()
+   { const string folderPath = @”C:\temp\posts”;
+       Posts = new List&lt;Post&gt;();
+       var files = Directory.GetFiles(folderPath);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   files.ToList().ForEach(ProcessFile);    } private void ProcessFile(string filepath)    { //Load xml  XDocument xdoc \= XDocument.Load(filepath); //Run query  var posts \= from lv1 in xdoc.Descendants("post")
+              select new Post()
+              {
+                  Title \= lv1.Element("title").Value,
+                  Content \= lv1.Element("content").Value,
+                  PublishDateTime \= Convert.ToDateTime(lv1.Element("pubDate").Value),
+                  CustomFields \= GetDesc(new KeyValuePair&lt;string, string\&gt;("Description", lv1.Element("description").Value))
+              };
+  posts.ToList().ForEach(Posts.Add);    } public CustomField\[\] GetDesc(params KeyValuePair&lt;string,string\&gt;\[\] fieldsToAdd)    {
+   var list \= new List&lt;CustomField\&gt;(); foreach (var keyValuePair in fieldsToAdd)
+   {
+       list.Add(new CustomField()
+       {
+           Id\=Guid.NewGuid().ToString(),
+           Key\=keyValuePair.Key,
+           Value \= keyValuePair.Value
+       });
+   } return list.ToArray();    } } private static void Main(string\[\] args)
+    {
+        var url \= "http://www.mckelt.com/blog/";
+        var cfg \= new WordPressSiteConfig
+        {
+            BaseUrl \= "/blog/xmlrpc.php",
+
+            BlogId \= 1,
+            Username \= "username",
+            Password \= "password" };
+
+        var fs \= new FileStore();
+        fs.ReadFiles(); foreach (var post1 in fs.Posts.OrderBy(x\=&gt;x.PublishDateTime))
+        {
+            post1.Status \= "publish"; using (var client \= new WordPressClient(cfg))
+            {
+                client.NewPost(post1);
+            }
+        }
+    }
+}
+</code></pre></div></div>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=From DotNetBlogEngine to WordPress&amp;url=http://0.0.0.0:4000/2015/06/01/from-dotnetblogengine-to-wordpress.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

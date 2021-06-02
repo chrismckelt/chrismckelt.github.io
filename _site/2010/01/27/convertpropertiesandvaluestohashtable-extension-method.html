@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertPropertiesAndValuesToHashtable Extension method | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2010/01/27/convertpropertiesandvaluestohashtable-extension-method.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>ConvertPropertiesAndValuesToHashtable Extension method</h2>
+        <p class="publish-date">
+  Published: <time datetime="2010-01-27">January 27, 2010</time>
+  
+</p>
+
+        <p>public static class Extensions
+    {
+        public static Hashtable ConvertPropertiesAndValuesToHashtable(this object obj)
+        {
+            var ht = new Hashtable();</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        // get all public static properties of obj type
+        var propertyInfos = obj.GetType().GetProperties().Where(a=&gt;a.MemberType.Equals(MemberTypes.Property)).ToArray();
+        // sort properties by name
+        Array.Sort(propertyInfos, (propertyInfo1, propertyInfo2) =&gt; propertyInfo1.Name.CompareTo(propertyInfo2.Name));
+
+        // write property names
+        foreach (PropertyInfo propertyInfo in propertyInfos)
+        {
+            ht.Add(propertyInfo.Name, propertyInfo.GetValue(obj, BindingFlags.Public, null, null, CultureInfo.CurrentCulture));
+        }
+
+        return ht;
+    }
+}
+</code></pre></div></div>
+
+<p>Tests</p>
+
+<p>using System;
+    using System.Collections;
+    using System.Globalization;
+    using System.Linq;
+    using System.Reflection;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using Presentation;
+using Presentation.Mappers;
+using Presentation.Model;
+
+using SoftwareApproach.TestingExtensions;
+
+using TestHelpers;
+
+\[Concern(typeof(DocumentMetaDataToDmsDocumentMetaDataMapper))\]
+\[TestClass\]
+public class WhenUsingExtensions : ContextSpecification&lt;DocumentMetaDataToDmsDocumentMetaDataMapper&gt;
+{
+    private DocumentMetadata metadata;
+
+    private Hashtable ht;
+
+    protected override void Context()
+    {
+        metadata = RandomHelper.FillPropertiesWithRandomValues&lt;DocumentMetadata&gt;(new DocumentMetadata());
+        metadata.RiskId = 12;
+    }
+
+    protected override void Because()
+    {
+        ht = metadata.ConvertPropertiesAndValuesToHashtable();
+    }
+
+    \[TestMethod\]
+    public void ShouldContainCorrectCountForNumberOfMembers()
+    {
+        ht.Count.ShouldEqual(metadata.GetType().GetProperties().Where(a=&gt;a.MemberType.Equals(MemberTypes.Property)).Count());
+    }
+
+    \[TestMethod\]
+    public void ShouldMapAllPropertiesToHashtableCorrectly()
+    {
+        metadata.Account.ShouldEqual(ht\["Account"\].ToString());
+        metadata.AssociatedNames.ShouldEqual(ht\["AssociatedNames"\].ToString());
+        metadata.Broker.ShouldEqual(ht\["Broker"\].ToString());
+        metadata.BrokerContact.ShouldEqual(ht\["BrokerContact"\].ToString());
+        metadata.CreatedDate.ShouldEqual(Convert.ToDateTime(ht\["CreatedDate"\], CultureInfo.CurrentCulture));
+        metadata.ExpiryDate.ShouldEqual(Convert.ToDateTime(ht\["ExpiryDate"\], CultureInfo.CurrentCulture));
+        metadata.InceptionDate.ShouldEqual(Convert.ToDateTime(ht\["InceptionDate"\], CultureInfo.CurrentCulture));
+        metadata.PolicyReference.ShouldEqual(ht\["PolicyReference"\].ToString());
+        metadata.QuoteReference.ShouldEqual(ht\["QuoteReference"\].ToString());
+        metadata.RiskId.ShouldEqual(Convert.ToInt32(ht\["RiskId"\]));
+        metadata.Status.ShouldEqual(ht\["Status"\].ToString());
+        metadata.Underwriter.ShouldEqual(ht\["Underwriter"\].ToString());
+        metadata.UniqueMarketReference.ShouldEqual(ht\["UniqueMarketReference"\].ToString());
+        metadata.YearOfAccount.ShouldEqual(Convert.ToInt32(ht\["YearOfAccount"\]));
+        
+    }
+}
+</code></pre></div></div>
+
+<p>.csharpcode, .csharpcode pre<br /> {<br /> font-size: small;<br /> color: black;<br /> font-family: consolas, “Courier New”, courier, monospace;<br /> background-color: #ffffff;<br /> /*white-space: pre;*/<br /> }<br /> .csharpcode pre { margin: 0em; }<br /> .csharpcode .rem { color: #008000; }<br /> .csharpcode .kwrd { color: #0000ff; }<br /> .csharpcode .str { color: #006080; }<br /> .csharpcode .op { color: #0000c0; }<br /> .csharpcode .preproc { color: #cc6633; }<br /> .csharpcode .asp { background-color: #ffff00; }<br /> .csharpcode .html { color: #800000; }<br /> .csharpcode .attr { color: #ff0000; }<br /> .csharpcode .alt<br /> {<br /> background-color: #f4f4f4;<br /> width: 100%;<br /> margin: 0em;<br /> }<br /> .csharpcode .lnum { color: #606060; }<br /> .csharpcode, .csharpcode pre<br /> {<br /> font-size: small;<br /> color: black;<br /> font-family: consolas, “Courier New”, courier, monospace;<br /> background-color: #ffffff;<br /> /*white-space: pre;*/<br /> }<br /> .csharpcode pre { margin: 0em; }<br /> .csharpcode .rem { color: #008000; }<br /> .csharpcode .kwrd { color: #0000ff; }<br /> .csharpcode .str { color: #006080; }<br /> .csharpcode .op { color: #0000c0; }<br /> .csharpcode .preproc { color: #cc6633; }<br /> .csharpcode .asp { background-color: #ffff00; }<br /> .csharpcode .html { color: #800000; }<br /> .csharpcode .attr { color: #ff0000; }<br /> .csharpcode .alt<br /> {<br /> background-color: #f4f4f4;<br /> width: 100%;<br /> margin: 0em;<br /> }<br /> .csharpcode .lnum { color: #606060; }<br /></p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=ConvertPropertiesAndValuesToHashtable Extension method&amp;url=http://0.0.0.0:4000/2010/01/27/convertpropertiesandvaluestohashtable-extension-method.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

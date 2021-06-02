@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D365 FO OData proxy generation | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2018/12/03/d365-fo-odata-proxy-generation.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>D365 FO OData proxy generation</h2>
+        <p class="publish-date">
+  Published: <time datetime="2018-12-03">December 3, 2018</time>
+  
+</p>
+
+        <h2 id="to-create-the-d365-finops-c-odata-proxy-do">To create the D365 FinOps C# OData Proxy do:</h2>
+
+<p>1. Install the following plugin</p>
+
+<p><a href="https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice">https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice</a></p>
+
+<p>2. Using a Visual Studio Standard Library project and add a new ‘Connected Service’</p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/clip_image0014.png" alt="image" /></p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/clip_image0024.png" alt="image" /></p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/image.png" alt="image" /></p>
+
+<p>3. Open the <em>Reference.cs</em>  file in VS Code (<em>VS Code seems to handle the file better than Notepad++ and Visual Studio)</em></p>
+
+<p>4.  Search for the EDMX mega string in the file</p>
+
+<p><em>private const string Edmx  = @”[mega big xml string we need to change]”</em></p>
+
+<p>5.   Cut the EDMX mega string and place in a file on disk call <em>edmx.xml</em>  on disk.  Change  “” to “</p>
+
+<p>Set this to be file to be embedded content in your Visual Studio project</p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/clip_image001.png" alt="image" /></p>
+
+<p>5. Search for the below function name and replace with the code below:</p>
+
+<script src="https://gist.github.com/chrismckelt/0212be92b34a8758eafba51f37ac8f4b.js"></script>
+
+<p>6. Now create your own proxy wrapper with authentication using:</p>
+
+<script src="https://gist.github.com/chrismckelt/9fb3ce4c9f1abd6b899f1350f272153c.js"></script>
+
+<p>7. Sample unit test to create a sales order</p>
+
+<script src="https://gist.github.com/chrismckelt/da45843a40b0b3ab7cfd3520ea06bdba.js"></script>
+
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=D365 FO OData proxy generation&amp;url=http://0.0.0.0:4000/2018/12/03/d365-fo-odata-proxy-generation.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

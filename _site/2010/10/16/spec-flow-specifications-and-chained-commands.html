@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spec Flow, Specifications and Chained Commands | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2010/10/16/spec-flow-specifications-and-chained-commands.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Spec Flow, Specifications and Chained Commands</h2>
+        <p class="publish-date">
+  Published: <time datetime="2010-10-16">October 16, 2010</time>
+  
+</p>
+
+        <h1 id="a-quick-experiment-with-spec-flow--httpwwwspecfloworg">A quick experiment with Spec Flow – <a href="http://www.specflow.org/" title="http://www.specflow.org/">http://www.specflow.org/</a></h1>
+
+<h2 id="spec-flow-feature">Spec flow feature</h2>
+
+<p> </p>
+
+<p>Feature: Run Specification rules
+    To stop large postage costs
+    As a user
+    I want to be stopped from buying to much if I am in Australia</p>
+
+<p>@CountryAllowedToProcessOrderWithLargeCost Scenario: Orders of 20 cannot be sent to Australia</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given I have a customer with an order for socks
+And the order is to be sent to Australia
+When I process the order
+Then I should not be able to place the order
+</code></pre></div></div>
+
+<p> </p>
+
+<h2 id="spec-flow-acceptance-test">Spec flow acceptance test</h2>
+
+<p> </p>
+
+<p>using System;</p>
+
+<p>using System.Text;</p>
+
+<p>using System.Collections.Generic;</p>
+
+<p>using System.Linq;</p>
+
+<p>using Core;</p>
+
+<p>using Core.OrderStates;</p>
+
+<p>using Microsoft.VisualStudio.TestTools.UnitTesting;</p>
+
+<p>using TechTalk.SpecFlow;</p>
+
+<p>namespace AcceptanceTests.StepDefinitions</p>
+
+<p>{</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\[Binding\]
+
+public class StepDefinitions
+
+{
+
+    private Customer customer;
+
+    private Order order;
+
+    private Product product;
+
+    private bool orderOk;
+
+    \[Given(@"I have a customer with an order for socks")\]
+
+    public void GivenIHaveACustomerWithAnOrderForSocks()
+
+    {
+
+        customer = new Customer(){FirstName = "chris", LastName = "mckelt"};
+
+        product = new SockProduct() {Id = 1, Name = "AAA", Price = 30};
+
+        order = new Order(customer);
+
+        order.AddProduct(product);
+
+    }
+
+    \[Given(@"the order is to be sent to Australia")\]
+
+    public void GivenTheOrderIsToBeSentToAustralia()
+
+    {
+
+        order.SetShippingDestination(ShippingDestination.Australia);
+
+    }
+
+    \[Then(@"I should not be able to place the order")\]
+
+    public void ThenIShouldNotBeAbleToPlaceTheOrder()
+
+    {
+
+        Assert.IsFalse(orderOk);
+
+    }
+
+    \[When(@"I process the order")\]
+
+    public void WhenIProcessTheOrder()
+
+    {
+
+        orderOk = order.CanBecome(new OrderConfirmed());
+
+    }
+
+}
+</code></pre></div></div>
+
+<p>}</p>
+
+<p> </p>
+
+<p>The state change from ‘order placed’ to ‘order confirmed’ is not allowed due to 2 specifications</p>
+
+<p>public ISpecification<Order> CreateCanBecomeSpecification(IOrderState newState)</Order></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+
+      ISpecification&lt;Order&gt; spec = new CustomerNameCannotBeEmptySpecification();
+
+      spec = spec.And(new ShippingToAustraliaWithPriceOver20NotAllowedSpecification());
+
+      return spec;
+
+  }
+</code></pre></div></div>
+
+<p><a href="www.mckelt.com/blog/file.axd?file=SpecificationPatternExample.zip">Download code</a></p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Spec Flow, Specifications and Chained Commands&amp;url=http://0.0.0.0:4000/2010/10/16/spec-flow-specifications-and-chained-commands.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

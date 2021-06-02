@@ -42,10 +42,22 @@ First we define a base interface that defines all our methods needed for an ‘i
 
 This base interface is called _IRepository_
 
-public interface IRepository<T> where T : class { T Save(T item); T SaveOrUpdate(T item); T Get(object id); long Count(); ICollection<T> FindAll(params ICriterion\[\] criteria); void Delete(T item);
+public interface IRepository<T>
+where T : class
+{
+T Save(T item);
+T SaveOrUpdate(T item);
+T Get(object
+id);
+long
+Count();
+ICollection<T>
+FindAll(params ICriterion[]
+criteria);
+void
+Delete(T item);
 
- } 
-
+    }   
  
 
 Now for each class we need a repository so we define 3 repository interfaces that implement the _IRepository_ interface with their corresponding class 

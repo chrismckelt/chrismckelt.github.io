@@ -1,0 +1,53 @@
+<p>]’—
+layout: post
+category: posts
+title: “Winforms export datatable to excel without COM+”
+date: “2008-07-22”
+categories:</p>
+<ul>
+  <li>“net”</li>
+  <li>
+    <h2 id="code">“code”</h2>
+  </li>
+</ul>
+
+<p>Simple export of a datatable to excel without using COM+</p>
+
+<p>Excel will ask if you want to open this as ‘An XML List’</p>
+
+<p>SaveFileDialog fileDialog = new SaveFileDialog();</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>fileDialog.Filter = “Excel files (*.xls)</td>
+      <td>*.xls”;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>fileDialog.FileName = “My_File_Name.xls”;</p>
+
+<p>fileDialog.ShowDialog();</p>
+
+<p>DataTable dt = GetFilteredDataTable(DisplayedWorkbookView.EmployeesByFocusGroup);</p>
+
+<p>using (FileStream fs = (FileStream)fileDialog.OpenFile())</p>
+
+<p>{</p>
+
+<p>using (StreamWriter sw = new StreamWriter(fs))</p>
+
+<p>{</p>
+
+<p>sw.Write(“&lt;?xml version=\“1.0\” standalone=\“yes\”?&gt;”);</p>
+
+<p>dt.WriteXml(sw, XmlWriteMode.IgnoreSchema);</p>
+
+<p>sw.Close();</p>
+
+<p>}</p>
+
+<p>fs.Close();</p>
+
+<p>}</p>

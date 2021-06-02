@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biztalk notes | Chris McKelt</title>
+
+    <link href="/assets/css/rouge-github.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="Chris McKelt’s blog" href="/feed.xml">
+
+    <link rel="canonical" href="http://0.0.0.0:4000/2009/02/12/biztalk-notes.html" />
+  </head>
+  <body>
+    <header>
+  <h1>Chris McKelt <span> Posts</span></h1>
+  
+  <div class="follow-btns">
+    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
+      Twitter
+    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
+      RSS
+    </a>
+  </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h2>Biztalk notes</h2>
+        <p class="publish-date">
+  Published: <time datetime="2009-02-12">February 12, 2009</time>
+  
+</p>
+
+        <p><strong>Databases</strong></p>
+
+<ul>
+  <li>SSODB – Enterprise Single Sign-On database</li>
+  <li>BizTalkRuleEngineDB – Repository for your business rules</li>
+  <li>BizTalkMsgBoxDb – Storage for a multitude of BizTalk activities, notably messages</li>
+  <li>BizTalkMgmtDb – Database for server meta data</li>
+  <li>BizTalkHwsDb – Human Workflow Services storage database</li>
+  <li>BizTalkEdiDb – State data for the EDI adapter</li>
+  <li>BizTalkDTADb – BizTalk tracking engine storage</li>
+  <li>BizTalkStarSchema – Staging, dimension, and measure tables</li>
+  <li>BAMPrimaryImport – Raw tracking data for BAM</li>
+  <li>BAMArchive – Archive for older business activity</li>
+  <li>BAMAlertsNSMain – Notification services for BAM monitoring</li>
+  <li>BAMAlertsApplication – Alert information for BAM notifications</li>
+</ul>
+
+<p><strong>Orchestration Tools</strong></p>
+
+<p>Group</p>
+
+<p>Allows you to collect various shapes together into a collapsible region, in much the same way that code regions in Visual Studio allow you to collapse code. If your orchestration becomes large and unwieldy, consider organizing items with groups.</p>
+
+<p>Send</p>
+
+<p>Provides a mechanism for sending out a message.</p>
+
+<p>Receive</p>
+
+<p>Provides a mechanism for receiving a message.</p>
+
+<p>Port</p>
+
+<p>Provides the liaison between the BizTalk messages and the orchestration.</p>
+
+<p>Role Link</p>
+
+<p>Provides an abstract method of dynamically selecting which of your trading partners you would like to send or receive a message.</p>
+
+<p>Transform</p>
+
+<p>Allows you to map a message.</p>
+
+<p>Message Assignment</p>
+
+<p>Nested within a Construct Message shape, allows you to create a message and assign values to it.</p>
+
+<p>Construct</p>
+
+<p>Message Creates a new instance of a message.</p>
+
+<p>Call Orchestration</p>
+
+<p>Synchronously calls another BizTalk orchestration. Start Orchestration</p>
+
+<p>Asynchronously calls another BizTalk orchestration.</p>
+
+<p>Call Rules</p>
+
+<p>Makes a call to a business policy.</p>
+
+<p>Expression</p>
+
+<p>Allows you to create an “in-line” C#-like language (XLang) coding block that can execute against the message.</p>
+
+<p>Decide</p>
+
+<p>Allows you to implement conditional logic in your orchestration flow.</p>
+
+<p>Delay</p>
+
+<p>Instructs the orchestration to pause for a set amount of time.</p>
+
+<p>Listen</p>
+
+<p>Provides a conditional branching mechanism that “listens” for the end of a Delay shape or the input of a message and turns flow control over to the branch that arrives first.</p>
+
+<p>Parallel Actions</p>
+
+<p>Gives you the opportunity to execute shapes in parallel to each other.</p>
+
+<p>Loop</p>
+
+<p>Provides a while loop within the orchestration flow.</p>
+
+<p>Scope</p>
+
+<p>Similar to coding scope, restricts transactions and error handling to a specified region.</p>
+
+<p>Throw Exception</p>
+
+<p>Throws an exception for bubbled-up error handling.</p>
+
+<p>Compensate</p>
+
+<p>Allows you to “undo” the effects of a transaction that has run its course by returning or resetting any resources that have been modified.</p>
+
+<p>Suspend</p>
+
+<p>Freezes an orchestration and bubbles up an error. While captured by a Suspend shape, the message will become resumable, as needed.</p>
+
+<p>Terminate</p>
+
+<p>Stops the orchestration and bubbles up an error. The message will be subsequently suspended; however, unlike with the Suspend shape, this message will be not be resumable.</p>
+
+        <p>
+  <a href="https://twitter.com/intent/tweet?text=Biztalk notes&amp;url=http://0.0.0.0:4000/2009/02/12/biztalk-notes.html&amp;via=dzhavatushev" class="btn btn-twitter">
+    <span class="label">Share on Twitter</span>
+  </a>
+</p>
+
+      </article>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

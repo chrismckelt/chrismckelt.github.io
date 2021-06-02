@@ -1,0 +1,85 @@
+I"s<h1 id="lean-canvas">Lean Canvas</h1>
+
+<h2 id="problem">Problem</h2>
+
+<p>This is the start of a series of blog posts where I try to build an online personal budgeting system.</p>
+
+<p>The motivation for this was me trying to do a household budget usin</p>
+
+<p>With <a href="https://en.wikipedia.org/wiki/Open_banking">Open Banking</a> approaching a common service to classify income and expenditure for bank statement transactions is not currently available on the market.</p>
+
+<p>The ability for a consumer to categorise their transactions sits within varied personal finance providers (eg. pocketbook, mint).</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>An API that uses <a href="https://en.wikipedia.org/wiki/Named-entity_recognition">Named Entity Recognition</a> to identifies a consumers bank statement into the below groups:</p>
+
+<p>Why –&gt; classification (eg Holiday travel) &amp; sub-category (flights) Who –&gt; company originating the charge When –&gt; Date time &amp; location How –&gt; Method of transfer (EftPos, cash withdraw, direct debit, credit card) What –&gt; Type of transaction is it? Dishonour, Overdrawn, Interest, Fees, Credit, Debit</p>
+
+<p>-——————————————————————————-</p>
+
+<h2 id="key-metrics">Key Metrics</h2>
+
+<ul>
+  <li>Correct classifications</li>
+  <li>API Usage</li>
+  <li>Website signups</li>
+  <li>Website classification requests</li>
+  <li>Percent of statements marked as correct (accurately identified)</li>
+  <li>Unique Value Proposition</li>
+  <li>We offer an open solution to personal financial statement classification.</li>
+</ul>
+
+<h2 id="similar-products">Similar products</h2>
+
+<ul>
+  <li>pocketbook – automated classification</li>
+  <li>pocketsmith.com – automated classification</li>
+  <li>youneedabudget.com – manual classification</li>
+  <li>myprosperity.com.au - – manual classification</li>
+  <li>Mint – US based  no AU presence</li>
+</ul>
+
+<h4 id="difference">Difference</h4>
+
+<p>We use <a href="https://en.wikipedia.org/wiki/Online_machine_learning">online machine learning</a> to classify all transactions on a bank statement and categorise them into categories for visualisation.</p>
+
+<h4 id="potential-future-features">Potential future features</h4>
+
+<ul>
+  <li>Personal finance advice</li>
+  <li>Weekly email summary statement of financial portfolio</li>
+  <li>Fraud alerts</li>
+  <li>Better products alert (mortgage/insurance)</li>
+  <li>Tax savings calculator ——————————————————————————–</li>
+</ul>
+
+<h4 id="channels">Channels</h4>
+
+<p>Free for consumers.  Paid for financial institutions that want to use the API</p>
+
+<h4 id="customer-segments">Customer Segments</h4>
+
+<p>Retail consumers wanting to understand their financial statement Business consumers wanting financial insight into their customers</p>
+
+<h4 id="cost-structure">Cost Structure</h4>
+
+<ul>
+  <li>Free for website use</li>
+  <li>API cost</li>
+</ul>
+
+<hr />
+
+<p> </p>
+
+<h2 id="posts-in-this-series">Posts in this series</h2>
+
+<p><a href="/blog/?p=460">Charge Id – scratching the tech itch [ part 1 ]</a> <a href="/blog/?p=485">Charge Id – lean canvas [ part 2 ]</a> <a href="/blog/?p=505">Charge Id – solution overview [ part 3 ]</a> <a href="/blog/?p=507">Charge Id – analysing the data [ part 4 ]</a> <a href="/blog/?p=668">Charge Id – the prediction model [ part 5 ]</a> <a href="/blog/?p=705">Charge Id – deploying a ML.Net Model to Azure [ part 6 ]</a></p>
+
+<p> </p>
+
+<h2 id="code">Code</h2>
+
+<p><a href="https://github.com/chrismckelt/vita" title="https://github.com/chrismckelt/vita">https://github.com/chrismckelt/vita</a></p>
+:ET
