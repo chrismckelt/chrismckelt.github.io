@@ -23,16 +23,18 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
-
-    <main>
-      <article>
-        <h2>{{ page.title }}</h2>
-        {% include published.html %}
-        {{ content }}
-        {% include share-on-twitter.html %}
-      </article>
-    </main>
-
+    <div class="container">
+      <main>
+        <article>
+          <h2>{{ page.title }}</h2>
+          {% include published.html %}
+          {{ content }}
+          {% include share-on-twitter.html %}
+        </article>
+      </main>
+  
+    </div>
+   
     <script src="/assets/js/main.js"></script>
   </body>
 </html>
