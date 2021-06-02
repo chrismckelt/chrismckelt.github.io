@@ -1,0 +1,8 @@
+<div class="tag-container">
+    {%- if page.tags.size > 0 -%}
+    <span class="tags">Tags: </span>
+        {%- for tag in page.tags -%}
+            <a class="badge bg-insight-purple" href="/tags/#{{ tag }}">{{tag}}</a>
+        {%- endfor -%}
+    {%- endif -%}
+</div>

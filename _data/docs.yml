@@ -1,0 +1,30 @@
+- title: Goals
+  docs:
+  - okr.html
+  - okr-actions.html
+  
+- title: Principles
+  docs:
+  - index.html
+  - why.html
+
+- title: Communication
+  docs:
+  - communication.html
+  - links.html
+  - glossary.html
+
+- title: Practices
+  docs:
+  - focus.html
+  - team-health-check.html
+  - back-2-base.html
+  - recruiting.html
+  - pre-sales.html
+  - pal-setup.md
+
+
+- title: Contribute
+  docs:
+  - contribute.html
+  - new-starter.html

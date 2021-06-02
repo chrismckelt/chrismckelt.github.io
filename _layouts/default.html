@@ -5,39 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | Chris McKelt</title>
 
+    <link rel="icon" href="/assets/images/favicon.ico.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico.png" type="image/x-icon">
     <link href="/assets/css/rouge-github.css" rel="stylesheet">
     <link href="/assets/css/custom.css" rel="stylesheet">
-
+    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"  rel="stylesheet">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
-
+  
     <link rel="canonical" href="{{ site.url }}" />
+    <base href="{{ site.url }}">
   </head>
-  <body>
-    {% include header.html %}
+ 
+<body>
+  {% include header.html %}
 
-    <nav>
-      <ul>
-        <li><a href="/">Posts</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/talks">Talks</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
+  {% include menu.html %}	  
 
-    <div class="container">
-      <main>
-        {{ content }}
-      </main>
-      <aside>
-        <div class="strava-card">
-          <div class="card-header">
-            <h3>Strava</h3>
-          </div>
-          <div class="card-body"></div>
-        </div>
-      </aside>
-    </div>
-    
-    <script src="/assets/js/main.js"></script>
-  </body>
+  <div class="container">
+    <main>
+      {{ content }}
+      {% include section_nav.html %}	  
+    </main>
+    <aside id="sidebar">
+      {% include docs_contents.html %}
+    </aside>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/data-tables.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+
 </html>

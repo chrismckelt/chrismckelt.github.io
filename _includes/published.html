@@ -1,6 +1,13 @@
 <p class="publish-date">
-  Published: <time datetime="{{ page.date | date: '%F' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  Published: <time datetime="{{ page.date | date: '%F' }}">{{ page.date | date: "%b %-d, %Y" }}</time>
   {% if page.last_updated %}
-    | Updated: <time datetime="{{ page.last_updated | date: '%F' }}">{{ page.last_updated | date: "%B %-d, %Y" }}</time>
+    | Updated: <time datetime="{{ page.last_updated | date: '%F' }}">{{ page.last_updated | date: "%b %-d, %Y" }}</time>
   {% endif %}
+  <br />
+  {% assign author = site.data.authors[page.author] %}
+  By: <a rel="author"
+    href="https://www.linkedin.com/in/{{ author.linkedin }}"
+    title="{{ author.name }}">
+       {{ author.name }}
+  </a>
 </p>

@@ -14,19 +14,15 @@
   </head>
   <body>
     <header>
-  <h1>Chris McKelt <span> Posts</span></h1>
-  
+  <span class="font-semibold text-xl tracking-tight">
+    mckelt.com
+  </span>
   <div class="follow-btns">
-    <a class="btn btn-twitter" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer">
-      Twitter
-    </a><a class="btn btn-github" href="https://github.com/chrismckelt" target="_blank" rel="noopener noreferrer">
-      GitHub
-    </a><a class="btn btn-rss" href="/feed.xml" target="_blank">
-      RSS
-    </a>
+    <a class="btn btn-twitter-round" href="https://twitter.com/chris_mckelt" target="_blank" rel="noopener noreferrer" alt="Twitter" title="Me on Twitter"><span class="sr-only">Twitter</span></a>
+    <a class="btn btn-github-round" href="https://github.com/chrismckelt/" target="_blank" rel="noopener noreferrer" alt="GitHub" title="Me on GitHub"><span class="sr-only">GitHub</span></a>
+    <a class="btn btn-rss-round" href="/feed.xml" target="_blank" alt="RSS" title="RSS"><span class="sr-only">RSS</span></a>
   </div>
 </header>
-
 
     <nav>
       <ul>
@@ -43,6 +39,13 @@
         <p class="publish-date">
   Published: <time datetime="2014-05-19">May 19, 2014</time>
   
+  <br />
+  
+  By: <a rel="author"
+    href="https://www.linkedin.com/in/"
+    title="">
+       
+  </a>
 </p>
 
         <p>[TestFixture] public class RouteTestFixture { [Test] public void Routes_should_not_change() { const string good = @ “all existing routes go here (hint run the test first then copy output to here)”; var goodRoutes = good.Split(Convert.ToChar(“;”)); var notFound = new List &lt; string &gt; (); var ass = Assembly.GetAssembly(typeof(EventStatisticsController)); var sb = new StringBuilder(); foreach(var type in ass.GetTypes()) { try { var members = type.GetMembers(); for (int i = 0; i &lt; members.Length; i++) { if (members[i].IsDefined(typeof(RouteAttribute), false)) { Object[] atts = members[i].GetCustomAttributes(typeof(RouteAttribute), false); for (int j = 0; j &lt; atts.Length; j++) { var routeAttribute = (RouteAttribute) atts[j]; string route = routeAttribute.Template + @ “/” + routeAttribute.Name; Console.WriteLine(route); sb.Append(route + “;”); if (!goodRoutes.Contains(route)) { notFound.Add(route); } } } } } catch (Exception e) { Console.WriteLine(@ “An exception occurred: {0}”, e.Message); } } if (notFound.Any()) { Console.WriteLine(@ “– MISSING ROUTES –”); foreach(var nf in notFound) { Console.WriteLine(nf); } Assert.Fail(“Missing Routes: “ + notFound.Count); } else { Assert.True(true, “All routes matched”); } Console.WriteLine(@ “————————————————”); Console.WriteLine(@ “Match the following string for future tests”); Console.WriteLine(sb.ToString()); } }</p>
