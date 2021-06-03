@@ -1,6 +1,7 @@
 highlighter: rouge
 plugins:
   - jekyll-feed
+  - simple_search_filter
 title: Chris McKelt’s blog
 description: Remembering Thoughts
 author: Chris McKelt
