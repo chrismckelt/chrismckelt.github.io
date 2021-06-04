@@ -1,0 +1,112 @@
+I""<p><a href="/file.axd?file=PerformanceTestingUsingACountingSemaphore.zip">PerformanceTestingUsingACountingSemaphore.zip (980.66 kb)</a><a href="/file.axd?file=PerformanceTestingUsingACountingSemaphore.zip"></a></p>
+
+<p>Running some performance tests using Fitnesse to test the limits of a new Sharepoint DMS solution produced this solution.</p>
+
+<p>The code we are trying to test is the AddDocument and the time it takes each call to this to succeed.</p>
+
+<p>So we need to add <em>n</em> number of documents to Sharepoint using <em>x</em> number of threads through a WCF service_,_ where <em>n</em> and <em>x</em> are configurable via the Fitnesse wiki</p>
+
+<p> </p>
+
+<p><img src="images/image.axd?picture=FitnesseTest1.png" alt="" /></p>
+
+<p> </p>
+
+<p> </p>
+
+<p>The code used to perform the test uses a <a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="http://en.wikipedia.org/wiki/Semaphore_(programming)">counting semaphore</a> to kick off <em>x</em> threads which loop while decrementing a <a href="http://msdn.microsoft.com/en-us/library/x13ttww7(VS.71).aspx" title="http://msdn.microsoft.com/en-us/library/x13ttww7(VS.71).aspx">volatile</a> variable <em>AddtoDMSXtimes.</em></p>
+
+<p> </p>
+
+<p> </p>
+
+<p>public string FileName;
+public int ConcurrentThreads = 10;
+public volatile int AddtoDMSXtimes = 1000;
+private DijkstraSemaphore semaphore; // counting semaphore
+private volatile Stack<Guid> guidStack = new Stack<Guid>();
+public volatile List<Guid> guidList = new List<Guid>();
+private ManualResetEvent resetEvent = new ManualResetEvent(false);</Guid></Guid></Guid></Guid></p>
+
+<p>private void Form1_Load(object sender, EventArgs e)
+{
+semaphore = new DijkstraSemaphore(0, ConcurrentThreads);
+}</p>
+
+<p> </p>
+
+<p>In the attached example Each loop just counts to 100 and outputs some info as seen below</p>
+
+<p> </p>
+
+<p>(in the real test this was adding a 275KB document to Sharepoint via a  new DMSServiceClient().AddGeneratedDocument(dmsDocument, documentContent); call).</p>
+
+<p> </p>
+
+<p>private void ExecuteTest()</p>
+
+<p>{
+Console.WriteLine(Thread.CurrentThread.Name);
+semaphore.Release(); while  (AddtoDMSXtimes &gt;= 0)
+{
+AddtoDMSXtimes–;
+guidList.Add(guidStack.Pop());
+ for(int exampleCount=0;exampleCount&lt;100-1;exampleCount++)
+{
+Console.WriteLine(Thread.CurrentThread.Name + “   “ + AddtoDMSXtimes.ToString() + “ “ + exampleCount.ToString());  <br />
+}
+} 
+semaphore.Acquire();
+}</p>
+
+<p> </p>
+
+<p>Initially new guids were being created in the worker threads – however I noticed when I had more than multiple threads creating Guids at one time I was getting duplicate guids!</p>
+
+<p>So an initial thread is created which branches off and populates a guid stack object with the total number of Guids required.</p>
+
+<p>Whilst this is off processing the required number of threads is created (<em>x</em>)</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>Thread populateGuidStackThread = new Thread((ThreadStart)
+delegate
+{
+for (int x = 0; x &lt; AddtoDMSXtimes+1; x++)
+{
+guidStack.Push(Guid.NewGuid());
+}
+resetEvent.Set();
+}
+);
+populateGuidStackThread.Start();</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>The guid creation thread then lets the main thread know it has finished processing and to begin running the worker threads</p>
+
+<p>Once it have finished it reports back the total seconds taken to create the threads and total seconds taken for the threads to finish their work.</p>
+
+<p> </p>
+
+<p> </p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       Thread\[\] threads = new Thread\[ConcurrentThreads\]; Stopwatch watch = new Stopwatch(); watch.Start(); int i; for (i = 0; i &lt; ConcurrentThreads; i++) { threads\[i\] = new Thread(new ThreadStart(ExecuteTest)); threads\[i\].Name = "Thread " + i.ToString(); } watch.Stop(); TimeSpan ts1 = watch.Elapsed; if (resetEvent.WaitOne()) { watch.Start(); foreach (Thread thread in threads) { thread.Start(); } watch.Stop(); } TimeSpan ts2 = watch.Elapsed; semaphore.WaitForStarvation(); Console.WriteLine("----------------- FINISHED -----------------------"); Console.WriteLine("Time to build threads in seconds " + ts1.TotalSeconds); Console.WriteLine("Time for threads to finish in seconds " + ts2.TotalSeconds);
+</code></pre></div></div>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p>Code project class taken from http://www.codeproject.com/KB/recipes/dijkstracountingsemaphore.aspx</p>
+
+<p><a href="/file.axd?file=PerformanceTestingUsingACountingSemaphore.zip"></a></p>
+
+<p><a href="/file.axd?file=PerformanceTestingUsingACountingSemaphore.zip">PerformanceTestingUsingACountingSemaphore.zip (980.66 kb)</a></p>
+:ET

@@ -1,0 +1,32 @@
+I""	<p>&lt;?xml version=“1.0” encoding=“utf-8” ?&gt;
+&lt;configuration&gt;
+  &lt;log4net&gt;
+    &lt;appender name=“WindowsEventAppender” type=“log4net.Appender.EventLogAppender”&gt;
+      &lt;param name=“LogName” value=“Application” /&gt;
+      &lt;applicationName value=“Phoenix” /&gt;
+      &lt;layout type=“log4net.Layout.PatternLayout”&gt;
+        &lt;conversionPattern value=“%date [%thread] %-5level %logger%newline =&gt; %message%newline” /&gt;
+      &lt;/layout&gt;
+      &lt;filter type=“log4net.Filter.LevelRangeFilter”&gt;
+        &lt;param name=“LevelMin” value=“DEBUG” /&gt;
+      &lt;/filter&gt;
+    &lt;/appender&gt;
+    &lt;appender name=“RollingFile” type=“log4net.Appender.RollingFileAppender”&gt;
+      &lt;file type=“log4net.Util.PatternString”   value=“logs\\phoenix.log” /&gt;
+      &lt;appendToFile value=“true” /&gt;
+      &lt;maximumFileSize value=“500KB” /&gt;
+      &lt;maxSizeRollBackups value=“2” /&gt;
+      &lt;layout type=“log4net.Layout.PatternLayout”&gt;
+        &lt;conversionPattern value=“%date [%thread] %-5level %logger%newline =&gt; %message%newline” /&gt;
+      &lt;/layout&gt;
+    &lt;/appender&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;root\&gt;
+  &lt;level value\="DEBUG" /&gt;
+  &lt;appender-ref ref\="WindowsEventAppender" /&gt;
+  &lt;appender-ref ref\="RollingFile" /&gt;
+&lt;/root\&gt;   &lt;/log4net\&gt; &lt;/configuration\&gt;
+</code></pre></div></div>
+
+<p>.csharpcode, .csharpcode pre<br /> {<br /> font-size: small;<br /> color: black;<br /> font-family: consolas, “Courier New”, courier, monospace;<br /> background-color: #ffffff;<br /> /*white-space: pre;*/<br /> }<br /> .csharpcode pre { margin: 0em; }<br /> .csharpcode .rem { color: #008000; }<br /> .csharpcode .kwrd { color: #0000ff; }<br /> .csharpcode .str { color: #006080; }<br /> .csharpcode .op { color: #0000c0; }<br /> .csharpcode .preproc { color: #cc6633; }<br /> .csharpcode .asp { background-color: #ffff00; }<br /> .csharpcode .html { color: #800000; }<br /> .csharpcode .attr { color: #ff0000; }<br /> .csharpcode .alt<br /> {<br /> background-color: #f4f4f4;<br /> width: 100%;<br /> margin: 0em;<br /> }<br /> .csharpcode .lnum { color: #606060; }</p>
+:ET

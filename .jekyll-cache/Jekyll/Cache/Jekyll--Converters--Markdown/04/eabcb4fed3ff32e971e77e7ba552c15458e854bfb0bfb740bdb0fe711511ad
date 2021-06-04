@@ -1,0 +1,10 @@
+I"�<p>$Arguments = ‘/install /startManually /serviceName:{0} /displayName:{0} NServiceBus.Production /username:{1} /password:{2}’ -f ‘McKelt.securitytokenservice.nservicebus.messagehandler’, ‘xxxx@au.McKelt.net’, ‘PasswordGoesHere’</p>
+
+<p>$nServiceBus = Resolve-Path -Path nServiceBus.Host.exe;</p>
+
+<p><a href="http://search.microsoft.com/default.asp?so=RECCNT&amp;siteid=us%2Fdev&amp;p=1&amp;nq=NEW&amp;qu=Write&amp;IntlSearch=&amp;boolean=PHRASE&amp;ig=01&amp;i=09&amp;i=99">Write</a>-Host -Object (‘Argument string is: {0}’ -f $Arguments);</p>
+
+<p><a href="http://search.microsoft.com/default.asp?so=RECCNT&amp;siteid=us%2Fdev&amp;p=1&amp;nq=NEW&amp;qu=Write&amp;IntlSearch=&amp;boolean=PHRASE&amp;ig=01&amp;i=09&amp;i=99">Write</a>-Host -Object (‘Path to nServiceBus.Host.exe is: {0}’ -f $nServiceBus);</p>
+
+<p>Start-Process -Wait -NoNewWindow -FilePath $nServiceBus -ArgumentList $Arguments -RedirectStandardOutput tmp.txt;</p>
+:ET

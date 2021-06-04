@@ -1,0 +1,39 @@
+I"<h2 id="to-create-the-d365-finops-c-odata-proxy-do">To create the D365 FinOps C# OData Proxy do:</h2>
+
+<p>1. Install the following plugin</p>
+
+<p><a href="https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice">https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseodataconnectedservice</a></p>
+
+<p>2. Using a Visual Studio Standard Library project and add a new ‘Connected Service’</p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/clip_image0014.png" alt="image" /></p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/clip_image0024.png" alt="image" /></p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/image.png" alt="image" /></p>
+
+<p>3. Open the <em>Reference.cs</em>  file in VS Code (<em>VS Code seems to handle the file better than Notepad++ and Visual Studio)</em></p>
+
+<p>4.  Search for the EDMX mega string in the file</p>
+
+<p><em>private const string Edmx  = @”[mega big xml string we need to change]”</em></p>
+
+<p>5.   Cut the EDMX mega string and place in a file on disk call <em>edmx.xml</em>  on disk.  Change  “” to “</p>
+
+<p>Set this to be file to be embedded content in your Visual Studio project</p>
+
+<p><img src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2019/12/clip_image001.png" alt="image" /></p>
+
+<p>5. Search for the below function name and replace with the code below:</p>
+
+<script src="https://gist.github.com/chrismckelt/0212be92b34a8758eafba51f37ac8f4b.js"></script>
+
+<p>6. Now create your own proxy wrapper with authentication using:</p>
+
+<script src="https://gist.github.com/chrismckelt/9fb3ce4c9f1abd6b899f1350f272153c.js"></script>
+
+<p>7. Sample unit test to create a sales order</p>
+
+<script src="https://gist.github.com/chrismckelt/da45843a40b0b3ab7cfd3520ea06bdba.js"></script>
+
+:ET

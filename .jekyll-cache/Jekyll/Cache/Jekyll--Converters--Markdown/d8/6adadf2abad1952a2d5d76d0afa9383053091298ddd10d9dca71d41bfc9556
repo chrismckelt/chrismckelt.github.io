@@ -1,0 +1,53 @@
+I"�<p>@if (HttpContext.Current.IsDebuggingEnabled)
+{      &lt;span&gt;Path&lt;/span&gt; @this.VirtualPath
+}</p>
+
+<p> </p>
+
+<h1 id="how-to-add-a-css-class-to-a-htmltextbox">How to add a css class to a Html.TextBox</h1>
+
+<p>&lt;% using(Html.BeginForm()) { %&gt;
+    &lt;div style=“width:500px; padding-top:15px;”&gt;
+        &lt;span class=“loginleft”&gt;
+            &lt;label for=“username” class=“largetext”&gt;Email:&lt;/label&gt;  
+        &lt;/span&gt;
+        &lt;span class=“loginright”&gt;
+            &lt;%= Html.TextBox(“email”, string.Empty, new { @class = “textbox” }) %&gt;<br />
+        &lt;/span&gt;
+         <br />
+         <br />
+        &lt;span class=“loginleft”&gt;
+            &lt;label for=“password” class=“largetext”&gt;Password:&lt;/label&gt;  
+        &lt;/span&gt;
+        &lt;span class=“loginright”&gt;
+            &lt;%= Html.Password(“password”, string.Empty, new { @class = “textbox” }) %&gt;<br />
+        &lt;/span&gt;
+        <br /> 
+        <br />
+        &lt;span class=“loginleft”&gt;
+         
+        &lt;/span&gt;
+        &lt;span class=“loginright”&gt;
+            &lt;%= Html.SubmitButton(“loginSubmit”, “Login”, new { @class = “button” }) %&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;% } %&gt;</p>
+
+<p> </p>
+
+<p> </p>
+
+<h2 id="how-to-find-out-which-process-you-want-to-connect-to">How to find out which process you want to connect to</h2>
+
+<p> </p>
+
+<p>cd C:\Windows\System32\inetsrv</p>
+
+<p>appcmd list wp</p>
+
+<p>pause</p>
+
+<p> </p>
+
+<p><a href="http://www.mckelt.com/blog/image.axd?picture=clip_image002.jpg"><img src="images/image.axd?picture=clip_image002_thumb.jpg" alt="clip_image002" title="clip_image002" /></a></p>
+:ET
