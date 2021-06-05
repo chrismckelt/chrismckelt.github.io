@@ -6,30 +6,27 @@ date: "2015-10-28"
 categories: 
   - "agile"
 ---
+# Title
 
-Overview –> see [What is a user story](?](https://www.mountaingoatsoftware.com/agile/user-stories)
+Wholesale customers created with 'on-hold' account status
 
-# An example user story below
-
-## Title
-
-Wholesale customers to be created as 'on-hold'
-
-## Card
+## Card Description
 
 Wholesale customers created in D365 CE will initially have their account status placed 'on hold' to disallow any credit transactions before they have their account credit checked and approved
 
-**Story** As a finance manager I want new wholesale customers to begin with their account status 'oh hold' So that no credit transactions are processed on their account until their account credit checked,approved and taken off hold.
+#### Story
+
+    AS A finance manager 
+    I WANT new wholesale customers to begin with their account status 'oh hold' 
+    SO THAT no credit transactions are processed on their account until their account credit checked,approved and taken off hold.
 
 _\[Any supporting notes/diagrams\]_
 
-![Image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//9c4ff0bf-2adc-4582-93a8-ffa8f06f2fca?fileName=image.png)
-
 #### Background
 
-see attached documents
+- any notes / emails / links for reference
 
-### Acceptance Criteria
+## Acceptance Criteria
 
 #### Simple Acceptance Criteria
 
@@ -40,8 +37,18 @@ see attached documents
 
 #### Specification by Example (for automated tests)
 
-Given a new wholesale customer is created in D365CE When that record is synced with D365FO Then the customer record status will be 'On Hold'
+    Given a new wholesale customer is created in D365CE 
+    When that record is synced with D365FO 
+    Then the customer record status will be 'On Hold'
 
-Given a new wholesale customer is created in D365CE When a new purchase order is raised against the customer Then the request is denied due to the customer being on hold
+    Given a new wholesale customer is created in D365CE 
+    When a new purchase order is raised against the customer 
+    Then the request is denied due to the customer being on hold
 
-Given a new wholesale customer is taken off hold When a new purchase order is raised against the customer Then the request is accepted
+    Given a new wholesale customer is taken off hold 
+    When a new purchase order is raised against the customer 
+    Then the request is accepted
+
+### Further information
+
+https://www.mountaingoatsoftware.com/agile/user-stories
