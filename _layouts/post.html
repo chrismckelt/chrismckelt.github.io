@@ -14,23 +14,19 @@
 
   </head>
   <body>
+    
     {% include header.html %}
+
+    {% include menu.html %}	
     <ul id="results-container"></ul>
-    <nav>
-      <ul>
-        <li><a href="/">Posts</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/talks">Talks</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-   </nav>
+
     <div class="container">
-      <li></li>
       <main>
         <article>
           <h2>{{ page.title }}</h2>
-          {% include published.html %}
           {{ content }}
+          <hr/>
+          {% include published.html %}
           {% include share-on-twitter.html %}
         </article>
       </main>

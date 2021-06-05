@@ -3,6 +3,7 @@ layout: post
 category: posts
 title: "Value Tests --> Eliminate Toil"
 date: "2015-07-10"
+excerpt: 'SOLID'
 categories: 
   - "tdd-bdd"
 ---

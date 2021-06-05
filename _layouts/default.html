@@ -29,11 +29,16 @@
       <ul id="results-container"></ul>
 
       {{ content }}
-      
-      {% include section_nav.html %}	  
+
     </main>
     <aside id="sidebar">
-      {% include docs_contents.html %}
+      <div class="tag-container">
+        <span class="tags">Tags:</span>
+        {% assign sorted_tags = site.tags | sort %} {% for tag in sorted_tags %} {% assign t = tag | first %}
+        <a class="badge bg-mckelt-purple" href="/tags/#{{ t }}">{{ t }}</a>
+        {% endfor %}
+     </div>
+    
     </aside>
   </div>
   {% include scripts.html %}

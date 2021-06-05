@@ -1,14 +1,10 @@
 /* ==========================================================================
-Custom Styling for Inside Insight Blog - Max Leong
-========================================================================== */
-
-/* ==========================================================================
 CSS Variables
 ========================================================================== */
 :root {
     /* Colors */
-    --insight-purple: #ae0a46;
-    --insight-purple-hover: #4e041f;
+    --mckelt-purple: #ae0a46;
+    --mckelt-purple-hover: #4e041f;
     --light-grey: #dee2e6;
     --very-light-grey: #f8f9fa;
     --headings: #222;
@@ -36,11 +32,11 @@ CSS Variables
     --rss: #b9501f;
 
     /* Gradients */
-    --insight-gradient: linear-gradient(
+    --mckelt-gradient: linear-gradient(
         to right,
-        #ae0a46 0%,
-        #a80b6e 50%,
-        #582873 100%
+        #3d17c7 0%,
+        #4548f1 50%,
+        #e2e3f5 100%
     );
 
     /* Typography */
@@ -156,8 +152,8 @@ p,
 /* ==========================================================================
 Background
 ========================================================================== */
-.bg-insight-purple {
-    background-color: var(--insight-purple);
+.bg-mckelt-purple {
+    background-color: var(--mckelt-purple);
 }
 
 .bg-light-grey {
@@ -244,7 +240,7 @@ header a {
 Nav
 ========================================================================== */
 nav {
-    background: var(--insight-gradient);
+    background: var(--mckelt-gradient);
 }
 
 nav ul {
@@ -400,64 +396,15 @@ a.badge:not(:last-child) {
 }
 
 /* ==========================================================================
-Strava Card
-========================================================================== */
-.strava-card {
-    background-color: #e6e6e5;
-    padding-left: 26px;
-    border-radius: 6px;
-    padding-top: 26px;
-    padding-bottom: 26px;
-    border: 1px solid #aca39a;
-    background-color: #fff;
-    padding: 30px;
-    margin-top: 10px;
-}
-
-.strava-card .card-header {
-    margin-bottom: 1rem;
-}
-
-.strava-card h3 {
-    margin-bottom: 0;
-    margin-top: 0;
-    font-weight: 300;
-    font-size: 20px;
-}
-
-.strava-card .activity-name {
-    margin-bottom: 1rem;
-}
-
-.strava-card .stats {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.strava-card .label {
-    color: #565656;
-    font-size: 0.75rem;
-}
-
-.strava-card .label + div {
-    font-size: 1.15rem;
-    line-height: 1.2;
-}
-
-/* ==========================================================================
 Links
 ========================================================================== */
 a {
-    color: var(--insight-purple);
+    color: var(--mckelt-purple);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--insight-purple-hover);
+    color: var(--mckelt-purple-hover);
     text-decoration: underline;
 }
 
@@ -515,7 +462,7 @@ Buttons
 }
 
 .btn-twitter-round {
-    background-image: url(../images/twitter-logo-white.svg);
+    background-image: url(../img/twitter-logo-white.svg);
     background-repeat: no-repeat;
     background-position: center;
     height: 32px;
@@ -525,7 +472,7 @@ Buttons
 }
 
 .btn-github-round {
-    background-image: url(../images/github-logo.svg);
+    background-image: url(../img/github-logo.svg);
     background-repeat: no-repeat;
     background-position: center;
     height: 32px;
@@ -535,7 +482,7 @@ Buttons
 }
 
 .btn-rss-round {
-    background-image: url(../images/rss.svg);
+    background-image: url(../img/rss.svg);
     background-repeat: no-repeat;
     background-position: center;
     height: 32px;
