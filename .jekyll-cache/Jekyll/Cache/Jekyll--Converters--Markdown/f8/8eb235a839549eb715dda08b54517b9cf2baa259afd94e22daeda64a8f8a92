@@ -1,26 +1,26 @@
-I"V<h2 id="tags">Tags</h2>
+I"ö<h2 id="tags">Tags</h2>
 
 <div class="tag-container">
       
-    <a class="badge bg-mckelt-purple" href="/tags/#azure">azure</a>
+    <a class="badge bg-mckelt-purple" href="#azure">azure</a>
      
-    <a class="badge bg-mckelt-purple" href="/tags/#blog">blog</a>
+    <a class="badge bg-mckelt-purple" href="#blog">blog</a>
      
-    <a class="badge bg-mckelt-purple" href="/tags/#docker">docker</a>
+    <a class="badge bg-mckelt-purple" href="#docker">docker</a>
      
-    <a class="badge bg-mckelt-purple" href="/tags/#iot">iot</a>
+    <a class="badge bg-mckelt-purple" href="#iot">iot</a>
      
-    <a class="badge bg-mckelt-purple" href="/tags/#nlp">nlp</a>
+    <a class="badge bg-mckelt-purple" href="#nlp">nlp</a>
      
-    <a class="badge bg-mckelt-purple" href="/tags/#r">r</a>
+    <a class="badge bg-mckelt-purple" href="#r">r</a>
      
-    <a class="badge bg-mckelt-purple" href="/tags/#software">software</a>
+    <a class="badge bg-mckelt-purple" href="#software">software</a>
      
-    <a class="badge bg-mckelt-purple" href="/tags/#wordpress">wordpress</a>
+    <a class="badge bg-mckelt-purple" href="#wordpress">wordpress</a>
     
 </div>
 
-<h4 id="/tags/#azure" class="text-capitalize">azure</h4>
+<h4 id="#azure" class="text-capitalize">azure</h4>
 
 <ul>
     
@@ -40,7 +40,7 @@
     
   </ul>
 
-<h4 id="/tags/#blog" class="text-capitalize">blog</h4>
+<h4 id="#blog" class="text-capitalize">blog</h4>
 
 <ul>
     
@@ -53,7 +53,7 @@
     
   </ul>
 
-<h4 id="/tags/#docker" class="text-capitalize">docker</h4>
+<h4 id="#docker" class="text-capitalize">docker</h4>
 
 <ul>
     
@@ -66,7 +66,7 @@
     
   </ul>
 
-<h4 id="/tags/#iot" class="text-capitalize">iot</h4>
+<h4 id="#iot" class="text-capitalize">iot</h4>
 
 <ul>
     
@@ -79,7 +79,7 @@
     
   </ul>
 
-<h4 id="/tags/#nlp" class="text-capitalize">nlp</h4>
+<h4 id="#nlp" class="text-capitalize">nlp</h4>
 
 <ul>
     
@@ -92,7 +92,7 @@
     
   </ul>
 
-<h4 id="/tags/#r" class="text-capitalize">r</h4>
+<h4 id="#r" class="text-capitalize">r</h4>
 
 <ul>
     
@@ -105,7 +105,7 @@
     
   </ul>
 
-<h4 id="/tags/#software" class="text-capitalize">software</h4>
+<h4 id="#software" class="text-capitalize">software</h4>
 
 <ul>
     
@@ -118,7 +118,7 @@
     
   </ul>
 
-<h4 id="/tags/#wordpress" class="text-capitalize">wordpress</h4>
+<h4 id="#wordpress" class="text-capitalize">wordpress</h4>
 
 <ul>
     

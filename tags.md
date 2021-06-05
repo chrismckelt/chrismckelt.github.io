@@ -8,7 +8,7 @@ permalink: /tags/
 
 <div class="tag-container">
     {% assign sorted_tags = site.tags | sort %} {% for tag in sorted_tags %} {% assign t = tag | first %}
-    <a class="badge bg-mckelt-purple" href="/tags/#{{ t }}">{{ t }}</a>
+    <a class="badge bg-mckelt-purple" href="#{{ t }}">{{ t }}</a>
     {% endfor %}
 </div>
 
@@ -16,7 +16,7 @@ permalink: /tags/
 {% assign t = tag | first %}
 {% assign posts = tag | last %}
 
-  <h4 id="/tags/#{{ t }}" class="text-capitalize">{{ t }}</h4>
+  <h4 id="{{ t }}" class="text-capitalize">{{ t }}</h4>
 
   <ul>
     {% for post in posts %}

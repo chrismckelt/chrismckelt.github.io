@@ -3,8 +3,8 @@ CSS Variables
 ========================================================================== */
 :root {
     /* Colors */
-    --mckelt-purple: #ae0a46;
-    --mckelt-purple-hover: #4e041f;
+    --mckelt-purple: #aa076b;
+    --mckelt-purple-hover: #61045f;
     --light-grey: #dee2e6;
     --very-light-grey: #f8f9fa;
     --headings: #222;
@@ -34,9 +34,9 @@ CSS Variables
     /* Gradients */
     --mckelt-gradient: linear-gradient(
         to right,
-        #3d17c7 0%,
-        #4548f1 50%,
-        #e2e3f5 100%
+        #4568dc    0%,
+        #b06ab3 50%,
+        #1b95e0 100%
     );
 
     /* Typography */
