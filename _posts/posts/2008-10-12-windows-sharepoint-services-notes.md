@@ -3,16 +3,14 @@ layout: post
 category: posts
 title: "Windows SharePoint Services Notes"
 date: "2008-10-12"
-categories: 
-  - "net"
-  - "notes"
+tags: dotnet sharepoint
 ---
 
 **SharePoint main objects**
 
-SPSite = Site Collection SPWeb = Site Web
-
-SPSite siteCollection = new SPSite("http://localhost/sites/sitename"); SPWeb web = siteCollection.OpenWeb();
+    SPSite = Site;  
+    Collection SPWeb = Site Web;  
+    SPSite siteCollection = new SPSite("http://localhost/sites/sitename");      SPWeb web = siteCollection.OpenWeb();
 
 **Features**
 
@@ -20,7 +18,7 @@ Features define a mechanism for defining site elements and adding them to a targ
 
 An example feature
 
- <Feature Id\="6AA03A00-02B5-4d83-A041-1CEB0DE9EF9E" Title\="Chris Document Manager" Description\="Test description" Version\="1.0.0.0"  Scope\="Web" ImageUrl\="TestImage.gif" ReceiverAssembly\="DocumentManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52cb0cd67d773ef7" ReceiverClass\="DocumentManager.FeatureReceiver" xmlns\="http://schemas.microsoft.com/sharepoint/"\> <ElementManifests\> <ElementManifest Location\="elements.xml" /> </ElementManifests\> </Feature\>
+>  <Feature Id\="6AA03A00-02B5-4d83-A041-1CEB0DE9EF9E" Title\="Chris Document Manager" Description\="Test description" Version\="1.0.0.0"  Scope\="Web" ImageUrl\="TestImage.gif" ReceiverAssembly\="DocumentManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52cb0cd67d773ef7" ReceiverClass\="DocumentManager.FeatureReceiver" xmlns\="http://schemas.microsoft.com/sharepoint/"\> <ElementManifests\> <ElementManifest Location\="elements.xml" /> </ElementManifests\> </Feature\>
 
 **Elements**
 
@@ -35,13 +33,13 @@ An example feature
 - Event handlers
 - Workflows
 
-  <Elements xmlns\="http://schemas.microsoft.com/sharepoint/"\> <CustomAction  Id\="SiteActionsToolbar" GroupId\="SiteActions" Location\="Microsoft.SharePoint.StandardMenu" Sequence\="100" Title\="Hello World" Description\="A custom menu item added using a feature" ImageUrl\="\_layouts/images/crtsite.gif" >       <UrlAction Url\="http://msdn.microsoft.com"/> </CustomAction\> </Elements\>
+>   <Elements xmlns\="http://schemas.microsoft.com/sharepoint/"\> <CustomAction  Id\="SiteActionsToolbar" GroupId\="SiteActions" Location\="Microsoft.SharePoint.StandardMenu" Sequence\="100" Title\="Hello World" Description\="A custom menu item added using a feature" ImageUrl\="\_layouts/images/crtsite.gif" >       <UrlAction Url\="http://msdn.microsoft.com"/> </CustomAction\> </Elements\>
 
 **Configuration Elements**
 
  
 
-<configuration\> <configSections\> <sectionGroup name\="SharePoint"\> <section name\="SafeControls" type\=""/> <section name\="RuntimeFilter" type\=""/> <section name\="WebPartLimits" type\=""/> <section name\="WebPartCache" type\=""/> <section name\="WebPartWorkItem" type\=""/> <section name\="WebPartControls" type\=""/> <section name\="SafeMode" type\=""/> <section name\="MergedActions" type\=""/> <section name\="PeoplePickerWildCards" type\=""/> <section name\="SafeControls" type\=""/> <section name\="SafeControls" type\=""/> </sectionGroup\> </configSections\> <SharePoint\> <SafeMode/> <WebPartLimits/> <WebPartCache/> <WebPartControls/> <SafeControls/> <PeoplePickerWildCards/> <MergedActions/> <BlobCache/> <RuntimeFilter/> </SharePoint\> </configuration\>
+> <configuration\> <configSections\> <sectionGroup name\="SharePoint"\> <section name\="SafeControls" type\=""/> <section name\="RuntimeFilter" type\=""/> <section name\="WebPartLimits" type\=""/> <section name\="WebPartCache" type\=""/> <section name\="WebPartWorkItem" type\=""/> <section name\="WebPartControls" type\=""/> <section name\="SafeMode" type\=""/> <section name\="MergedActions" type\=""/> <section name\="PeoplePickerWildCards" type\=""/> <section name\="SafeControls" type\=""/> <section name\="SafeControls" type\=""/> </sectionGroup\> </configSections\> <SharePoint\> <SafeMode/> <WebPartLimits/> <WebPartCache/> <WebPartControls/> <SafeControls/> <PeoplePickerWildCards/> <MergedActions/> <BlobCache/> <RuntimeFilter/> </SharePoint\> </configuration\>
 
 **SPVirtualPathProvider**
 
@@ -64,7 +62,7 @@ Application Pages
 
 **Debugging WSS Components**
 
-<configuration\> <SharePoint\> <SafeMode CallStack\="true"/> </SharePoint\> <system.web\> <customErrors mode\="Off"/> <compilation debug\="true"/> </system.web\> </configuration\> 
+> <configuration\> <SharePoint\> <SafeMode CallStack\="true"/> </SharePoint\> <system.web\> <customErrors mode\="Off"/> <compilation debug\="true"/> </system.web\> </configuration\> 
 
 **SPFile**
 
@@ -139,10 +137,32 @@ A schema file must define content type references and its own separate data sche
 Create a custom document library in code -- with 4 extended fields
 
  
-
-const string LIBRARY\_NAME = "BeazleyTradeDocumentLibrary";  SPSite siteCollection = new SPSite("http://localhost:334");SPWeb web = siteCollection.OpenWeb();if (!ListExists(web.Lists, LIBRARY\_NAME)){Guid listId = siteCollection.RootWeb.Lists.Add(LIBRARY\_NAME, "Beazley Trade Document Library", SPListTemplateType.DocumentLibrary);SPList list = web.Lists\[listId\];list.Fields.Add("BTProductId", SPFieldType.Number, true);list.Fields.Add("BTDocumentVersionNo", SPFieldType.Number, true);list.Fields.Add("BTProductName", SPFieldType.Text, false);list.Fields.Add("TemplateType", SPFieldType.Text, false);SPField btProductIdField = list.Fields\["BTProductId"\];btProductIdField.ShowInDisplayForm = true;btProductIdField.ShowInEditForm = true;btProductIdField.ShowInListSettings = true;btProductIdField.ShowInNewForm = true;btProductIdField.ShowInViewForms = true;SPView defaultView = list.Views\[0\];defaultView.ViewFields.Add(btProductIdField);defaultView.Update();list.ContentTypesEnabled = false;list.OnQuickLaunch = true;list.EnableAttachments = false;list.EnableVersioning = false;list.NoCrawl = true;list.Update();}
-
- 
+> const string LIBRARY\_NAME = "TradeDocumentLibrary";  
+> SPSite siteCollection = new SPSite("http://localhost:334");  
+> SPWeb web = siteCollection.OpenWeb();  
+> if (!ListExists(web.Lists, LIBRARY\_NAME)) {  
+>   Guid listId = siteCollection.RootWeb.Lists.Add(LIBRARY\_NAME, "Beazley Trade Document Library", SPListTemplateType.DocumentLibrary);  
+>   SPList list = web.Lists\ [listId\];  
+>   list.Fields.Add("BTProductId", SPFieldType.Number, true);  
+>   list.Fields.Add("BTDocumentVersionNo", SPFieldType.Number, true);  
+>   list.Fields.Add("BTProductName", SPFieldType.Text, false);  
+>   list.Fields.Add("TemplateType", SPFieldType.Text, false);  
+>   SPField btProductIdField = list.Fields\ ["BTProductId"\];  
+>   btProductIdField.ShowInDisplayForm = true;  
+>   btProductIdField.ShowInEditForm = true;  
+>   btProductIdField.ShowInListSettings = true;  
+>   btProductIdField.ShowInNewForm = true;  
+>   btProductIdField.ShowInViewForms = true;  
+>   SPView defaultView = list.Views\ [0\];  
+>   defaultView.ViewFields.Add(btProductIdField);  
+>   defaultView.Update();  
+>   list.ContentTypesEnabled = false;  
+>   list.OnQuickLaunch = true;  
+>   list.EnableAttachments = false;  
+>   list.EnableVersioning = false;  
+>   list.NoCrawl = true;  
+>   list.Update();  
+> }
 
  
 
@@ -193,8 +213,4 @@ SPSecurity allows code to run with higher priviledges
 
  
 
-SPSecurity.RunWithElevitedPrivaledges(
-
-delegate{// code run as SharePoint\\System}
-
-)
+    SPSecurity.RunWithElevitedPrivaledges(delegate{// code run as SharePoint\\System})
