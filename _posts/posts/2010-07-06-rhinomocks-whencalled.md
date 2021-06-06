@@ -8,16 +8,13 @@ tags: dotnet tdd
 
 The following test would fail without this
 
- 
     .WhenCalled(invocation => invocation.ReturnValue = new TestResult(){IsTrue = true, Message = "BBB"})
 
  
-         
-
+          
     [TestClass]
     public class ChrisTest
     {
-
         private IRuleService ruleService;
 
        [TestMethod]
