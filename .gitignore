@@ -6,3 +6,4 @@ dist
 sw.*
 jekyll-cache
 /_site
+.jekyll-cache/
