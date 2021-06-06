@@ -3,9 +3,7 @@ layout: post
 category: posts
 title: "Crystal Software Development"
 date: "2010-06-30"
-categories: 
-  - "agile"
-  - "software"
+tags: agile
 ---
 
 # Crystal Software Development [Download](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/2010/06/Crystal.pptx)

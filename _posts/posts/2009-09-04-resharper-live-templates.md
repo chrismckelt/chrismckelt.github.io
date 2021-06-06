@@ -3,10 +3,7 @@ layout: post
 category: posts
 title: "Resharper Live Templates"
 date: "2009-09-04"
-categories: 
-  - "tools"
+tags: software
 ---
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_27.png "image")](http://www.mckelt.com/blog/image.axd?picture=image_27.png)
-
-Click here to download [Resharper Templates](http://www.mckelt.com/blog/file.axd?file=livetemplates.xml)
+![image](https://user-images.githubusercontent.com/662868/120915872-c416db80-c6d8-11eb-8019-37548db1e340.png)

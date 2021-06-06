@@ -3,8 +3,7 @@ layout: post
 category: posts
 title: "Biztalk notes"
 date: "2009-02-12"
-categories: 
-  - "notes"
+tags: biztalk
 ---
 
 **Databases**
@@ -24,88 +23,88 @@ categories:
 
 **Orchestration Tools**
 
-Group
+**Group**
 
 Allows you to collect various shapes together into a collapsible region, in much the same way that code regions in Visual Studio allow you to collapse code. If your orchestration becomes large and unwieldy, consider organizing items with groups.
 
-Send
+**Send**
 
 Provides a mechanism for sending out a message.
 
-Receive
+**Receive**
 
 Provides a mechanism for receiving a message.
 
-Port
+**Port**
 
 Provides the liaison between the BizTalk messages and the orchestration.
 
-Role Link
+**Role Link**
 
 Provides an abstract method of dynamically selecting which of your trading partners you would like to send or receive a message.
 
-Transform
+**Transform**
 
 Allows you to map a message.
 
-Message Assignment
+**Message Assignment**
 
 Nested within a Construct Message shape, allows you to create a message and assign values to it.
 
-Construct
+**Construct**
 
 Message Creates a new instance of a message.
 
-Call Orchestration
+**Call Orchestration**
 
 Synchronously calls another BizTalk orchestration. Start Orchestration
 
 Asynchronously calls another BizTalk orchestration.
 
-Call Rules
+**Call Rules**
 
 Makes a call to a business policy.
 
-Expression
+**Expression**
 
 Allows you to create an “in-line” C#-like language (XLang) coding block that can execute against the message.
 
-Decide
+**Decide**
 
 Allows you to implement conditional logic in your orchestration flow.
 
-Delay
+**Delay**
 
 Instructs the orchestration to pause for a set amount of time.
 
-Listen
+**Listen**
 
 Provides a conditional branching mechanism that “listens” for the end of a Delay shape or the input of a message and turns flow control over to the branch that arrives first.
 
-Parallel Actions
+**Parallel Actions**
 
 Gives you the opportunity to execute shapes in parallel to each other.
 
-Loop
+**Loop**
 
 Provides a while loop within the orchestration flow.
 
-Scope
+**Scope**
 
 Similar to coding scope, restricts transactions and error handling to a specified region.
 
-Throw Exception
+**Throw Exception**
 
 Throws an exception for bubbled-up error handling.
 
-Compensate
+**Compensate**
 
 Allows you to “undo” the effects of a transaction that has run its course by returning or resetting any resources that have been modified.
 
-Suspend
+**Suspend**
 
 Freezes an orchestration and bubbles up an error. While captured by a Suspend shape, the message will become resumable, as needed.
 
-Terminate
+**Terminate**
 
 Stops the orchestration and bubbles up an error. The message will be subsequently suspended; however, unlike with the Suspend shape, this message will be not be resumable.

@@ -39,8 +39,6 @@ In the attached example Each loop just counts to 100 and outputs some info as se
 
 (in the real test this was adding a 275KB document to Sharepoint via a  new DMSServiceClient().AddGeneratedDocument(dmsDocument, documentContent); call).
 
-
-
 > private void ExecuteTest()  
 > {  
 > Console.WriteLine(Thread.CurrentThread.Name);  
@@ -53,7 +51,7 @@ In the attached example Each loop just counts to 100 and outputs some info as se
 > Console.WriteLine(Thread.CurrentThread.Name + "   " + AddtoDMSXtimes.ToString() + " " + exampleCount.ToString());      
 > }  
 > }   
-> semaphore.Acquire();  
+>      semaphore.Acquire();  
 > }  
 > 
 
@@ -64,16 +62,16 @@ So an initial thread is created which branches off and populates a guid stack ob
 Whilst this is off processing the required number of threads is created (_x_)
 > 
 > Thread populateGuidStackThread = new Thread((ThreadStart)
-> delegate
-> {
-> for (int x = 0; x < AddtoDMSXtimes+1; x++)
-> {
-> guidStack.Push(Guid.NewGuid());
-> }
-> resetEvent.Set();
-> }
-> );
-> populateGuidStackThread.Start();
+> delegate  
+> {  
+> for (int x = 0; x < AddtoDMSXtimes+1; x++)  
+> {  
+> guidStack.Push(Guid.NewGuid());  
+> }  
+> resetEvent.Set();  
+> }  
+> );  
+> populateGuidStackThread.Start();  
 
 The guid creation thread then lets the main thread know it has finished processing and to begin running the worker threads
 
@@ -93,7 +91,7 @@ Once it have finished it reports back the total seconds taken to create the thre
 > TimeSpan ts1 = watch.Elapsed;  
 > if (resetEvent.WaitOne())  
 > {  
-> watch.Start();  
+>    watch.Start();  
 > foreach (Thread thread in threads)  
 > {  
 > thread.Start();  

@@ -3,9 +3,9 @@ layout: post
 category: posts
 title: "Invalid object name 'master.dbo.spt_values'."
 date: "2010-08-24"
-categories: 
-  - "sql"
+tags: sql
 ---
+#  "Invalid object name 'master.dbo.spt_values'."
 
 This means your SQL Master DB is in a bad state.
 
