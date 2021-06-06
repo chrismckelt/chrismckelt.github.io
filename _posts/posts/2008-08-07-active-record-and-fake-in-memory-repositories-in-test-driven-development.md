@@ -3,8 +3,7 @@ layout: post
 category: posts
 title: "Active Record and Fake In Memory Repositories in Test Driven Development"
 date: "2008-08-07"
-categories: 
-  - "net"
+tags: dotnet orm
 ---
 
 Download Project source files:[ExampleFakeRepository.zip](/file.axd?file=FakeRepositoryExample.zip)
@@ -19,44 +18,44 @@ It is a Visual Studio 2008 solution and uses the Castle project's [Active Record
 
 ### Step 1 – Our Core Model
 
- 
+The model will consist of 3 classes
 
-Our model will consist of 3 classes
-
-- SuperHero e.g. Superman
-    - SupeHeroId
-    - RealName
-    - SuperHeroName
-- Power e.g. Flight
-    - PowerId
-    - PowerName
-- SuperHeroPower e.g. Superman’s flight
-    - SuperHeroPowerId
-    - Comments (e.g. Faster than a speeding bullet)
+    - SuperHero e.g. Superman
+        - SupeHeroId
+        - RealName
+        - SuperHeroName
+    - Power e.g. Flight
+        - PowerId
+        - PowerName
+    - SuperHeroPower e.g. Superman’s flight
+        - SuperHeroPowerId
+        - Comments (e.g. Faster than a speeding bullet)
 
 Each of our classes implements an Interface called _IIdRetriever_
 
- /// <summary> /// This was created so that the BaseRepositoryFake class can provide a standard /// implementation for fake repositories despite not knowing what property holds /// the Id. /// </summary> public interface IIdRetriever { int GetId(); void SetId(int id); }
+     /// <summary> 
+     /// This was created so that the BaseRepositoryFake class can provide a standard 
+     /// implementation for fake repositories despite not knowing what property holds 
+     /// the Id. 
+     /// </summary> 
+     public interface IIdRetriever 
+     { 
+         int GetId(); 
+         void SetId(int id); 
+     }
 
 First we define a base interface that defines all our methods needed for an ‘in-memory’ database
 
 This base interface is called _IRepository_
 
-public interface IRepository<T>
-where T : class
-{
-T Save(T item);
-T SaveOrUpdate(T item);
-T Get(object
-id);
-long
-Count();
-ICollection<T>
-FindAll(params ICriterion[]
-criteria);
-void
-Delete(T item);
-
+    public interface IRepository<T> where T : class
+    {
+        T Save(T item);
+        T SaveOrUpdate(T item);
+        T Get(objectid);
+        long Count();
+        ICollection<T> FindAll(params ICriterion[] criteria);
+        void Delete(T item);
     }   
  
 
@@ -66,19 +65,17 @@ Now for each class we need a repository so we define 3 repository interfaces tha
 - IPowerRepository
 - ISuperHeroPowerRepository
 
-public interface ISuperHeroRepository : IRepository<SuperHero\>{}
+    public interface ISuperHeroRepository : IRepository<SuperHero>{}
 
- 
 
 Now for the concrete implementations of our repositories the following classes are created
 
  
-
 - SuperHeroRepository
 - PowerRepository
 - SuperHeroPowerRepository
 
-public class PowerRepository : ARRepository<Power\>, IPowerRepository{}
+     public class PowerRepository : ARRepository<Power>, IPowerRepository{}
 
 ### Step 2 – Create the database, populate data and generate the binary file
 
@@ -96,7 +93,9 @@ Firstly there are some integration tests in the database which ensure the add/ed
 
 Secondly there is a folder entitled _Fakes_ 
 
-The main file here is the BaseRepositoryFake which contains all our base methods to mimic a database – yet in memory through an internal collection. By inheriting this class our other fake repositories get the ability to Save,SaveOrUpdate,Delete and find all.
+The main file here is the BaseRepositoryFake which contains all our base methods to mimic a database – yet in memory through an internal collection. 
+
+By inheriting this class our other fake repositories get the ability to Save,SaveOrUpdate,Delete and find all.
 
 Our inheriting fake repositories are as follows
 
@@ -106,7 +105,7 @@ Our inheriting fake repositories are as follows
 
 These simply inherit the BaseRepositoryFake and implement their corresponding interface
 
-public class SuperHeroRepositoryFake : BaseRepositoryFake<SuperHero\>, ISuperHeroRepository
+    public class SuperHeroRepositoryFake : BaseRepositoryFake<SuperHero>, ISuperHeroRepository
 
 An explanation of the files in the root of the Tests project
 
@@ -116,6 +115,3 @@ An explanation of the files in the root of the Tests project
 - SeededRepositoryFakesCountTest – test to ensure the SeededRepositoryFakes are filled
 - SuperHeroSeed – class that reads from the binary file
 
- 
-
-Download the above sample and run the tests to see this all in action.

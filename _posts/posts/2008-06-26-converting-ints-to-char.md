@@ -3,8 +3,7 @@ layout: post
 category: posts
 title: "Converting ints to char"
 date: "2008-06-26"
-categories: 
-  - "code"
+tags: code
 ---
 # Convert.ToChar(34).ToString()
 
