@@ -6,8 +6,6 @@ date: "2013-10-06"
 tags: dotnet tdd
 ---
 
-## XUnit Ignore test at runtime (with SpecFlow tag @IgnoreLocally)
-
 Code --> [https://github.com/chrismckelt/XUnit.OptionallyIgnore](https://github.com/chrismckelt/XUnit.OptionallyIgnore)
 
 NuGet --> [https://www.nuget.org/packages/Xunit.SpecFlow.AssertSkip/](https://www.nuget.org/packages/Xunit.SpecFlow.AssertSkip/)
