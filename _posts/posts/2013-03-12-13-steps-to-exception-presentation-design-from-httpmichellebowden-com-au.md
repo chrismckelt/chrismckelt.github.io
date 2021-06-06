@@ -3,10 +3,10 @@ layout: post
 category: posts
 title: "13 Steps to exception presentation design (from http://michellebowden.com.au/)"
 date: "2013-03-12"
-categories: 
-  - "misc"
-  - "notes"
+tags: notes
 ---
+
+## 13 Steps to exception presentation design
 
 1. Pace, Pace, Pace
 2. Lead

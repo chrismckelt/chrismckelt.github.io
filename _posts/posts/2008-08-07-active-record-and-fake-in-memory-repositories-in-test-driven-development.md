@@ -6,8 +6,6 @@ date: "2008-08-07"
 tags: dotnet orm
 ---
 
-Download Project source files:[ExampleFakeRepository.zip](/file.axd?file=FakeRepositoryExample.zip)
-
 ### Introduction
 
 Here is a simple example of how to use fake repositories in test driven development.

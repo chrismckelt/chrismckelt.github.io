@@ -3,8 +3,7 @@ layout: post
 category: posts
 title: "Software quotes"
 date: "2012-09-04"
-categories: 
-  - "quotes"
+tags: quotes
 ---
 
 “In God we trust. All others must bring data.”- _[W. Edwards Deming](https://www.google.com/url?q=https://en.wikipedia.org/wiki/W._Edwards_Deming&sa=D&ust=1463700706970000&usg=AFQjCNGZqsO5eD2PW7Zhcjxo-i92jAVjcw), Statistician_

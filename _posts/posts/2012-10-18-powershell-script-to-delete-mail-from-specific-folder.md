@@ -3,13 +3,10 @@ layout: post
 category: posts
 title: "Powershell script to delete mail from specific folder"
 date: "2012-10-18"
-categories: 
-  - "powershell"
+tags: code
 ---
 
- 
-
-[function](http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=function&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99) Remove-MailItem {            
+[function](http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=function&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99)         Remove-MailItem {            
 
 	\[CmdletBinding(SupportsShouldProcess=$[true](http://search.microsoft.com/default.asp?so=RECCNT&siteid=us%2Fdev&p=1&nq=NEW&qu=true&IntlSearch=&boolean=PHRASE&ig=01&i=09&i=99))\]            
 
