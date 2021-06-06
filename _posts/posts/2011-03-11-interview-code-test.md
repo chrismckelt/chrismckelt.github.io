@@ -3,10 +3,7 @@ layout: post
 category: posts
 title: "My interview coding test"
 date: "2011-03-11"
-categories: 
-  - "net"
-  - "tdd-bdd"
-  - "tools"
+tags: interview
 ---
 
 # **Technical Test - Book Store**
