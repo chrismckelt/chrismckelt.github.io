@@ -3,10 +3,7 @@ layout: post
 category: posts
 title: "Software Playbook"
 date: "2014-02-23"
-categories: 
-  - "agile"
-  - "software"
-  - "startup"
+tags: software
 ---
 
  

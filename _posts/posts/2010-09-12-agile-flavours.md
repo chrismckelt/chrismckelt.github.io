@@ -2,9 +2,8 @@
 layout: post
 category: posts
 title: "Agile Flavours"
-date: "2014-09-12"
-categories: 
-  - "agile"
+date: "2010-09-12"
+tags: agile
 ---
 
 **XP**

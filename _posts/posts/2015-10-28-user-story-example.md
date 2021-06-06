@@ -3,8 +3,7 @@ layout: post
 category: posts
 title: "User story example"
 date: "2015-10-28"
-categories: 
-  - "agile"
+tags: agile
 ---
 # Title
 

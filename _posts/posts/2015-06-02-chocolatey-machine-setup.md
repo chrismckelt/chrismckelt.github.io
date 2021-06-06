@@ -3,15 +3,9 @@ layout: post
 category: posts
 title: "Chocolatey machine setup"
 date: "2015-06-02"
-categories: 
-  - "net"
-  - "software"
-  - "startup"
-  - "tools"
+tags: software
 ---
 
 [https://gist.github.com/chrismckelt/3884f94078a7bd3a773b](https://gist.github.com/chrismckelt/3884f94078a7bd3a773b "https://gist.github.com/chrismckelt/3884f94078a7bd3a773b")
 
- 
-
-#Administrator privileges check If (\-NOT (\[Security.Principal.WindowsPrincipal\] \[Security.Principal.WindowsIdentity\]::GetCurrent()).IsInRole(\` \[Security.Principal.WindowsBuiltInRole\] "Administrator")) { Write\-Warning "You do not have Administrator rights!\`nPlease run the build shell as administrator!" exit } $scriptPath \= $MyInvocation.MyCommand.Path $scriptDirectory \= Split\-Path $scriptPath $customDir \= Resolve\-Path (Join\-Path ($scriptDirectory) "..\\") cd $customDir mkdir "c:\\software" mkdir "c:\\downloads" mkdir "c:\\temp" Write\-Host "Welcome to chrismckelts Chocolatey install" Write\-Host "\---------------------------------" get\-item "$\*.bat" Write\-Host "\---------------------------------" ECHO "Installing PsGet and PS plugins" (new\-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex Install\-Module pscx Install\-Module psake ECHO "FINISHED - Installing PsGet and PS plugins - FINISHED" ECHO "Installing Chocolatey and required apps" iex ((new\-object net.webclient).DownloadString("https://chocolatey.org/install.ps1")) \[Environment\]::SetEnvironmentVariable("Path", $env:Path + ";" + $env:systemdrive + '\\chocolatey\\bin', \[System.EnvironmentVariableTarget\]::Machine ) choco feature enable \-n\=allowGlobalConfirmation choco install dotnet4.5 choco install 7zip choco install slickrun choco install fiddler choco install curl choco install GoogleChrome #choco install Firefox choco install grepwin choco install ConEmu choco install notepadplusplus choco install paint.net choco install linqpad choco install PowerGUI choco install P4Merge choco install clover choco install fiddler choco install sourcetree choco install googledrive choco install vlc choco install nodejs.install choco install msbuild.communitytasks choco install procmon choco install dotPeek choco install keepass #choco install logparser1 #choco install VirtualCloneDrive choco install foxitreader choco install git\-credential\-winstore choco install mRemoteNG #$webclient = New-Object Net.WebClient # $url = 'http://download.microsoft.com/download/E/A/3/EA38D9B8-E00F-433F-AAB5-9CDA28BA5E7D/FSharp\_Bundle.exe' # $webclient.DownloadFile($url, "$pwd\\FSharp\_Bundle.exe") .\\FSharp\_Bundle.exe /install /quiet ECHO "FINISHED - Installing Chocolatey and required apps - FINISHED"
+ <script src="https://gist.github.com/chrismckelt/3884f94078a7bd3a773b.js"></script>

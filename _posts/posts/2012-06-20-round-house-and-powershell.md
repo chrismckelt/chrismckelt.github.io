@@ -23,11 +23,8 @@ Using [https://github.com/chucknorris/roundhouse](https://github.com/chucknorris
 		if (Test-Path "D:\\Code\\") 
 		{
  			$rh = "D:\\Code\\Phoenix\\trunk\\Tools\\RoundhousE\\console\\rh.exe"
-
 			$indexesFolder = "D:\\Code\\Phoenix\\trunk\\Database\\10-Indexes"
-
 			$schemaChangesFolder = "D:\\Code\\Phoenix\\trunk\\Database\\11-SchemaChanges"
-
 			if ($environment -eq  'integration')
 			{
 				$connectionString = "Data Source=xxxxx;Database=rrrr\_Integration; User Id=rrrr; Password=rrrr;"
@@ -54,12 +51,10 @@ Using [https://github.com/chucknorris/roundhouse](https://github.com/chucknorris
 		Start-Process -FilePath $rh -ArgumentList $args -PassThru
 
 		Write\-Host "Database upgrade complete"	
-
 	}  
     }
 
  
-
 The following tables are created
 
  

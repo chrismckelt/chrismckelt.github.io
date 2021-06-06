@@ -3,11 +3,7 @@ layout: post
 category: posts
 title: "Cloud platform providers"
 date: "2015-06-29"
-categories: 
-  - "azure"
-  - "cloud"
-  - "software"
-  - "startup"
+tags: azure software
 ---
 
 Firstly some terminology courtesy of [Stackoverflow](http://stackoverflow.com/questions/16820336/what-is-saas-paas-and-iaas-with-examples)

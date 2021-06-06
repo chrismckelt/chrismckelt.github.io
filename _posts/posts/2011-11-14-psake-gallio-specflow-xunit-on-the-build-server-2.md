@@ -13,17 +13,14 @@ This is a quick post to show how to get PowerShell with [PSAKE](http://codebette
 
 The folder with our build scripts looks like this
 
+![image](https://user-images.githubusercontent.com/662868/120942836-06363080-c75e-11eb-9e2f-0a43b021e334.png)
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image.axd?picture=image_thumb_38.png "image")](http://www.mckelt.com/image.axd?picture=image_38.png)
-
- 
 
 The environments folder contains all of the configuration files for each environment
 
 ![image](https://user-images.githubusercontent.com/662868/120924073-7021ec00-c704-11eb-83f0-c51328e36f54.png)
 
 Build server process
-
  
 
 The build/check-in process is now as follows.
@@ -44,11 +41,17 @@ The build/check-in process is now as follows.
 
 8\. On Success the build is packaged for deployment (config files modified for environment)
 
- 
 
 Cruise control originally calls default.ps1 passing in the environment.
 
->     <powershell> <scriptsDirectory>C:\\CCWorking\\Phoenix\\CodeBase\\Build\\BuildScripts</scriptsDirectory><!--Scrips folder--> <script>default.ps1</script> <buildArgs>-environment:integration</buildArgs><!-- Project working folder -workingDir C:\\project1\\working--> <executable>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</executable> <buildTimeoutSeconds>10000</buildTimeoutSeconds> <description>Phoenix Build</description> </powershell>
+> <powershell>   
+> <scriptsDirectory>C:\\CCWorking\\Phoenix\\CodeBase\\Build\\BuildScripts</scriptsDirectory>  
+> <!--Scrips folder-->   
+> <script>default.ps1</script>   
+> <buildArgs>-environment:integration</buildArgs>  
+> <!-- Project working folder -workingDir C:\\project1\\working-->   
+> <executable>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</executable>   
+> <buildTimeoutSeconds>10000</buildTimeoutSeconds> <description>Phoenix Build</description> </powershell>
 > 
  
 

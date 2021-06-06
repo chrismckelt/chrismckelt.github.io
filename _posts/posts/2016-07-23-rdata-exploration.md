@@ -3,10 +3,7 @@ layout: post
 category: posts
 title: "R–Data Exploration"
 date: "2016-07-23"
-categories: 
-  - "data-science"
-  - "machine-learning"
-  - "r"
+tags: r data-science
 ---
 
 # PCA
