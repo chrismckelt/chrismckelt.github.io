@@ -18,6 +18,4 @@ tags: code sofware
 
 **Heap Sort**
 
-https://en.wikipedia.org/wiki/Sorting/algorithm
-
 ![628e6d48b76004a4afb95ae28aa2328e](https://user-images.githubusercontent.com/662868/120915766-3509c380-c6d8-11eb-8c96-a4c99e4fd423.png)
