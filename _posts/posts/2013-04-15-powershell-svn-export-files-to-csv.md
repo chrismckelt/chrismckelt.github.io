@@ -7,8 +7,6 @@ tags: code
 ---
 
 
-## POWERSHELL & SVN – EXPORT FILES TO CSV
-
 ```
 Function Get-SvnLogData()
 {
