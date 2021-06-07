@@ -3,9 +3,7 @@ layout: post
 category: posts
 title: "Charge Id – Analysing the data"
 date: "2018-07-21"
-categories: 
-  - "chargeid"
-  - "r"
+tags: dotnet
 ---
 
 ## So what are we trying to do here?

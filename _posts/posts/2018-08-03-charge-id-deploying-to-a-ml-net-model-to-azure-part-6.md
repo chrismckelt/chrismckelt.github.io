@@ -3,14 +3,7 @@ layout: post
 category: posts
 title: "Charge Id - Deploying a ML.Net Model to Azure"
 date: "2018-08-03"
-categories: 
-  - "net"
-  - "chargeid"
-  - "data-science"
-  - "machine-learning"
-  - "ml-net"
-  - "software"
-  - "startup"
+tags: dotnet
 ---
 
 In the [previous post](/blog/?p=668) we built a machine learning model using [ML.Net](http://dot.net/ml), in this post we will deploy the model to an Azure app and allow it to be used via a HTTP API

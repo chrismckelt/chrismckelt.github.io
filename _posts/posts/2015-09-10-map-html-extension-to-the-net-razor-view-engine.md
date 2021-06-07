@@ -19,14 +19,26 @@ tags: dotnet
 [![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb3.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2015/09/image3.png)
 
 ```
-<compilation debug\="true" targetFramework\="4.6" \> <buildProviders\> 
-<add extension\=".html" type\="System.Web.WebPages.Razor.RazorBuildProvider"/> </buildProviders\> </compilation\> System.Web.Razor.RazorCodeLanguage.Languages.Add("html", new CSharpRazorCodeLanguage()); WebPageHttpHandler.RegisterExtension("html");
+<compilation debug\="true" targetFramework\="4.6" \> 
+  <buildProviders\>     
+    <add extension\=".html" type\="System.Web.WebPages.Razor.RazorBuildProvider"/>   
+</buildProviders\> 
+</compilation\>
+
+ System.Web.Razor.RazorCodeLanguage.Languages.Add("html", new CSharpRazorCodeLanguage()); WebPageHttpHandler.RegisterExtension("html");
 
 
 ```
 ```
-@using Fasti.WebClient 
-@{ Layout \= null; @RenderPage("~/index.html") } 
+
+@{ 
+  
+  Layout \= null;   
+
+  @RenderPage("~/index.html") 
+
+}   
+
 <!-- Version + @System.Reflection.Assembly.GetAssembly(typeof (Startup)).GetName().Version.ToString(); \-->
 
 ```

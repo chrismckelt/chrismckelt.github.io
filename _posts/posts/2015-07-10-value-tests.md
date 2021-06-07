@@ -7,6 +7,7 @@ excerpt: 'TDD'
 tags: tdd
 ---
 ## Write Value Tests
+
 Having drank the TDD cool aid over the years I went deep.  BDD with Fitnesse, SpecFlow. Maximum code coverage %. Days fixing up UI tests. Ensuring this calls that – all code was covered.  
 
 Today here is how I calculate a tests value.

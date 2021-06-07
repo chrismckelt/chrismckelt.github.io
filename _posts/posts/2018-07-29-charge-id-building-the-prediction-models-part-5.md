@@ -3,12 +3,7 @@ layout: post
 category: posts
 title: "Charge Id – The prediction model"
 date: "2018-07-29"
-categories: 
-  - "net"
-  - "chargeid"
-  - "data-science"
-  - "machine-learning"
-  - "ml-net"
+tags: dotnet
 ---
 
 In this post we will build a prediction model using ML .Net to classify an individual bank transaction into a pre-defined group using the description text.

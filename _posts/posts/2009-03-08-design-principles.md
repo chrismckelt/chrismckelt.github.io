@@ -4,7 +4,7 @@ category: posts
 title: "Design Principles"
 date: "2009-03-08"
 excerpt: 'SOLID'
-tags: code sofware
+tags: code software
 ---
 
 ## The Open/Closed Principle

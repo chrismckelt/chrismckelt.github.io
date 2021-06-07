@@ -7,6 +7,7 @@ tags: code fsharp
 ---
 `
    # FSharp Canopy Tests
+```
 
     namespace RegressionTests
 
@@ -27,40 +28,40 @@ tags: code fsharp
             elementTimeout <- 15.0
             compareTimeout <- 15.0
 
-            let \_testpage =             ConfigurationManager.AppSettings.\["AolSiteUrl"\]
-            let \_username =             ConfigurationManager.AppSettings.\["AolChallengerId"\]
-            let \_password =             ConfigurationManager.AppSettings.\["AolPassword"\]
-            let \_passwordChangeToThis = ConfigurationManager.AppSettings.\["AolPasswordChangeToThis"\]
-            let \_includePasswordChangeTest = ConfigurationManager.AppSettings.\["IncludePasswordChangeTest"\]
-            let \_quickSearchText = ConfigurationManager.AppSettings.\["QuickSearchText"\]
-            let \_quickSearchFindInvestor = ConfigurationManager.AppSettings.\["QuickSearchFindInvestor"\]
-            let \_path = ConfigurationManager.AppSettings.\["OutputTestResults"\]
+            let _testpage =             ConfigurationManager.AppSettings.\["AolSiteUrl"]
+            let _username =             ConfigurationManager.AppSettings.\["AolChallengerId"]
+            let _password =             ConfigurationManager.AppSettings.\["AolPassword"]
+            let _passwordChangeToThis = ConfigurationManager.AppSettings.\["AolPasswordChangeToThis"]
+            let _includePasswordChangeTest = ConfigurationManager.AppSettings.\["IncludePasswordChangeTest"]
+            let _quickSearchText = ConfigurationManager.AppSettings.\["QuickSearchText"]
+            let _quickSearchFindInvestor = ConfigurationManager.AppSettings.\["QuickSearchFindInvestor"]
+            let _path = ConfigurationManager.AppSettings.\["OutputTestResults"]
 
-            QuoteHelper.deleteFiles \_path "" true
+            QuoteHelper.deleteFiles _path "" true
 
-            for file in System.IO.Directory.EnumerateFiles(\_path) do
-                let tempPath = System.IO.Path.Combine(\_path, file)
+            for file in System.IO.Directory.EnumerateFiles(_path) do
+                let tempPath = System.IO.Path.Combine(_path, file)
                 System.IO.File.Delete(tempPath)
 
-            context ("Testing :: eQuote - " + \_testpage + "/Quote")
+            context ("Testing :: eQuote - " + _testpage + "/Quote")
 
-            before (fun \_ -> 
+            before (fun _ -> 
                   describe "Starting test"
-                  url (\_testpage + "/Quote")
+                  url (_testpage + "/Quote")
                 )
            
-            ntest "Login" (fun \_ ->
-                describe ("Login with " + \_username)
-                url \_testpage
-                "#userId" << \_username
-                "#password" <<  \_password
+            ntest "Login" (fun _ ->
+                describe ("Login with " + _username)
+                url _testpage
+                "#userId" << _username
+                "#password" <<  _password
                 click ".submit"
-              //  on (\_testpage + "/Secure/Home/")
+              //  on (_testpage + "/Secure/Home/")
             )
 
-            ntest "GIP Quote - Fixed Term" (fun \_ ->
+            ntest "GIP Quote - Fixed Term" (fun _ ->
                     describe "Creating GIP quote – fixed 3 year"
-                    js "$('input:radio\[name=NewPolicyType\]:first').attr('checked', true);" |> ignore
+                    js "$('input:radio\[name=NewPolicyType]:first').attr('checked', true);" |> ignore
                     click "#btnContinue1"
                     sleep 5
                     let setQuote = QuoteHelper.createQuoteTerm "100000" "Monthly" "3"
@@ -71,15 +72,15 @@ tags: code fsharp
                     sleep 3
                     let linkText = read "#yourQuoteId"
                     describe linkText
-                    screenshot \_path linkText |> ignore
+                    screenshot _path linkText |> ignore
                     )
 
-            ntest "GIP quote – life" (fun \_ ->
+            ntest "GIP quote – life" (fun _ ->
                     describe "Creating GIP quote – life"
-                    js "$('input:radio\[name=NewPolicyType\]::nth(1)').attr('checked', true);" |> ignore
+                    js "$('input:radio\[name=NewPolicyType]::nth(1)').attr('checked', true);" |> ignore
                     click "#btnContinue1"
                     sleep 5
-                    js " $('input:radio\[name=ProductTerm\]::nth(1)').click();" |> ignore
+                    js " $('input:radio\[name=ProductTerm]::nth(1)').click();" |> ignore
                     sleep 1
                     let setQuote = QuoteHelper.createQuoteLife "100000" "Monthly" 
                     js setQuote |> ignore
@@ -91,12 +92,12 @@ tags: code fsharp
                     sleep 3
                     let linkText = read "#yourQuoteId"
                     describe linkText
-                    screenshot \_path linkText |> ignore
+                    screenshot _path linkText |> ignore
                     )
 
-            ntest "GA Quote - Fixed Term" (fun \_ ->
+            ntest "GA Quote - Fixed Term" (fun _ ->
                     describe "Creating Fee for service annuity quote - FIXED"
-                    js "$('input:radio\[name=NewPolicyType\]:first').attr('checked', true);" |> ignore
+                    js "$('input:radio\[name=NewPolicyType]:first').attr('checked', true);" |> ignore
                     click "#btnContinue1"
                     sleep 5
                     let setQuote = QuoteHelper.createQuoteTerm "100000" "Monthly" "3"
@@ -109,15 +110,15 @@ tags: code fsharp
                     sleep 3
                     let linkText = read "#yourQuoteId"
                     describe linkText
-                    screenshot \_path linkText |> ignore
+                    screenshot _path linkText |> ignore
                     )
 
-            ntest "GA quote – life" (fun \_ ->
+            ntest "GA quote – life" (fun _ ->
                     describe "Creating GA quote – life"
-                    js "$('input:radio\[name=NewPolicyType\]::nth(1)').attr('checked', true);" |> ignore
+                    js "$('input:radio\[name=NewPolicyType]::nth(1)').attr('checked', true);" |> ignore
                     click "#btnContinue1"
                     sleep 5
-                    js " $('input:radio\[name=ProductTerm\]::nth(1)').click();" |> ignore
+                    js " $('input:radio\[name=ProductTerm]::nth(1)').click();" |> ignore
                     sleep 1
                     let setQuote = QuoteHelper.createQuoteLife "100000" "Yearly" 
                     js setQuote |> ignore
@@ -129,15 +130,15 @@ tags: code fsharp
                     sleep 3
                     let linkText = read "#yourQuoteId"
                     describe linkText
-                    screenshot \_path linkText |> ignore
+                    screenshot _path linkText |> ignore
                     )
 
-            ntest "GreenId Test" (fun \_ ->
+            ntest "GreenId Test" (fun _ ->
                     describe "GreenId Test"
-                    js "$('input:radio\[name=NewPolicyType\]::nth(1)').attr('checked', true);" |> ignore
+                    js "$('input:radio\[name=NewPolicyType]::nth(1)').attr('checked', true);" |> ignore
                     click "#btnContinue1"
                     sleep 5
-                    js " $('input:radio\[name=ProductTerm\]::nth(1)').click();" |> ignore
+                    js " $('input:radio\[name=ProductTerm]::nth(1)').click();" |> ignore
                     sleep 1
                     let setQuote = QuoteHelper.createQuoteLife "100000" "Yearly" 
                     js setQuote |> ignore
@@ -153,8 +154,8 @@ tags: code fsharp
                     sleep 5
                     js QuoteHelper.greenId |> ignore
                     sleep 1
-                    click "#InvestorDetails\_IdentityVerification\_CheckId"
-                    screenshot \_path ("GreenId -" + linkText )|> ignore
+                    click "#InvestorDetails_IdentityVerification_CheckId"
+                    screenshot _path ("GreenId -" + linkText )|> ignore
                     )
 
             run ()
@@ -167,56 +168,56 @@ namespace RegressionTests
     module QuoteHelper =
 
         let createQuoteTerm amount paymentFrequency term = (
-                                             @"  $('#InvestorDetails\_Title').val('Mr');
-                                            $('#InvestorDetails\_GivenNames').val('test');
-                                            $('#InvestorDetails\_Surname').val('client');
-                                            $('#InvestorDetails\_DateOfBirth\_day').val(1);
-                                            $('#InvestorDetails\_DateOfBirth\_month').val(1);
-                                            $('#InvestorDetails\_DateOfBirth\_year').val(1937);
+                                             @"  $('#InvestorDetails_Title').val('Mr');
+                                            $('#InvestorDetails_GivenNames').val('test');
+                                            $('#InvestorDetails_Surname').val('client');
+                                            $('#InvestorDetails_DateOfBirth_day').val(1);
+                                            $('#InvestorDetails_DateOfBirth_month').val(1);
+                                            $('#InvestorDetails_DateOfBirth_year').val(1937);
                                             $('#InvestmentAmount').val(" + amount + ");
-                                            $('#InvestmentAmount\_editor').val('$100,000.00');
+                                            $('#InvestmentAmount_editor').val('$100,000.00');
                                             $('#PaymentFrequency').val('" + paymentFrequency + "');
                                             $('#Term').val('" + term + "');
                                             $('#InitialCommissionRate').val('0');
                                             $('#Indexation').val('ZeroPercent');
                                             $('#OngoingCommissionRate').val('0.00550');
                                             $('#ResidualCapitalValueRate').val('1.00000');
-                                            $('#JointInvestorDetails\_Title').val('Mr');
-                                            $('#JointInvestorDetails\_GivenNames').val('joint test');
-                                            $('#JointInvestorDetails\_Surname').val('client');
-                                            $('#JointInvestorDetails\_DateOfBirth\_day').val(31);
-                                            $('#JointInvestorDetails\_DateOfBirth\_month').val(12);
-                                            $('#JointInvestorDetails\_DateOfBirth\_year').val(1956);")
+                                            $('#JointInvestorDetails_Title').val('Mr');
+                                            $('#JointInvestorDetails_GivenNames').val('joint test');
+                                            $('#JointInvestorDetails_Surname').val('client');
+                                            $('#JointInvestorDetails_DateOfBirth_day').val(31);
+                                            $('#JointInvestorDetails_DateOfBirth_month').val(12);
+                                            $('#JointInvestorDetails_DateOfBirth_year').val(1956);")
 
         let createQuoteLife amount paymentFrequency  = (
-                                             @"  $('#InvestorDetails\_Title').val('Mr');
-                                            $('#InvestorDetails\_GivenNames').val('test');
-                                            $('#InvestorDetails\_Surname').val('client');
-                                            $('#InvestorDetails\_DateOfBirth\_day').val(1);
-                                            $('#InvestorDetails\_DateOfBirth\_month').val(1);
-                                            $('#InvestorDetails\_DateOfBirth\_year').val(1937);
+                                             @"  $('#InvestorDetails_Title').val('Mr');
+                                            $('#InvestorDetails_GivenNames').val('test');
+                                            $('#InvestorDetails_Surname').val('client');
+                                            $('#InvestorDetails_DateOfBirth_day').val(1);
+                                            $('#InvestorDetails_DateOfBirth_month').val(1);
+                                            $('#InvestorDetails_DateOfBirth_year').val(1937);
                                             $('#InvestmentAmount').val(" + amount + ");
-                                            $('#InvestmentAmount\_editor').val('$100,000.00');
+                                            $('#InvestmentAmount_editor').val('$100,000.00');
                                             $('#PaymentFrequency').val('" + paymentFrequency + "');
                                             $('#InitialCommissionRate').val('0.0055');
                                             $('#Indexation').val('ZeroPercent');
                                             $('#OngoingCommissionRate').val('0.00550');
                                             $('#ResidualCapitalValueRate').val('1.00000');
-                                            $('#JointInvestorDetails\_Title').val('Mr');
-                                            $('#JointInvestorDetails\_GivenNames').val('joint test');
-                                            $('#JointInvestorDetails\_Surname').val('client');
-                                            $('#JointInvestorDetails\_DateOfBirth\_day').val(31);
-                                            $('#JointInvestorDetails\_DateOfBirth\_month').val(12);
-                                            $('#JointInvestorDetails\_DateOfBirth\_year').val(1956);")
+                                            $('#JointInvestorDetails_Title').val('Mr');
+                                            $('#JointInvestorDetails_GivenNames').val('joint test');
+                                            $('#JointInvestorDetails_Surname').val('client');
+                                            $('#JointInvestorDetails_DateOfBirth_day').val(31);
+                                            $('#JointInvestorDetails_DateOfBirth_month').val(12);
+                                            $('#JointInvestorDetails_DateOfBirth_year').val(1956);")
 
         let greenId = (@"
-                        $('#InvestorDetails\_ResidentialAddress\_UnitNumber').val('5');
-                        $('#InvestorDetails\_ResidentialAddress\_StreetNumber').val('48');
-                        $('#InvestorDetails\_ResidentialAddress\_StreetName').val('Manchester');
-                        $('#InvestorDetails\_ResidentialAddress\_Suburb').val('Gymea');
-                        $('#InvestorDetails\_ResidentialAddress\_StreetType').val('RD');
-                        $('#InvestorDetails\_ResidentialAddress\_State').val('NSW');
-                        $('#InvestorDetails\_ResidentialAddress\_Postcode').val(2227);
+                        $('#InvestorDetails_ResidentialAddress_UnitNumber').val('5');
+                        $('#InvestorDetails_ResidentialAddress_StreetNumber').val('48');
+                        $('#InvestorDetails_ResidentialAddress_StreetName').val('Manchester');
+                        $('#InvestorDetails_ResidentialAddress_Suburb').val('Gymea');
+                        $('#InvestorDetails_ResidentialAddress_StreetType').val('RD');
+                        $('#InvestorDetails_ResidentialAddress_State').val('NSW');
+                        $('#InvestorDetails_ResidentialAddress_Postcode').val(2227);
                     
         ")
 
@@ -236,3 +237,5 @@ namespace RegressionTests
                 deleteFiles subdir.FullName pattern includeSubDirs
 
 `           
+
+```

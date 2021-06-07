@@ -3,7 +3,7 @@ layout: post
 category: posts
 title: "Sorting Algorithms"
 date: "2009-03-05"
-tags: code sofware
+tags: code software
 ---
 
 - Bubble
