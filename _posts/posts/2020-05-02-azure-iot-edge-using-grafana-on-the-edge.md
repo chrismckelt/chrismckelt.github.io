@@ -3,12 +3,7 @@ layout: post
 category: posts
 title: "Azure IoT Edge - using Grafana on the Edge"
 date: "2020-05-02"
-tags: azure docker iot
-categories: 
-  - "azure"
-  - "docker"
-  - "grafana"
-  - "iot"
+tags: azure iot node python dotnet grafana
 ---
 
 # Series

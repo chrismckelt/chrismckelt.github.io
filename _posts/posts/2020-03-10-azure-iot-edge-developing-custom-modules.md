@@ -3,16 +3,7 @@ layout: post
 category: posts
 title: "Azure IoT Edge - Developing custom modules"
 date: "2020-03-10"
-categories: 
-  - "net"
-  - "azure"
-  - "cloud"
-  - "code"
-  - "docker"
-  - "iot"
-  - "node"
-  - "powershell"
-  - "python"
+tags: azure iot node python dotnet containers
 ---
 
 # Series

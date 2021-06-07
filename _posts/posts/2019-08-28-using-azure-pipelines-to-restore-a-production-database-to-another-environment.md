@@ -3,14 +3,7 @@ layout: post
 category: posts
 title: "Using Azure Pipelines to restore a production database to another environment"
 date: "2019-08-28"
-categories: 
-  - "azure"
-  - "cloud"
-  - "code"
-  - "devops"
-  - "software"
-  - "sql"
-  - "tools"
+tags: azure sql 
 ---
 
 Often we need a fresh copy of the production database in another environment (eg DEV/TEST/UAT). 

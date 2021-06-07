@@ -3,15 +3,7 @@ layout: post
 category: posts
 title: "Azure IoT Edge – using TimescaleDB on the Edge"
 date: "2020-04-12"
-categories: 
-  - "net"
-  - "azure"
-  - "cloud"
-  - "database"
-  - "docker"
-  - "iot"
-  - "node"
-  - "timescale"
+tags: azure iot node python dotnet containers timescale
 ---
 
 # Series

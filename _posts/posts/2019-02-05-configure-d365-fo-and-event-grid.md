@@ -3,10 +3,7 @@ layout: post
 category: posts
 title: "Configure D365 fo and event grid"
 date: "2019-02-05"
-categories: 
-  - "net"
-  - "azure"
-  - "dynamics"
+tags: dotnet d365 azure
 ---
 
 ### Overview on how to publish data entity changes from Dynamics Finance and Operations to Azure Event Grid.

@@ -3,15 +3,7 @@ layout: post
 category: posts
 title: "Azure IoT Edge – using Apache Nifi as a 3rd party container"
 date: "2020-04-11"
-categories: 
-  - "net"
-  - "azure"
-  - "cloud"
-  - "docker"
-  - "iot"
-  - "node"
-  - "python"
-  - "software"
+tags: azure iot node python dotnet containers
 ---
 
 # Series

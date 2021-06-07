@@ -3,9 +3,7 @@ layout: post
 category: posts
 title: "D365 FO OData proxy generation"
 date: "2018-12-03"
-categories: 
-  - "net"
-  - "dynamics"
+tags: dotnet d365
 ---
 
 ## To create the D365 FinOps C# OData Proxy do:

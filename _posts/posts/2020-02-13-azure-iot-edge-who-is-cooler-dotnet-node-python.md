@@ -3,15 +3,7 @@ layout: post
 category: posts
 title: "Azure IoT Edge- Who is cooler? dotnet, node or python?"
 date: "2020-02-13"
-categories: 
-  - "net"
-  - "azure"
-  - "code"
-  - "docker"
-  - "iot"
-  - "node"
-  - "powershell"
-  - "python"
+tags: azure iot node python dotnet containers
 ---
 
 # Series

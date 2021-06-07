@@ -3,9 +3,7 @@ layout: post
 category: posts
 title: "Reactive architecture with event grid"
 date: "2019-04-27"
-categories: 
-  - "net"
-  - "azure"
+tags: azure
 ---
 
 Azure Global Bootcamp – 27th April 2019

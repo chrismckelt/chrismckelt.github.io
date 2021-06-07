@@ -3,8 +3,7 @@ layout: post
 category: posts
 title: "Story mapping workshop"
 date: "2017-05-05"
-categories: 
-  - "agile"
+tags: agile
 ---
 
 Format to run a small story mapping workshop
