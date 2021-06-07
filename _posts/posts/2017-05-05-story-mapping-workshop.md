@@ -23,6 +23,4 @@ Identity key objects and people to deliver
 
 Story Map Structure: **Goals > Activities > Tasks > Stories**
 
- 
-
-![](images/1*EsdHVBgi4BDzb_qJhUXWSw.jpeg)
+![image](https://user-images.githubusercontent.com/662868/120944692-73e75a00-c768-11eb-8121-3e9ddd34e8f4.png)

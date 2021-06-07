@@ -8,7 +8,8 @@ tags: fsharp
 
 # Import these references
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2016/03/image.png)
+![image](https://user-images.githubusercontent.com/662868/120944745-b741c880-c768-11eb-9182-d53d9f451a72.png)
+
 
 ### Sample script
 
@@ -17,5 +18,4 @@ tags: fsharp
 ### Graph
 
  
-
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-1.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2016/03/image-1.png)
+![image](https://user-images.githubusercontent.com/662868/120944762-c9bc0200-c768-11eb-8d84-3df4d099fe09.png)
