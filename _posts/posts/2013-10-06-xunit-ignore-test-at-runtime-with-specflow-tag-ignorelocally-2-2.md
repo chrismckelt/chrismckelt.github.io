@@ -75,7 +75,7 @@ Add the following to the .config file
 ```
 
 ```
-Finally put the all compiled assemblies into a **_lib_** folder in the root folder of your SpecFlow project
+Finally put the all compiled assemblies into a **_lib_** folder in the root folder of your SpecFlow project  
 
 ![image](https://user-images.githubusercontent.com/662868/120943303-b73dca80-c760-11eb-9743-5f76c5043b76.png)
 
