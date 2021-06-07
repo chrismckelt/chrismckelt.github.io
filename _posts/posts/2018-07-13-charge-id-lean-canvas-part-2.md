@@ -3,13 +3,7 @@ layout: post
 category: posts
 title: "Charge Id - Lean Canvas"
 date: "2018-07-13"
-categories: 
-  - "net"
-  - "azure"
-  - "chargeid"
-  - "machine-learning"
-  - "ml-net"
-  - "startup"
+tags: dotnet
 ---
 
 # Lean Canvas

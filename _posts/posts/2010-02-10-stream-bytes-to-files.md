@@ -7,8 +7,8 @@ tags: dotnet
 ---
 
                 
-
- using(var stream =
+```
+using(var stream =
   Assembly.GetAssembly(typeof (StubPolicy)).GetManifestResourceStream(
     "Documents.TestHelpers.Files.test.msg")) {
   const int bufferLength = 256;
@@ -27,3 +27,5 @@ tags: dotnet
     stream.Close();
   }
 }
+
+```

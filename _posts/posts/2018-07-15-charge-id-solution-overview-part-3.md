@@ -3,11 +3,7 @@ layout: post
 category: posts
 title: "Charge Id – solution overview"
 date: "2018-07-15"
-categories: 
-  - "chargeid"
-  - "data-science"
-  - "ml-net"
-  - "startup"
+tags: dotnet
 ---
 
 The proposed solution sequence flow follows:
