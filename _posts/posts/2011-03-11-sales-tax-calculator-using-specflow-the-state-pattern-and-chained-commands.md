@@ -266,43 +266,54 @@ And the code:
 And finally the big one – Order Completion
 > 
 > 
-> Feature: Sales tax should be 10% for all goods except books food and medical products
->     When an order is completed
->     As a user
->     I want to calculate the sales taxes
+> Feature: Sales tax should be 10% for all goods except books food and medical products  
+>     When an order is completed  
+>     As a user  
+>     I want to calculate the sales taxes  
 > 
-> @CalculateSalesTax1 Scenario: Calculate Sales Tax
->     Given A Customer with Name Joe Smith
->     Given an order that is in progress
->     When I add the following products to the inprogress order
->       | Id        | Name            | ProductType    | Imported     | Price    |
->       | 1 | A-Book | Book | false | 12.49 |
->       | 2 | Music CD | Other | false | 14.99 |
->       | 3 | Chocolates | Food | false | 00.85 |
+> @CalculateSalesTax1 Scenario: Calculate Sales Tax  
+>     Given A Customer with Name Joe Smith  
+>     Given an order that is in progress  
+>     When I add the following products to the inprogress order  
+
+Id        | Name            | ProductType    | Imported     | Price      
+---------|----------|---------|---------|---------
+1 | A-Book | Book | false | 12.49 
+2 | Music CD | Other | false | 14.99 
+3 | Chocolates | Food | false | 00.85 
+
+
 >     When the order is completed
 >     Then the sales tax should be 1.50 
 >     And the total should be 29.83
 > 
-> @CalculateSalesTax2 Scenario: Calculate Sales Tax for imported items
->     Given A Customer with Name Joe Smith
->     Given an order that is in progress
->     When I add the following imported products to the inprogress order
->       | Id        | Name            | ProductType    | Imported     | Price    |
->       | 1 | Chocolates | Food | true | 10.00 |
->       | 2 | Perfume CD | Other | true | 47.50 |
+> @CalculateSalesTax2 Scenario: Calculate Sales Tax for imported items  
+>     Given A Customer with Name Joe Smith  
+>     Given an order that is in progress  
+>     When I add the following imported products to the inprogress order  
+
+Id        | Name            | ProductType    | Imported     | Price      
+---------|----------|---------|---------|---------
+1 | Chocolates | Food | true | 10.00 |
+2 | Perfume CD | Other | true | 47.50 |
+
+>     
 >     When the order is completed
 >     Then the sales tax should be 7.65 
 > 
-> @CalculateSalesTax3 Scenario: Calculate Sales Tax for both types of items
-> Given A Customer with Name Joe Smith
-> Given an order that is in progress
-> When I add the following imported products to the inprogress order
->     | Id           | Name            | ProductType    | Imported    | Price    |
->     | 1 | perfume | Other | true | 27.99 |
->     | 2 | perfume | Other | false | 18.99 |
->     | 3 | pills | Medical | false | 9.75 |
->     | 4 | chocolate | Food | true | 11.25 |
-> When the order is completed
+> @CalculateSalesTax3 Scenario: Calculate Sales Tax for both types of items  
+> Given A Customer with Name Joe Smith  
+> Given an order that is in progress  
+> When I add the following imported products to the inprogress order  
+
+Id        | Name            | ProductType    | Imported     | Price      
+---------|----------|---------|---------|---------
+1 | perfume | Other | true | 27.99 
+2 | perfume | Other | false | 18.99 
+3 | pills | Medical | false | 9.75 
+4 | chocolate | Food | true | 11.25 
+
+> When the order is completed  
 > Then the sales tax should be 6.70
 
 And the code:
