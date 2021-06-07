@@ -3,7 +3,7 @@ layout: post
 category: posts
 title: "CFA – Accounting Ratios"
 date: "2010-05-08"
-tags: finance
+tags: notes
 ---
 
 # Liquidity ratios
