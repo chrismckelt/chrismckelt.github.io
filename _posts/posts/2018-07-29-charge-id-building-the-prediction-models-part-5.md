@@ -50,15 +50,18 @@ We shuffle the data in the file and split this into 2 files ‘train.csv’ and 
 
 To use our predictor we create a prediction service with 3 methods:
 
+```
  public interface IPredict
   {
-    Task<string\> PredictAsync(PredictionRequest request);
-    Task<string\> TrainAsync(string trainpath);
+    Task<string> PredictAsync(PredictionRequest request);
+    Task<string> TrainAsync(string trainpath);
     Task<ClassificationMetrics> EvaluateAsync(string testPath);
   }
 
+```
 ## Creating the Learning Pipeline
 
+```
  var pipeline = new LearningPipeline
         {
             // load from CSV --> SubCategory manually classified), Description, Bank, Amount, AccountName, Notes, Tags
@@ -82,27 +85,32 @@ To use our predictor we create a prediction service with 3 methods:
             new PredictedLabelColumnOriginalValueConverter() {PredictedLabelColumn = "PredictedLabel"}
         };
 
+
+```
 #### Training
 
-  // training 
+  // training   
+```
     Console.WriteLine("=============== Start training ===============");
     var watch = System.Diagnostics.Stopwatch.StartNew();
 
-    \_model = pipeline.Train<BankStatementLineItem, PredictedLabel>();
-    await \_model.WriteAsync(PredictorSettings.Model1Path);
+    _model = pipeline.Train<BankStatementLineItem, PredictedLabel>();
+    await _model.WriteAsync(PredictorSettings.Model1Path);
 
     watch.Stop();
     Console.WriteLine($"=============== End training ===============");
     Console.WriteLine($"training took {watch.ElapsedMilliseconds} milliseconds");
     Console.WriteLine("The model is saved to {0}", PredictorSettings.Model1Path);
 
-#### Testing
+```
 
-    public async Task<string\> PredictAsync(PredictionRequest request)
+ #### Testing
+
+    public async Task<string> PredictAsync(PredictionRequest request)
     {
-        if (\_model == null)
+        if (_model == null)
         {
-            \_model = await PredictionModel.ReadAsync<BankStatementLineItem, PredictedLabel>(PredictorSettings.Model1Path);
+            _model = await PredictionModel.ReadAsync<BankStatementLineItem, PredictedLabel>(PredictorSettings.Model1Path);
         }
 
         var item = new BankStatementLineItem
@@ -117,55 +125,60 @@ To use our predictor we create a prediction service with 3 methods:
             Tags = request.Tags
         };
 
-        var prediction = \_model.Predict(item);
+        var prediction = _model.Predict(item);
 
         return prediction.SubCategory;
     }
 
 ##### Write an test for verify subcategories are correctly predicted from the test data
 
- \[Theory\]
- \[InlineData("EFTPOS ALDI 27 CARRUM DOWNS AU","ANZ",Categories.Groceries.Supermarkets)\]
- \[InlineData("Kmart Cannington Aus","ANZ",Categories.Shopping.OtherShopping)\]
- \[InlineData("Bunnings Innaloo","ANZ",Categories.Home.HomeImprovement)\]
- \[InlineData("City Of Perth Park1 Perth","ParkingTolls",Categories.Transport.ParkingTolls)\]
- \[InlineData("Virgin Australia Airli Spring Hill Aus","WESTPAC\_INTERNET\_BANKING",Categories.HolidayTravel.Flights)\]
-\[InlineData("My Healthy Place Floreat","WESTPAC\_INTERNET\_BANKING",Categories.HealthBeauty.Chemists)\]
-public async Task Predict\_test\_sample(string description, string bank, string subcategory)
-            {
-                var result = await \_predict.PredictAsync(new PredictionRequest()
-                {
-                    Description = description,
-                    Bank =bank
-                });
-       
-                Console.WriteLine(result);
-                result.Should().Be(subcategory);
-            }
+```
+[Theory]
+[InlineData("EFTPOS ALDI 27 CARRUM DOWNS AU","ANZ",Categories.Groceries.Supermarkets)]
+[InlineData("Kmart Cannington Aus","ANZ",Categories.Shopping.OtherShopping)]
+[InlineData("Bunnings Innaloo","ANZ",Categories.Home.HomeImprovement)]
+[InlineData("City Of Perth Park1 Perth","ParkingTolls",Categories.Transport.ParkingTolls)]
+[InlineData("Virgin Australia Airli Spring Hill Aus","WESTPAC_INTERNET_BANKING",Categories.HolidayTravel.Flights)]
+[InlineData("My Healthy Place Floreat","WESTPAC_INTERNET_BANKING",Categories.HealthBeauty.Chemists)]
+public async Task Predict_test_sample(string description, string bank, string subcategory)
+{
+    var result = await _predict.PredictAsync(new PredictionRequest()
+    {
+        Description = description,
+        Bank =bank
+    });
+
+    Console.WriteLine(result);
+    result.Should().Be(subcategory);
+}
         
 
+```
 #### Evaluating result metrics
 
+```
  public async Task<ClassificationMetrics> EvaluateAsync(string testPath)
     {
         var testData = new TextLoader(testPath).CreateFrom<BankStatementLineItem>(separator: ',', useHeader: true);
         var evaluator = new ClassificationEvaluator();
 
-        if (\_model == null)
+        if (_model == null)
         {
-            \_model = await PredictionModel.ReadAsync<BankStatementLineItem, PredictedLabel>(PredictorSettings.Model1Path);
+            _model = await PredictionModel.ReadAsync<BankStatementLineItem, PredictedLabel>(PredictorSettings.Model1Path);
         }
 
-        var metrics = evaluator.Evaluate(\_model, testData);
+        var metrics = evaluator.Evaluate(_model, testData);
         return metrics;
     }
 
+```
 Write a test to ensure the model is giving accurate results
 
- \[Fact\]
-    public async Task Evaluate\_accuracy\_greater\_than\_95\_percent()
+```
+    [Fact]
+    public async Task Evaluate_accuracy_greater_than_95_percent()
     {
-        var metrics = await \_predict.EvaluateAsync(Test);
+        var metrics = await _predict.EvaluateAsync(Test);
         Console.WriteLine();
         Console.WriteLine("PredictionModel quality metrics evaluation");
         Console.WriteLine("------------------------------------------");
@@ -173,6 +186,7 @@ Write a test to ensure the model is giving accurate results
         metrics.AccuracyMacro.Should().BeGreaterOrEqualTo(0.95);
     }
 
+```
 #### The output metrics
 
 [![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-6.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-6.png)
@@ -220,21 +234,7 @@ Extracted contents are below
 In this post we have chosen a machine learning model to create, built a learning pipeline to ingest the data, performed training and evaluated our metrics using training data.  The end result is a deployable file alongside our application.
 
 Next up –> hosting the model in an Azure Function app.
-
  
-
- 
-
-* * *
-
- 
-
-## Posts in this series
-
-[Charge Id – scratching the tech itch \[ part 1 \]](/blog/?p=460) [Charge Id – lean canvas \[ part 2 \]](/blog/?p=485) [Charge Id – solution overview \[ part 3 \]](/blog/?p=505) [Charge Id – analysing the data \[ part 4 \]](/blog/?p=507) [Charge Id – the prediction model \[ part 5 \]](/blog/?p=668) [Charge Id – deploying a ML.Net Model to Azure \[ part 6 \]](/blog/?p=705)
-
- 
-
 ## Code
 
 [https://github.com/chrismckelt/vita](https://github.com/chrismckelt/vita "https://github.com/chrismckelt/vita")

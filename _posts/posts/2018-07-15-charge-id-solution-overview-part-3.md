@@ -20,14 +20,12 @@ The proposed solution sequence flow follows:
 
 ## Posts in this series
 
-[Charge Id – scratching the tech itch \[ part 1 \]](/blog/?p=460)  
-[Charge Id – lean canvas \[ part 2 \]](/blog/?p=485)  
-[Charge Id – solution overview \[ part 3 \]](/blog/?p=505)  
-[Charge Id – analysing the data \[ part 4 \]](/blog/?p=507)  
-[Charge Id – the prediction model \[ part 5 \]](/blog/?p=668)  
-[Charge Id – deploying a ML.Net Model to Azure \[ part 6 \]](/blog/?p=705)
-
-  
+Charge Id – scratching the tech itch    
+Charge Id – lean canvas   
+Charge Id – solution overview   
+Charge Id – analysing the data   
+Charge Id – the prediction model   
+Charge Id – deploying a ML.Net Model to Azure   
 
 ## Code
 
