@@ -104,7 +104,7 @@ To use our predictor we create a prediction service with 3 methods:
 
 ```
 
- #### Testing
+ ## Testing
 
     public async Task<string> PredictAsync(PredictionRequest request)
     {
@@ -174,6 +174,7 @@ public async Task Predict_test_sample(string description, string bank, string su
 ```
 Write a test to ensure the model is giving accurate results
 
+ 
 ```
     [Fact]
     public async Task Evaluate_accuracy_greater_than_95_percent()
@@ -187,6 +188,7 @@ Write a test to ensure the model is giving accurate results
     }
 
 ```
+ 
 #### The output metrics
 
 [![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-6.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-6.png)
