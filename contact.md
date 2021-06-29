@@ -26,7 +26,7 @@ title: Contact
                 <a href="https://dev.to/chris_mckelt"><img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
                         alt="Chris McKelt's DEV Profile" height="30" width="30"></a>
             </td>
-            <td align="center"><a href="http://blog.mckelt.com" class="zocial blogger">Blog</a></td>
+            <td align="center"><a href="https://blog.mckelt.com" class="zocial blogger">Blog</a></td>
             <td align="center"><a href="tel:00000000" class="zocial bitcoin">Email</a></td>
         </tr>
         <tr>
