@@ -87,9 +87,8 @@ To use our predictor we create a prediction service with 3 methods:
 
 
 ```
-#### Training
+**Training**
 
-  // training   
 ```
     Console.WriteLine("=============== Start training ===============");
     var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -104,7 +103,7 @@ To use our predictor we create a prediction service with 3 methods:
 
 ```
 
- ## Testing
+**Testing**
 
     public async Task<string> PredictAsync(PredictionRequest request)
     {
