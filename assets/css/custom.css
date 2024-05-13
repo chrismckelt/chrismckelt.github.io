@@ -65,7 +65,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 1rem;
     line-height: 1.5;
-    font-family: "Allumi Pro", "Roboto", "Helvetica Neue", "Helvetica",
+    font-family: "Roboto", "Helvetica Neue", "Helvetica",
         Helvetica, Arial, sans-serif;
     font-weight: 300;
     color: var(--body);
@@ -76,14 +76,6 @@ body {
 /* ==========================================================================
 Typography
 ========================================================================== */
-@font-face {
-    font-family: "Allumi Pro";
-    src: url("../fonts/AllumiPro-Light.woff2") format("woff2"),
-        url("../fonts/AllumiPro-Light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
 
 @font-face {
     font-family: "Klinic Slab";
