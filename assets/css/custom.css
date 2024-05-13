@@ -89,7 +89,7 @@ h5,
 .h5,
 h6,
 .h6 {
-    font-family: "Roboto", "Helvetica Neue", "Helvetica",
+    font-family: "Verdana", "Helvetica Neue", "Helvetica",
         Helvetica, Arial, sans-serif;
     color: var(--heading);
     line-height: 1.2;
