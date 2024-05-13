@@ -77,15 +77,6 @@ body {
 Typography
 ========================================================================== */
 
-@font-face {
-    font-family: "Klinic Slab";
-    src: url("../fonts/KlinicSlab-Light.woff2") format("woff2"),
-        url("../fonts/KlinicSlab-Light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
 h1,
 .h1,
 h2,
@@ -98,7 +89,7 @@ h5,
 .h5,
 h6,
 .h6 {
-    font-family: "Klinic Slab", "Roboto", "Helvetica Neue", "Helvetica",
+    font-family: "Roboto", "Helvetica Neue", "Helvetica",
         Helvetica, Arial, sans-serif;
     color: var(--heading);
     line-height: 1.2;
