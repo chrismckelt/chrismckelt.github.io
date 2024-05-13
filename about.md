@@ -21,9 +21,9 @@ Outside of work I enjoy the beach with my son, building/riding electric vehicles
 
         <picture>
 
-            <source srcset="/img/me.jpg" type="image/jpeg">
+            <source srcset="https://blog.mckelt.com/assets/img/me9.jpg" type="image/jpeg">
 
-            <img class="rounded-full border-solid border-4 shadow-inset mb-4 w-64 h-64" height="256" width="256" alt="Chris McKelt" src="/img/me.jpg">
+            <img class="rounded-full border-solid border-4 shadow-inset mb-4 w-64 h-64" height="256" width="256" alt="Chris McKelt" src="https://blog.mckelt.com/assets/img/me9.jpg">
 
         </picture>
 
